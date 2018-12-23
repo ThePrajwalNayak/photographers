@@ -1,3 +1,20 @@
-<p>
-  home works!
-</p>
+<div id="home" class="row">
+  <div class="col-md-3 video-wrapper">
+    <!--Start Video Cards-->
+    <div class="video-card margin-top-half" *ngFor="let videoCard of videoCards">
+      <video class="width-full" loop controls muted>
+        <source src="../../assets/images/videos/{{videoCard.video}}" type="video/mp4" />
+      </video>
+      <div class="padding-one clearfix">
+        <img class="img-thumbnail left margin-right-one" width="100" height="100" src="../../assets/images/videos_photographers_thumbnail/{{videoCard.photographerImage}}"
+        />
+        <span class="author block margin-top-half">{{videoCard.photographer}}</span>
+        <span class="time block">{{videoCard.time}} hours ago</span>
+      </div>
+    </div>
+    <!--End Video Cards-->
+    <a class="app-btn app-btn-primary margin-top-half" routerLink="/videos">More videos</a>
+  </div>
+  <div class="col-md-6">Feeds</div>
+  <div class="col-md-3">Photographers</div>
+</div>

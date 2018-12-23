@@ -1,0 +1,21 @@
+@import "../../_variables";
+#home {
+  .video-wrapper {
+    padding: 1.5rem;
+    .video-card {
+      border: 1px solid $card-color-author-secondary;
+      border-radius: 3px;
+      background: white;
+      .author {
+        color: $card-color-author;
+        font-size: 1rem;
+        font-family: MontserratSemiBold;
+      }
+      .time {
+        color: $card-color-author-secondary;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
