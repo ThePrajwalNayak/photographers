@@ -1,1 +1,198 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./_variables";
+//https://www.smashingmagazine.com/2013/02/setting-weights-and-styles-at-font-face-declaration/
+@font-face {
+  font-family: 'MontserratUltraLight';
+  src: url('./assets/montserrat/Montserrat-UltraLight.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MontserratThin';
+  src: url('./assets/montserrat/Montserrat-Thin.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MontserratLight';
+  src: url('./assets/montserrat/Montserrat-Light.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MontserratRegular';
+  src: url('./assets/montserrat/Montserrat-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MontserratSemiBold';
+  src: url('./assets/montserrat/Montserrat-SemiBold.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MontserratBold';
+  src: url('./assets/montserrat/Montserrat-Bold.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MontserratExtraBold';
+  src: url('./assets/montserrat/Montserrat-ExtraBold.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MontserratHairline';
+  src: url('./assets/montserrat/Montserrat-Hairline.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* =10px */
+
+body {
+  font-size: 62.5%;
+  font-family: MontserratHairline;
+  font-size: 1.4rem;
+}
+
+//UTILITY CLASSES
+// floating
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// text align
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// margin
+.margin-top-none {
+  margin-top: 0;
+}
+
+.margin-top-quarter {
+  margin-top: $base-space-unit / 4;
+}
+
+.margin-top-half {
+  margin-top: $base-space-unit / 2;
+}
+
+.margin-top-one {
+  margin-top: $base-space-unit;
+}
+
+.margin-top-two {
+  margin-top: $base-space-unit * 2;
+}
+
+// padding
+.padding-top-none {
+  padding-top: 0;
+}
+
+.padding-top-quarter {
+  padding-top: $base-space-unit / 4;
+}
+
+.padding-top-half {
+  padding-top: $base-space-unit / 2;
+}
+
+.padding-top-one {
+  padding-top: $base-space-unit;
+}
+
+.padding-top-two {
+  padding-top: $base-space-unit * 2;
+}
+
+//width and height
+.width-full {
+  width: 100%;
+}
+
+.height-full {
+  height: 100%;
+}
+
+.height-auto {
+  height: auto;
+}
+
+//position
+.fixed {
+  position: fixed;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.static {
+  position: static;
+}
+
+//display
+.inline {
+  display: inline;
+}
+
+.block {
+  display: block;
+}
+
+.img-circle-padding{
+    padding: 2px;
+    border: 2px solid #f4f4f4;
+    border-radius: 50%;
+}
+
+.img-circle{
+    border: 2px solid #f4f4f4;
+    border-radius: 50%;
+}
+
+.center-absolute{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

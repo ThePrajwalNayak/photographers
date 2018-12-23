@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { NavigationComponent } from './navigation/navigation.component';
+import { HomeComponent } from './home/home.component';
 import { PhotographersComponent } from './photographers/photographers.component';
-import { PhotographersDeatilsComponent } from './photographers-deatils/photographers-deatils.component';
+import { StoriesComponent } from './stories/stories.component';
+import { ExploreComponent } from './explore/explore.component';
 
 const routes: Routes = [
-  { path: 'nav', component: NavigationComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'photographers', component: PhotographersComponent },
-  { path: 'photographers/:id', component: PhotographersDeatilsComponent },
-  { path: '', redirectTo: '/nav', pathMatch: 'full' },
-  { path: '**', component: NavigationComponent }
+  { path: 'stories', component: StoriesComponent },
+  { path: 'explore', component: ExploreComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: HomeComponent }
 ];
 
 @NgModule({
