@@ -3,9 +3,25 @@
   .video-wrapper {
     padding: 1.5rem;
     .video-card {
-      border: 1px solid $card-color-author-secondary;
-      border-radius: 3px;
-      background: white;
+      border: 1px solid $card-color-border;
+      border-radius: $app-card-border-radius;
+      background: $card-color-background;
+      .author {
+        color: $card-color-author;
+        font-size: 1rem;
+        font-family: MontserratSemiBold;
+      }
+      .time {
+        color: $card-color-author-secondary;
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .image-wrapper {
+    .image-card {
+      border: 1px solid $card-color-border;
+      border-radius: $app-card-border-radius;
+      background: $card-color-background;
       .author {
         color: $card-color-author;
         font-size: 1rem;

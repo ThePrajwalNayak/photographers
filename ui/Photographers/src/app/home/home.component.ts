@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { HomeService } from './home.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,53 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  videoCards : any;
+  videoCards: any;
+  imageCards : any;
 
-  constructor() { }
+  constructor(private homeService: HomeService) { }
 
   ngOnInit() {
-    this.initVideoCard();
+   this.initVideoCard();
+   this.initImageCard();
   }
 
-  initVideoCard(){
-    this.videoCards = [
-      {
-      photographer : 'Carla Houston',
-      photographerImage : 'Carla Houston.jpeg',
-      video : 'video1.mp4',
-      time : 1
-    },
-    {
-      photographer : 'Jim Hayden',
-      photographerImage : 'Jim Hayden.jpeg',
-      video : 'video2.mp4',
-      time : 2
-    },
-    {
-      photographer : 'Kaitlyn Kristy',
-      photographerImage : 'Kaitlyn Kristy.jpeg',
-      video : 'video3.mp4',
-      time : 2
-    },
-    {
-      photographer : 'Natosha Jacobs',
-      photographerImage : 'Natosha Jacobs.jpg',
-      video : 'video4.mp4',
-      time : 3
-    },
-    {
-      photographer : 'Neha Sharma',
-      photographerImage : 'Neha Sharma.jpeg',
-      video : 'video5.mp4',
-      time : 5
-    },
-    {
-      photographer : 'Richard Jones',
-      photographerImage : 'Richard Jones.jpeg',
-      video : 'video6.mp4',
-      time : 6
-    }
-    ];
+  initVideoCard() {
+    this.homeService.getAllVideos()
+      .subscribe(data => {
+        this.videoCards = data;
+      }, err => {
+        console.log(err);
+      });
+  }
+
+  initImageCard(){
+    this.homeService.getAllImages()
+    .subscribe( data => {
+      this.imageCards = data;
+    }, err => {
+      console.log(err);
+    });
   }
 
 }

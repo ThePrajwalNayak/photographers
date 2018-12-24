@@ -197,7 +197,7 @@ body {
 
 .img-thumbnail{
     padding: 2px;
-    border: 2px dotted #88898a;
+    border: 2px solid #88898a;
     border-radius: 50%;
 }
 
@@ -223,4 +223,19 @@ body {
 .app-btn-primary{
   color: $app-btn-primary-color !important; 
   background-color: $app-btn-primary-color-background;
+}
+
+.fa-like-color{
+  color: #b2b2b2;
+  opacity: 0.5;
+}
+
+
+.fa-thumsup-color{
+  color: #337ab7;
+  
+}
+
+.fa-heart-color{
+  color: #e16a70;
 }
