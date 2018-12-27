@@ -3,9 +3,10 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Photographers = require('./models/photographers.js');
+var randomstring = require("randomstring");
 
 // const dbConnection = "mongodb://accountUser:password@localhost:27017/dbname";
-const dbConnection = "mongodb://[username]:[password]@ds129904.mlab.com:29904/[dbname]";
+const dbConnection = "mongodb://admin:Pass1234@ds129904.mlab.com:29904/photographers";
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -38,21 +39,25 @@ app.post('/api/photographers', function (req, res) {
         password: req.body.password,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
+        location : req.body.location,
         email: req.body.email,
         phoneNumber: req.body.phoneNumber,
         profilePicture: req.body.profilePicture,
-        age: req.body.age,
+        dob: req.body.dob,
         sex: req.body.sex,
         about: req.body.about,
         linkFacebook: req.body.linkFacebook,
         linkLinkedIn: req.body.linkLinkedIn,
         linkTwitter: req.body.linkTwitter,
         linkInstagram: req.body.linkInstagram,
-        enterdDt: new Date(),
-        updateDt: new Date(),
-        isActive: false
+        photoLink: req.body.photoLink,
+        videoLink: req.body.videoLink,
+        activationLink : randomstring.generate(10),
+        isActive: false,
     }).then(Photographers => {
         res.json(Photographers);
+    }, err => {
+        res.json(err.message);
     })
 });
 
@@ -68,6 +73,7 @@ app.get('/api/photographers/:photographers_id', function (req, res) {
 
 app.put('/api/photographers/:photographers_id', function (req, res) {
     console.log('UPDATE PHOTOGRAPHERS');
+    req.body.updateDt = new Date();
     Photographers.findByIdAndUpdate(req.params.photographers_id, { $set: req.body }, function (err, photographers) {
         if (err) return next(err);
         res.json(photographers);
@@ -82,3 +88,10 @@ app.delete('/api/photographers/:photographers_id', function (req, res) {
     })
 });
 
+app.post('/api/login', function (req, res) {
+    console.log('Login');
+    Photographers.findOne({username: req.body.username, password : req.body.password}, function(err, photographer) {
+       if (err) return next(err);
+       res.json(photographer)
+      });
+});
