@@ -11,12 +11,14 @@ export class HomeComponent implements OnInit {
 
   videoCards: any;
   imageCards : any;
+  photographers : any;
 
   constructor(private homeService: HomeService) { }
 
   ngOnInit() {
    this.initVideoCard();
    this.initImageCard();
+  this.initPhotographers();
   }
 
   initVideoCard() {
@@ -37,4 +39,13 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  initPhotographers(){
+    this.homeService.getAllPhotographers()
+      .subscribe(data => {
+        this.photographers = data;
+        console.log(this.photographers);
+      }, err => {
+        console.log(err);
+      });
+  }
 }

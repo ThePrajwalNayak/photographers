@@ -33,5 +33,20 @@
       }
     }
   }
+  .photographers-wrapper {
+    .photographers-card {
+      background-color: $card-color-background;
+      .author {
+        color: $card-color-author;
+        font-size: 1rem;
+        font-family: MontserratSemiBold;
+      }
+      .author-username{
+        color: $card-color-author-secondary;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
 }
 

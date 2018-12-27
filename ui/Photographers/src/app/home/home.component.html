@@ -32,5 +32,12 @@
     </div>
      <a class="app-btn app-btn-primary margin-top-half" routerLink="/images">More images</a>
   </div>
-  <div class="col-md-3">Photographers</div>
+  <div class="col-md-3 photographers-wrapper">
+      <div class="photographers-card clearfix padding-one" *ngFor="let photographer of photographers">
+        <img class="img-thumbnail left margin-right-one " width="50" height="50" *ngIf="photographer.profilePicture" [src]="'data:image/jpg;base64,'+photographer.profilePicture"/>
+        <img class="img-thumbnail left margin-right-one " width="50" height="50"  *ngIf="!photographer.profilePicture" src="../../assets/images/placeholder_person.png"/>
+        <span class="author">{{photographer.firstName}} {{photographer.lastName}}</span>
+        <span class="author-username">{{photographer.username}}</span>
+      </div>
+  </div>
 </div>

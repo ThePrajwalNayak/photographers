@@ -6,6 +6,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class HomeService {
 
+  BASE_URL = "http://pickphotographersapi.tk/api";
+
   constructor(private http:HttpClient) { }
 
   getAllVideos(){
@@ -14,5 +16,9 @@ export class HomeService {
 
   getAllImages(){
     return this.http.get("../../assets/json/image.json");
+  }
+
+  getAllPhotographers(){
+    return this.http.get(this.BASE_URL + "/photographers");
   }
 }
