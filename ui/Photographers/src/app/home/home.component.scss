@@ -5,6 +5,9 @@
       border: 1px solid $card-color-border;
       border-radius: $app-card-border-radius;
       background: $card-color-background;
+      video{
+        width: 100%;
+      }
       .author {
         color: $card-color-author;
         font-size: 1rem;
@@ -30,6 +33,9 @@
         color: $card-color-author-secondary;
         font-size: 0.8rem;
       }
+      .feed-image{
+        width: 100%;
+      }
     }
   }
   .photographers-wrapper {
@@ -39,10 +45,6 @@
         color: $card-color-author;
         font-size: 1rem;
         font-family: MontserratSemiBold;
-      }
-      .author-username {
-        color: $card-color-author-secondary;
-        font-size: 0.8rem;
       }
     }
   }

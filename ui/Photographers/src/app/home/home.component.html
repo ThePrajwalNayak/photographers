@@ -23,7 +23,7 @@
         <span class="author block margin-top-half">{{imageCard.photographer}}</span>
         <span class="time block">{{imageCard.time}} hours ago</span>
       </div>
-      <img class="width-full" src="../../assets/images/images/{{imageCard.photographerImage}}.jpg" />
+      <img class="feed-image width-full" src="../../assets/images/images/{{imageCard.photographerImage}}.jpg" />
       <div class="padding-one text-center">
         <span class="margin-right-one"><i class="fa fa-thumbs-up">{{imageCard.likes}}</i></span>
         <span class="margin-right-one fa-thumsup-color"><i class="fa fa-thumbs-up">{{imageCard.thumbsup}}</i></span>
@@ -37,7 +37,6 @@
         <img class="img-thumbnail left margin-right-one " width="50" height="50" *ngIf="photographer.profilePicture" [src]="'data:image/jpg;base64,'+photographer.profilePicture"/>
         <img class="img-thumbnail left margin-right-one " width="50" height="50"  *ngIf="!photographer.profilePicture" src="../../assets/images/placeholder_person.png"/>
         <span class="author">{{photographer.firstName}} {{photographer.lastName}}</span>
-        <span class="author-username">{{photographer.username}}</span>
       </div>
       <a class="app-btn app-btn-primary margin-top-half" routerLink="/photographers">View more</a>
   </div>

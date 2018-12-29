@@ -42,10 +42,16 @@ export class HomeComponent implements OnInit {
   initPhotographers(){
     if (localStorage.getItem('photographers')) {
       this.photographers = JSON.parse(localStorage.getItem('photographers'));
+      if(this.photographers && this.photographers.length > 5){
+        this.photographers = this.photographers.slice(0, 5);
+      }
     } else {
       this.homeService.getAllPhotographers()
         .subscribe(data => {
           this.photographers = data;
+                if(this.photographers && this.photographers.length > 5){
+        this.photographers = this.photographers.slice(0, 5);
+      }
           localStorage.setItem('photographers', JSON.stringify(data));
           console.log(this.photographers);
         }, err => {

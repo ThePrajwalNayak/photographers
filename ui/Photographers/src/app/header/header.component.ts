@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+
+  HOME : string = 'Home';
+  PHOTOGRAPHERS : string = 'Photographers';
+  VIDEOS : string = 'Videos';
+  IMAGES : string = 'Images';
+  EXPLORE : string = 'Explore';
+  CONTACT : string = 'Contact';
+  selectedNavMenu : string;
+
   constructor() { }
 
   ngOnInit() {
+    this.selectedNavMenu = this.HOME;
   }
+
+  setSelectedNavMenu(path : string){
+    this.selectedNavMenu = path;
+  }
+
+
 
 }

@@ -1,7 +1,11 @@
 @import "../../_variables";
 #header {
   .row-nav {
-      margin: 0;
+    margin: 0;
+    // active-link for present nav menu
+    .active-link {
+      background-color: #0fc19e !important;
+    }
     .dark-black {
       background-color: $nav-background-color-odd;
     }
@@ -12,12 +16,9 @@
       height: 150px;
       padding: 0 10px;
       a {
-          color: white;
-          text-decoration: none;
+        color: white;
+        text-decoration: none;
       }
-                .active-link{
-              background-color: #0fc19e !important;
-          }
     }
   }
 }

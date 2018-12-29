@@ -8,38 +8,38 @@
         </div>
     </div>
     <div class="row row-nav">
-        <div class="col-md-2 clean-black relative">
-            <a class="center-absolute text-center" routerLink="/home">
+        <div class="col-md-2 clean-black relative" [ngClass]="{'active-link' : selectedNavMenu === HOME}">
+            <a class="center-absolute text-center" routerLink="/home" (click)="setSelectedNavMenu(HOME)">
                 <i class="fa fa-home "></i>
                 <span class="block">Home</span>
             </a>
         </div>
-        <div class="col-md-2 dark-black relative">
-            <a class="center-absolute text-center" routerLink="/photographers">
+        <div class="col-md-2 dark-black relative" [ngClass]="{'active-link' : selectedNavMenu === PHOTOGRAPHERS}">
+            <a class="center-absolute text-center" routerLink="/photographers" (click)="setSelectedNavMenu(PHOTOGRAPHERS)">
                 <i class="fa fa-user"></i>
                 <span class="block">Photographers</span>
             </a>
         </div>
-        <div class="col-md-2 clean-black relative">
-            <a class="center-absolute text-center" routerLink="/videos">
+        <div class="col-md-2 clean-black relative" [ngClass]="{'active-link' : selectedNavMenu === VIDEOS}">
+            <a class="center-absolute text-center" routerLink="/videos" (click)="setSelectedNavMenu(VIDEOS)">
                   <i class="fa fa-align-left"></i>
                 <span class="block">Videos</span>
             </a>
         </div>
-        <div class="col-md-2 dark-black relative">
-            <a class="center-absolute text-center" routerLink="/images">
+        <div class="col-md-2 dark-black relative" [ngClass]="{'active-link' : selectedNavMenu === IMAGES}">
+            <a class="center-absolute text-center" routerLink="/images" (click)="setSelectedNavMenu(IMAGES)">
                 <i class="fa fa-crosshairs"></i>
                 <span class="block">Images</span>
             </a>
         </div>
-        <div class="col-md-2 clean-black relative">
-            <a class="center-absolute text-center" routerLink="/explore">
+        <div class="col-md-2 clean-black relative" [ngClass]="{'active-link' : selectedNavMenu === EXPLORE}">
+            <a class="center-absolute text-center" routerLink="/explore" (click)="setSelectedNavMenu(EXPLORE)">
                   <i class="fa fa-align-left"></i>
                 <span class="block">Explore</span>
             </a>
         </div>
-        <div class="col-md-2 dark-black relative">
-            <a class="center-absolute text-center" routerLink="/explore">
+        <div class="col-md-2 dark-black relative" [ngClass]="{'active-link' : selectedNavMenu === CONTACT}">
+            <a class="center-absolute text-center" routerLink="/explore" (click)="setSelectedNavMenu(CONTACT)">
                 <i class="fa fa-crosshairs"></i>
                 <span class="block">Contact</span>
             </a>
