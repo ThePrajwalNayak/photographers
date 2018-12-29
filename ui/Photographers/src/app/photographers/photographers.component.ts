@@ -8,10 +8,13 @@ import { PhotographersService } from '../photographers.service';
 })
 export class PhotographersComponent implements OnInit {
 
+  photographers : any;
   constructor(private photographersService : PhotographersService) { }
 
   ngOnInit() {
-    this.loadAllPhotographers();
+    if (localStorage.getItem('photographers')) {
+      this.photographers = JSON.parse(localStorage.getItem('photographers'));
+    }
   }
 
   loadAllPhotographers(){

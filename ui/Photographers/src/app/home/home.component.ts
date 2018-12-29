@@ -40,12 +40,17 @@ export class HomeComponent implements OnInit {
   }
 
   initPhotographers(){
-    this.homeService.getAllPhotographers()
-      .subscribe(data => {
-        this.photographers = data;
-        console.log(this.photographers);
-      }, err => {
-        console.log(err);
-      });
+    if (localStorage.getItem('photographers')) {
+      this.photographers = JSON.parse(localStorage.getItem('photographers'));
+    } else {
+      this.homeService.getAllPhotographers()
+        .subscribe(data => {
+          this.photographers = data;
+          localStorage.setItem('photographers', JSON.stringify(data));
+          console.log(this.photographers);
+        }, err => {
+          console.log(err);
+        });
+    }
   }
 }
