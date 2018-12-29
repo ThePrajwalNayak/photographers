@@ -1,0 +1,60 @@
+@import "../../_variables";
+#photographers {
+  .row {
+    .card-left {
+      height: 600px;
+      overflow-y: scroll;
+      .photographers-card {
+        background-color: $card-color-background;
+        .author {
+          color: $card-color-author;
+          font-size: 1rem;
+          font-family: MontserratSemiBold;
+        }
+      }
+    }
+    .card-right {
+      .selected-photographer {
+        .background {
+          border: 1px solid $card-color-background;
+          background-image: url('../../assets/images/images/image3.jpg');
+          background-color: $card-color-background;
+          height: 300px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          img {
+            position: absolute;
+            bottom: -25%;
+            margin-left: 50%;
+            transform: translate(-50%, 0);
+            height: 200px;
+            width: 200px;
+          }
+        }
+        .card {
+          background-color: $card-color-background;
+        }
+        .card-info {
+          margin-top: 100px;
+          .name {
+            color: $card-color-author;
+            font-size: 2rem;
+            font-family: MontserratSemiBold;
+          }
+          .username {
+            color: $card-color-author-secondary;
+            font-size: 1.4rem;
+            font-family: MontserratSemiBold;
+          }
+          .details {
+            font-size: 20px;
+          }
+        }
+        .card-about {}
+        .card-contact {}
+      }
+    }
+  }
+}
+

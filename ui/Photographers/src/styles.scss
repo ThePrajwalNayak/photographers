@@ -128,6 +128,10 @@ body {
   margin-right: $base-space-unit;
 }
 
+.margin-right-half{
+  margin-right: $base-space-unit/2;
+}
+
 // padding
 .padding-none{
   padding: 0;
@@ -156,6 +160,8 @@ body {
 .padding-one{
   padding: $base-space-unit;
 }
+
+.paddin
 
 //width and height
 .width-full {

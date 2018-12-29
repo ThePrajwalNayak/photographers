@@ -1,3 +1,56 @@
 <div id="photographers">
-    Photographers
+    <div class="row">
+        <div class="col-md-3 card-left">
+            <div class="photographers-card clearfix padding-one" *ngFor="let photographer of photographers">
+                <img class="img-thumbnail left margin-right-one " width="50" height="50" *ngIf="photographer.profilePicture" [src]="'data:image/jpg;base64,'+photographer.profilePicture"
+                />
+                <img class="img-thumbnail left margin-right-one " width="50" height="50" *ngIf="!photographer.profilePicture" src="../../assets/images/placeholder_person.png"
+                />
+                <span class="author">{{photographer.firstName}} {{photographer.lastName}}</span>
+            </div>
+        </div>
+        <div class="col-md-9 card-right">
+            <div class="selected-photographer">
+                <div class="background relative">
+                    <img class="img-thumbnail" *ngIf="selectedPhotographer.profilePicture" [src]="'data:image/jpg;base64,'+selectedPhotographer.profilePicture"
+                    />
+                    <img class="img-thumbnail" *ngIf="!selectedPhotographer.profilePicture" src="../../assets/images/placeholder_person.png"
+                    />
+                </div>
+                <div class="card card-info padding-one">
+                    <p class="name">{{selectedPhotographer.firstName}} {{selectedPhotographer.lastName}}</p>
+                    <p class="username"># {{selectedPhotographer.username}}</p>
+                    <div class="row details">
+                        <span class="col-md-3"><i class="fa fa-map-marker margin-right-half"></i>{{selectedPhotographer.location}}</span>
+                        <span class="col-md-3"><i class="fa fa-birthday-cake margin-right-half"></i>{{selectedPhotographer.dob}}</span>
+                        <span class="col-md-3"><i class="fa fa-envelope margin-right-half"></i>Mail Me</span>
+                        <span class="col-md-3"><i class="fa fa-mobile margin-right-half"></i>Unlock Phone</span>
+                        <!--<span class="col-md-3"><i class="fa fa-envelope margin-right-half"></i>{{selectedPhotographer.email}}</span>
+                        <span class="col-md-3"><i class="fa fa-mobile margin-right-half"></i>{{selectedPhotographer.phoneNumber}}</span>-->
+                    </div>
+                    <p>
+                        <a title="Image Link" href="{{selectedPhotographer.photoLink}}">
+                            <i class="fa fa-link margin-right-half"></i>Image Link
+                        </a>
+                    </p>
+                    <p>
+                        <a title="Video Link" href="{{selectedPhotographer.videoLink}}">
+                            <i class="fa fa-link margin-right-half"></i>Video Link
+                        </a>
+                    </p>
+                </div>
+                <div class="card card-about margin-top-one padding-one">
+                    <p>{{selectedPhotographer.about}}</p>
+                </div>
+                <div class="card card-contact margin-top-one padding-one">
+                    <div class="text-center">
+                        <a class="margin-right-one" title="Facebook Page" href="{{selectedPhotographer.linkFacebook}}"><i class="fa fa-facebook"></i></a>
+                        <a class="margin-right-one" title="Twitter Page" href="{{selectedPhotographer.linkTwitter}}"><i class="fa fa-twitter"></i></a>
+                        <a class="margin-right-one" title="Instagram Page" href="{{selectedPhotographer.linkInstagram}}"><i class="fa fa-instagram"></i></a>
+                        <a class="margin-right-one" title="Linked Page" href="{{selectedPhotographer.linkLinkedIn}}"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

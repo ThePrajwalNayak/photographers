@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { PhotographersService } from '../photographers.service';
 
 @Component({
@@ -9,11 +10,13 @@ import { PhotographersService } from '../photographers.service';
 export class PhotographersComponent implements OnInit {
 
   photographers : any;
+  selectedPhotographer : any;
   constructor(private photographersService : PhotographersService) { }
 
   ngOnInit() {
     if (localStorage.getItem('photographers')) {
       this.photographers = JSON.parse(localStorage.getItem('photographers'));
+      this.selectedPhotographer = this.photographers[0];
     }
   }
 
