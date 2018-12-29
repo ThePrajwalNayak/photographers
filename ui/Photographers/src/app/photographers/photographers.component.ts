@@ -29,4 +29,8 @@ export class PhotographersComponent implements OnInit {
     });
   }
 
+  setPhotographer(photographer){
+    this.selectedPhotographer = photographer;
+  }
+
 }

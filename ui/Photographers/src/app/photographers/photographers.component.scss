@@ -12,6 +12,9 @@
           font-family: MontserratSemiBold;
         }
       }
+      .selected-photographer{
+          background: $app-color-secondary;
+      }
     }
     .card-right {
       .selected-photographer {
