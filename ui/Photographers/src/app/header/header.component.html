@@ -1,13 +1,17 @@
 <div id="header">
-    <div class="row container">
-        <div class="margin-top-one">
+    <div class="row">
+        <div class="col-md-4 margin-top-one">
             <a>
                 <fa name="camera" animation="spin"></fa>
                 Photographers
             </a>
         </div>
+        <div class="col-md-5"></div>
+        <div class="col-md-3">
+             <a routerLink="/signup">Signup</a>
+        </div>
     </div>
-    <div class="row row-nav">
+    <div class="row row-nav" *ngIf="currentUrl !== '/signup'">
         <div class="col-md-2 clean-black relative" [ngClass]="{'active-link' : selectedNavMenu === HOME}">
             <a class="center-absolute text-center" routerLink="/home" (click)="setSelectedNavMenu(HOME)">
                 <i class="fa fa-home "></i>

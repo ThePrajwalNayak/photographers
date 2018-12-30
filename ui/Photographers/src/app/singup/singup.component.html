@@ -1,0 +1,91 @@
+<div id="singup">
+    Signup Works
+    <div class="card-singup padding-one">
+        <p>Registration</p>
+        <form [formGroup]='signupForm' (ngSubmit)="createPhotographer(signupForm)">
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="label" for="username">User Name : *</label>
+                    <input id="username" class="form-control item" type="text" name="username" placeholder="User Name">
+                </div>
+                <div class="col-md-4">
+                    <label class="label" for="firstName">First Name: *</label>
+                    <input id="firstName" class="form-control item" type="text" name="firstName" placeholder="First Name">
+                </div>
+                <div class="col-md-4">
+                    <label class="label" for="lastName">Last Name</label>
+                    <input id="lastName" class="form-control item" type="text" name="lastName" placeholder="Last Name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="label" for="email">Email</label>
+                    <input id="email" class="form-control item" type="text" name="email" placeholder="Email">
+                </div>
+                <div class="col-md-4">
+                    <label class="label" for="phoneNumber">Mobile</label>
+                    <input id="phoneNumber" class="form-control item" type="text" name="phoneNumber" placeholder="Mobile">
+                </div>
+                <div class="col-md-4">
+                    <label class="label" for="location">Location</label>
+                    <input id="location" class="form-control item" type="text" name="location" placeholder="Location">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="label" for="dob">DOB</label>
+                    <input id="dob" class="form-control item" type="text" name="dob" placeholder="dob">
+                </div>
+                <div class="col-md-6">
+                    <label class="label" for="sex">Sex</label>
+                    <select id="sex" class="form-control item">
+                            <option>Male</option>
+                             <option>Female</option>
+                     </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="label" for="about">About Me</label>
+                    <textarea id="about" class="form-control item" type="text" name="about" placeholder="about me"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <label class="label" for="facebookLink">FaceBook Link</label>
+                    <input id="facebookLink" class="form-control item" type="text" name="facebookLink" placeholder="facebookLink">
+                </div>
+                <div class="col-md-3">
+                    <label class="label" for="instagramLink">Instagram Link</label>
+                    <input id="facebookLink" class="form-control item" type="text" name="instagramLink" placeholder="instagramLink">
+                </div>
+                <div class="col-md-3">
+                    <label class="label" for="twitterLink">Twitter Link</label>
+                    <input id="twitterLink" class="form-control item" type="text" name="twitterLink" placeholder="twitterLink">
+                </div>
+                <div class="col-md-3">
+                    <label class="label" for="linkedInLink">Linkedin Link</label>
+                    <input id="linkedInLink" class="form-control item" type="text" name="linkedInLink" placeholder="linkedInLink">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="label" for="imageLink">Images Link</label>
+                    <input id="imageLink" class="form-control item" type="text" name="imageLink" placeholder="imageLink">
+                </div>
+                <div class="col-md-6">
+                    <label class="label" for="videoLink">Videos Link</label>
+                    <input id="videoLink" class="form-control item" type="text" name="videoLink" placeholder="videoLink">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="btn app-btn app-btn-primary">Reset</button>
+                </div>
+                <div class="col-md-6">
+                    <button type="submit" class="btn app-btn app-btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

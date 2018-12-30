@@ -6,6 +6,7 @@ import { VideosComponent } from './videos/videos.component';
 import { ImagesComponent } from './images/images.component';
 import { ExploreComponent } from './explore/explore.component';
 import { ContactComponent } from './contact/contact.component';
+import { SingupComponent } from './singup/singup.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'images', component: ImagesComponent },
   { path: 'explore', component: ExploreComponent },
   { path: 'contact', component: ContactComponent },
+  { path : 'signup', component : SingupComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: HomeComponent }
 ];

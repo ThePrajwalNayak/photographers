@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'; 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +15,7 @@ import { ExploreComponent } from './explore/explore.component';
 import { ImagesComponent } from './images/images.component';
 import { VideosComponent } from './videos/videos.component';
 import { ContactComponent } from './contact/contact.component';
+import { SingupComponent } from './singup/singup.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +26,16 @@ import { ContactComponent } from './contact/contact.component';
     ExploreComponent,
     ImagesComponent,
     VideosComponent,
-    ContactComponent
+    ContactComponent,
+    SingupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [PhotographersService],
   bootstrap: [AppComponent]
