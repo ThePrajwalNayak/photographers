@@ -6,39 +6,51 @@
             <div class="row">
                 <div class="col-md-4">
                     <label class="label" for="username">User Name : *</label>
-                    <input id="username" class="form-control item" type="text" name="username" placeholder="User Name">
+                    <input formControlName="username" id="username" class="form-control item" type="text" name="username" placeholder="User Name">
                 </div>
+
+    <div *ngIf="signupForm.controls['username'].touched && !signupForm.controls['username'].valid">  
+        <span *ngIf="signupForm.controls['username'].hasError('required') ">  
+            First name is required  
+            </span>  
+            <span *ngIf="signupForm.controls['username'].hasError('minlength') ">  
+             Min length is {{validation.usernameMinLength}}
+            </span>  
+            <span *ngIf="signupForm.controls['username'].hasError('maxlength') ">  
+            max length is 15  
+        </span>  
+    </div> 
                 <div class="col-md-4">
                     <label class="label" for="firstName">First Name: *</label>
-                    <input id="firstName" class="form-control item" type="text" name="firstName" placeholder="First Name">
+                    <input formControlName="username" id="firstName" class="form-control item" type="text" name="firstName" placeholder="First Name">
                 </div>
                 <div class="col-md-4">
                     <label class="label" for="lastName">Last Name</label>
-                    <input id="lastName" class="form-control item" type="text" name="lastName" placeholder="Last Name">
+                    <input formControlName="username" id="lastName" class="form-control item" type="text" name="lastName" placeholder="Last Name">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4">
                     <label class="label" for="email">Email</label>
-                    <input id="email" class="form-control item" type="text" name="email" placeholder="Email">
+                    <input formControlName="email" id="email" class="form-control item" type="text" name="email" placeholder="Email">
                 </div>
                 <div class="col-md-4">
                     <label class="label" for="phoneNumber">Mobile</label>
-                    <input id="phoneNumber" class="form-control item" type="text" name="phoneNumber" placeholder="Mobile">
+                    <input formControlName="phoneNumber" id="phoneNumber" class="form-control item" type="text" name="phoneNumber" placeholder="Mobile">
                 </div>
                 <div class="col-md-4">
                     <label class="label" for="location">Location</label>
-                    <input id="location" class="form-control item" type="text" name="location" placeholder="Location">
+                    <input formControlName="location" id="location" class="form-control item" type="text" name="location" placeholder="Location">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <label class="label" for="dob">DOB</label>
-                    <input id="dob" class="form-control item" type="text" name="dob" placeholder="dob">
+                    <input formControlName="dob" id="dob" class="form-control item" type="text" name="dob" placeholder="dob">
                 </div>
                 <div class="col-md-6">
                     <label class="label" for="sex">Sex</label>
-                    <select id="sex" class="form-control item">
+                    <select formControlName="sex" id="sex" class="form-control item">
                             <option>Male</option>
                              <option>Female</option>
                      </select>
@@ -47,35 +59,35 @@
             <div class="row">
                 <div class="col-md-12">
                     <label class="label" for="about">About Me</label>
-                    <textarea id="about" class="form-control item" type="text" name="about" placeholder="about me"></textarea>
+                    <textarea formControlName="about" id="about" class="form-control item" type="text" name="about" placeholder="about me"></textarea>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-3">
                     <label class="label" for="facebookLink">FaceBook Link</label>
-                    <input id="facebookLink" class="form-control item" type="text" name="facebookLink" placeholder="facebookLink">
+                    <input formControlName="linkFacebook" id="facebookLink" class="form-control item" type="text" name="facebookLink" placeholder="facebookLink">
                 </div>
                 <div class="col-md-3">
                     <label class="label" for="instagramLink">Instagram Link</label>
-                    <input id="facebookLink" class="form-control item" type="text" name="instagramLink" placeholder="instagramLink">
+                    <input formControlName="linkInstagram" id="facebookLink" class="form-control item" type="text" name="instagramLink" placeholder="instagramLink">
                 </div>
                 <div class="col-md-3">
                     <label class="label" for="twitterLink">Twitter Link</label>
-                    <input id="twitterLink" class="form-control item" type="text" name="twitterLink" placeholder="twitterLink">
+                    <input formControlName="linkTwitter" id="twitterLink" class="form-control item" type="text" name="twitterLink" placeholder="twitterLink">
                 </div>
                 <div class="col-md-3">
                     <label class="label" for="linkedInLink">Linkedin Link</label>
-                    <input id="linkedInLink" class="form-control item" type="text" name="linkedInLink" placeholder="linkedInLink">
+                    <input formControlName="linkLinkedIn" id="linkedInLink" class="form-control item" type="text" name="linkedInLink" placeholder="linkedInLink">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <label class="label" for="imageLink">Images Link</label>
-                    <input id="imageLink" class="form-control item" type="text" name="imageLink" placeholder="imageLink">
+                    <input formControlName="photoLink" id="imageLink" class="form-control item" type="text" name="imageLink" placeholder="imageLink">
                 </div>
                 <div class="col-md-6">
                     <label class="label" for="videoLink">Videos Link</label>
-                    <input id="videoLink" class="form-control item" type="text" name="videoLink" placeholder="videoLink">
+                    <input formControlName="videoLink" id="videoLink" class="form-control item" type="text" name="videoLink" placeholder="videoLink">
                 </div>
             </div>
             <div class="row">
