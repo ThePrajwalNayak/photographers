@@ -8,10 +8,10 @@ import { FormBuilder, FormGroup, FormControl, Validators, NgForm } from '@angula
 })
 export class SingupComponent implements OnInit {
 
-  errorMessage : any = {
-    required : 'Required',
-    minlength : 'Min length is',
-    maxLength : 'Max length is'
+  errorMessage: any = {
+    required: 'Required',
+    minlength: 'Min length is',
+    maxLength: 'Max length is'
   }
   validation: any = {
     usernameMinLength: 5,

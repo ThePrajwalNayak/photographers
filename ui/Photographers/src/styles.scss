@@ -132,6 +132,9 @@ body {
   margin-right: $base-space-unit/2;
 }
 
+.margin-bottom-one{
+  margin-bottom: $base-space-unit;
+}
 // padding
 .padding-none{
   padding: 0;
@@ -249,4 +252,8 @@ body {
 
 .pointer{
   cursor: pointer;
+}
+
+.app-conatiner{
+  padding : 1rem;
 }

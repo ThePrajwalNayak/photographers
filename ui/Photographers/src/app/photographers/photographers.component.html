@@ -1,4 +1,4 @@
-<div id="photographers">
+<div id="photographers" class="app-conatiner">
     <div class="row">
         <div class="col-md-3 card-left">
             <div class="photographers-card clearfix padding-one pointer" [ngClass]="{'selected-photographer' : photographer._id== selectedPhotographer._id}" (click)="setPhotographer(photographer)" *ngFor="let photographer of photographers">

@@ -1,9 +1,8 @@
 <div id="singup">
-    Signup Works
     <div class="card-singup padding-one">
         <p>Registration</p>
         <form [formGroup]='signupForm' (ngSubmit)="createPhotographer(signupForm)">
-            <div class="row">
+            <div class="row margin-bottom-one">
                 <div class="col-md-4">
                     <label class="label" for="username">User Name : *</label>
                     <input formControlName="username" id="username" class="form-control item" type="text" name="username" placeholder="iamjohn">
@@ -32,16 +31,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <label class="label" for="email">Email : *</label>
-                    <input formControlName="email" id="email" class="form-control item" type="text" name="email" placeholder="a@b.com">
-                    <div class="error-message-wrapper" *ngIf="signupForm.controls['email'].touched && !signupForm.controls['email'].valid">
-                        <span class="error-message" *ngIf="signupForm.controls['email'].hasError('required')"> {{errorMessage.required}}</span>
-                        <span class="error-message" *ngIf="signupForm.controls['email'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.emailMinLength}}</span>
-                        <span class="error-message" *ngIf="signupForm.controls['email'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.emailMaxLength}}</span>
-                    </div>
-                </div>
+            <div class="row margin-bottom-one">
                 <div class="col-md-4">
                     <label class="label" for="phoneNumber">Mobile</label>
                     <input formControlName="phoneNumber" id="phoneNumber" class="form-control item" type="text" name="phoneNumber" placeholder="7760051883">
@@ -58,13 +48,7 @@
                         <span class="error-message" *ngIf="signupForm.controls['location'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.locationMaxLength}}</span>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <label class="label" for="dob">DOB</label>
-                    <input formControlName="dob" id="dob" class="form-control item" type="text" name="dob" placeholder="dob">
-                </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label class="label" for="sex">Sex</label>
                     <select formControlName="sex" id="sex" class="form-control item">
                             <option>Male</option>
@@ -72,54 +56,67 @@
                      </select>
                 </div>
             </div>
-            <div class="row">
+            <div class="row margin-bottom-one">
+                <div class="col-md-7">
+                    <label class="label" for="email">Email : *</label>
+                    <input formControlName="email" id="email" class="form-control item" type="text" name="email" placeholder="a@b.com">
+                    <div class="error-message-wrapper" *ngIf="signupForm.controls['email'].touched && !signupForm.controls['email'].valid">
+                        <span class="error-message" *ngIf="signupForm.controls['email'].hasError('required')"> {{errorMessage.required}}</span>
+                        <span class="error-message" *ngIf="signupForm.controls['email'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.emailMinLength}}</span>
+                        <span class="error-message" *ngIf="signupForm.controls['email'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.emailMaxLength}}</span>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <label class="label" for="dob">DOB</label>
+                    <input formControlName="dob" id="dob" class="form-control item" type="text" name="dob" placeholder="dob">
+                </div>
+            </div>
+            <div class="row margin-bottom-one">
                 <div class="col-md-12">
                     <label class="label" for="about">About Me : *</label>
-                    <textarea formControlName="about" id="about" class="form-control item" type="text" name="about" placeholder="about me"></textarea>
+                    <textarea formControlName="about" id="about" class="form-control item aboutme" type="text" name="about" placeholder="about me"></textarea>
                     <div class="error-message-wrapper" *ngIf="signupForm.controls['about'].touched && !signupForm.controls['about'].valid">
                         <span class="error-message" *ngIf="signupForm.controls['about'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.aboutMinLength}}</span>
                         <span class="error-message" *ngIf="signupForm.controls['about'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.aboutMaxLength}}</span>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <label class="label" for="facebookLink">FaceBook Link</label>
-                    <input formControlName="linkFacebook" id="facebookLink" class="form-control item" type="text" name="facebookLink" placeholder="facebookLink">
-                    <div class="error-message-wrapper" *ngIf="signupForm.controls['linkFacebook'].touched && !signupForm.controls['linkFacebook'].valid">
-                        <span class="error-message" *ngIf="signupForm.controls['linkFacebook'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.socailLinkMinLength}}</span>
-                        <span class="error-message" *ngIf="signupForm.controls['linkFacebook'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.socailLinkMaxLength}}</span>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <label class="label" for="instagramLink">Instagram Link</label>
-                    <input formControlName="linkInstagram" id="facebookLink" class="form-control item" type="text" name="instagramLink" placeholder="instagramLink">
-                    <div class="error-message-wrapper" *ngIf="signupForm.controls['linkInstagram'].touched && !signupForm.controls['linkInstagram'].valid">
-                        <span class="error-message" *ngIf="signupForm.controls['linkInstagram'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.socailLinkMinLength}}</span>
-                        <span class="error-message" *ngIf="signupForm.controls['linkInstagram'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.socailLinkMaxLength}}</span>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <label class="label" for="twitterLink">Twitter Link</label>
-                    <input formControlName="linkTwitter" id="twitterLink" class="form-control item" type="text" name="twitterLink" placeholder="twitterLink">
-                    <div class="error-message-wrapper" *ngIf="signupForm.controls['linkTwitter'].touched && !signupForm.controls['linkTwitter'].valid">
-                        <span class="error-message" *ngIf="signupForm.controls['linkTwitter'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.socailLinkMinLength}}</span>
-                        <span class="error-message" *ngIf="signupForm.controls['linkTwitter'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.socailLinkMaxLength}}</span>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <label class="label" for="linkedInLink">Linkedin Link</label>
-                    <input formControlName="linkLinkedIn" id="linkedInLink" class="form-control item" type="text" name="linkedInLink" placeholder="linkedInLink">
-                    <div class="error-message-wrapper" *ngIf="signupForm.controls['linkLinkedIn'].touched && !signupForm.controls['linkLinkedIn'].valid">
-                        <span class="error-message" *ngIf="signupForm.controls['linkLinkedIn'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.socailLinkMinLength}}</span>
-                        <span class="error-message" *ngIf="signupForm.controls['linkLinkedIn'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.socailLinkMaxLength}}</span>
-                    </div>
+            <div class="margin-bottom-one">
+                <label class="label" for="facebookLink">FaceBook Link</label>
+                <input formControlName="linkFacebook" id="facebookLink" class="form-control item" type="text" name="facebookLink" placeholder="https://www.facebook.com/[username]">
+                <div class="error-message-wrapper" *ngIf="signupForm.controls['linkFacebook'].touched && !signupForm.controls['linkFacebook'].valid">
+                    <span class="error-message" *ngIf="signupForm.controls['linkFacebook'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.socailLinkMinLength}}</span>
+                    <span class="error-message" *ngIf="signupForm.controls['linkFacebook'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.socailLinkMaxLength}}</span>
                 </div>
             </div>
-            <div class="row">
+            <div class="margin-bottom-one">
+                <label class="label" for="instagramLink">Instagram Link</label>
+                <input formControlName="linkInstagram" id="facebookLink" class="form-control item" type="text" name="instagramLink" placeholder="https://www.instagram.com/[username]">
+                <div class="error-message-wrapper" *ngIf="signupForm.controls['linkInstagram'].touched && !signupForm.controls['linkInstagram'].valid">
+                    <span class="error-message" *ngIf="signupForm.controls['linkInstagram'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.socailLinkMinLength}}</span>
+                    <span class="error-message" *ngIf="signupForm.controls['linkInstagram'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.socailLinkMaxLength}}</span>
+                </div>
+            </div>
+            <div class="margin-bottom-one">
+                <label class="label" for="twitterLink">Twitter Link</label>
+                <input formControlName="linkTwitter" id="twitterLink" class="form-control item" type="text" name="twitterLink" placeholder="https://twitter.com/[username]">
+                <div class="error-message-wrapper" *ngIf="signupForm.controls['linkTwitter'].touched && !signupForm.controls['linkTwitter'].valid">
+                    <span class="error-message" *ngIf="signupForm.controls['linkTwitter'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.socailLinkMinLength}}</span>
+                    <span class="error-message" *ngIf="signupForm.controls['linkTwitter'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.socailLinkMaxLength}}</span>
+                </div>
+            </div>
+            <div class="margin-bottom-one">
+                <label class="label" for="linkedInLink">Linkedin Link</label>
+                <input formControlName="linkLinkedIn" id="linkedInLink" class="form-control item" type="text" name="linkedInLink" placeholder="https://www.linkedin.com/in/[username]/">
+                <div class="error-message-wrapper" *ngIf="signupForm.controls['linkLinkedIn'].touched && !signupForm.controls['linkLinkedIn'].valid">
+                    <span class="error-message" *ngIf="signupForm.controls['linkLinkedIn'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.socailLinkMinLength}}</span>
+                    <span class="error-message" *ngIf="signupForm.controls['linkLinkedIn'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.socailLinkMaxLength}}</span>
+                </div>
+            </div>
+            <div class="row margin-bottom-one">
                 <div class="col-md-6">
                     <label class="label" for="imageLink">Images Link</label>
-                    <input formControlName="photoLink" id="imageLink" class="form-control item" type="text" name="imageLink" placeholder="imageLink">
+                    <input formControlName="photoLink" id="imageLink" class="form-control item" type="text" name="imageLink" placeholder="personal image link">
                     <div class="error-message-wrapper" *ngIf="signupForm.controls['photoLink'].touched && !signupForm.controls['photoLink'].valid">
                         <span class="error-message" *ngIf="signupForm.controls['photoLink'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.photoLinkMinLength}}</span>
                         <span class="error-message" *ngIf="signupForm.controls['photoLink'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.photoLinkMaxLength}}</span>
@@ -127,19 +124,19 @@
                 </div>
                 <div class="col-md-6">
                     <label class="label" for="videoLink">Videos Link</label>
-                    <input formControlName="videoLink" id="videoLink" class="form-control item" type="text" name="videoLink" placeholder="videoLink">
+                    <input formControlName="videoLink" id="videoLink" class="form-control item" type="text" name="videoLink" placeholder="personal video link">
                     <div class="error-message-wrapper" *ngIf="signupForm.controls['videoLink'].touched && !signupForm.controls['videoLink'].valid">
                         <span class="error-message" *ngIf="signupForm.controls['videoLink'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.videoLinkMinLength}}</span>
                         <span class="error-message" *ngIf="signupForm.controls['videoLink'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.videoLinkMaxLength}}</span>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row margin-bottom-one">
                 <div class="col-md-6">
-                    <button class="btn app-btn app-btn-primary">Reset</button>
+                    <button (click)="initSignupForm()" class="btn app-btn app-btn-primary">Reset</button>
                 </div>
                 <div class="col-md-6">
-                    <button type="submit" class="btn app-btn app-btn-primary">Submit</button>
+                    <button [disabled]="!signupForm.valida" type="submit" class="btn app-btn app-btn-primary">Submit</button>
                 </div>
             </div>
         </form>
