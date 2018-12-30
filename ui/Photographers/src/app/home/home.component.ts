@@ -18,7 +18,17 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
    this.initVideoCard();
    this.initImageCard();
-  this.initPhotographers();
+         this.homeService.getAllPhotographers()
+        .subscribe(data => {
+          this.photographers = data;
+                if(this.photographers && this.photographers.length > 5){
+        this.photographers = this.photographers.slice(0, 5);
+      }
+          localStorage.setItem('photographers', JSON.stringify(data));
+          console.log(this.photographers);
+        }, err => {
+        });
+  // this.initPhotographers();
   }
 
   initVideoCard() {

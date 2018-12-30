@@ -235,6 +235,12 @@ body {
   background-color: $app-btn-primary-color-background;
 }
 
+.app-btn-secondary{
+  color: $app-btn-primary-color-background !important; 
+  background-color: $app-btn-primary-color;
+  border: 1px solid $app-btn-primary-color-background;
+}
+
 .fa-like-color{
   color: #b2b2b2;
   opacity: 0.5;

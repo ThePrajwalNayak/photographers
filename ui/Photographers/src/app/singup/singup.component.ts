@@ -32,8 +32,8 @@ export class SingupComponent implements OnInit {
     dobMaxLength: 20,
     sexMinLength: 3,
     sexMaxLength: 20,
-    aboutMinLength: 3,
-    aboutMaxLength: 20,
+    aboutMinLength: 100,
+    aboutMaxLength: 150,
     socailLinkMinLength: 10,
     socailLinkMaxLength: 50,
     photoLinkMinLength: 5,
@@ -72,7 +72,7 @@ export class SingupComponent implements OnInit {
     });
   }
 
-  createPhotographer(signupForm: NgForm) {
+  createPhotographer(signupForm) {
     console.log(signupForm.controls);
   }
 }

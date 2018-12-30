@@ -76,6 +76,7 @@
                     <label class="label" for="about">About Me : *</label>
                     <textarea formControlName="about" id="about" class="form-control item aboutme" type="text" name="about" placeholder="about me"></textarea>
                     <div class="error-message-wrapper" *ngIf="signupForm.controls['about'].touched && !signupForm.controls['about'].valid">
+                        <span class="error-message" *ngIf="signupForm.controls['about'].hasError('required')"> {{errorMessage.required}}</span>
                         <span class="error-message" *ngIf="signupForm.controls['about'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.aboutMinLength}}</span>
                         <span class="error-message" *ngIf="signupForm.controls['about'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.aboutMaxLength}}</span>
                     </div>
@@ -133,10 +134,10 @@
             </div>
             <div class="row margin-bottom-one">
                 <div class="col-md-6">
-                    <button (click)="initSignupForm()" class="btn app-btn app-btn-primary">Reset</button>
+                    <button (click)="initSignupForm()" class="btn app-btn app-btn-secondary">Reset</button>
                 </div>
                 <div class="col-md-6">
-                    <button [disabled]="!signupForm.valida" type="submit" class="btn app-btn app-btn-primary">Submit</button>
+                    <button [disabled]="!signupForm.valid" type="submit" class="btn app-btn app-btn-primary">Submit</button>
                 </div>
             </div>
         </form>
