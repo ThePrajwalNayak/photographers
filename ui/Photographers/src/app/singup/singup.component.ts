@@ -44,7 +44,8 @@ export class SingupComponent implements OnInit {
     videoLinkMaxLength: 100,
   }
   photographer: any = {};
-
+  profilePicture : any;
+  base64textString = [];
   signupForm: FormGroup;
   constructor(private formBuilder: FormBuilder, private signUpService : SingupService) { }
 
@@ -74,6 +75,24 @@ export class SingupComponent implements OnInit {
     });
   }
 
+  importFile(event) {
+    if (event.target.files.length == 0) {
+      console.log("No file selected!");
+      return
+    }
+    let file: File = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = this.handleReaderLoaded.bind(this);
+      reader.readAsBinaryString(file);
+      // after here 'file' can be accessed and used for further process
+    }
+  }
+
+  handleReaderLoaded(e) {
+    this.base64textString.push('data:image/png;base64,' + btoa(e.target.result));
+    this.profilePicture = this.base64textString;
+  }
   createPhotographer(signupForm) {
     // var form = this.signupForm;
     // var reqObj = {
@@ -86,7 +105,7 @@ export class SingupComponent implements OnInit {
     //     phoneNumber: form.get('phoneNumber').value,
     //     location : form.get('location').value,
     //     dob: form.get('dob').value,
-    //     sex: form.get('sex').value,
+    //     sex: form.get('sex').value == 'Male' ? 'M' : 'F',
     //     about: form.get('about').value,
     //     linkFacebook: form.get('linkFacebook').value,
     //     linkLinkedIn: form.get('linkLinkedIn').value,
@@ -99,6 +118,7 @@ export class SingupComponent implements OnInit {
     this.signUpService.createAccount(reqObj)
     .subscribe(data => {
       console.log(data);
+      
     }, err => {
       console.log(err);
     });

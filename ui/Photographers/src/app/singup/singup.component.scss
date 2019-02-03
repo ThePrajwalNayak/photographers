@@ -17,6 +17,15 @@
     padding: 5% 10%;
     margin: 0 auto;
     form {
+        .photographer-image{
+              margin-left: 50%;
+              transform: translatex(-50%);
+              margin-bottom: 10%;
+              img{
+                width: 200px;
+                height: 200px;
+              }
+        }
         .label {
           font-size: 16px;
           color: $input-label-color;
