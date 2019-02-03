@@ -97,24 +97,29 @@ export class SingupComponent implements OnInit {
   }
   createPhotographer(signupForm) {
     var form = this.signupForm;
+    var picture;
+    if(this.profilePicture){
+      picture = this.profilePicture[0].split(',');
+      picture = picture[1];
+    }
     var reqObj = {
         username: form.get('username').value,
-        profilePicture: form.get('profilePicture').value,
+        profilePicture: picture ? picture : null,
         password: form.get('password').value,
         firstName: form.get('firstName').value,
         lastName: form.get('lastName').value,
         email: form.get('email').value,    
-        phoneNumber: form.get('phoneNumber').value,
-        location : form.get('location').value,
-        dob: form.get('dob').value,
-        sex: form.get('sex').value == 'Male' ? 'M' : 'F',
+        phoneNumber: form.get('phoneNumber').value ? form.get('phoneNumber').value : null,
+        location : form.get('location').value ? form.get('location').value : null,
+        dob: form.get('dob').value ? form.get('dob').value : null,
+        sex: form.get('sex').value ? (form.get('sex').value == 'Male' ? 'M' : 'F') : null,
         about: form.get('about').value,
-        linkFacebook: form.get('linkFacebook').value,
-        linkLinkedIn: form.get('linkLinkedIn').value,
-        linkTwitter: form.get('linkTwitter').value,
-        linkInstagram: form.get('linkInstagram').value,
-        photoLink: form.get('photoLink').value,
-        videoLink: form.get('videoLink').value
+        linkFacebook: form.get('linkFacebook').value ? form.get('linkFacebook').value : null ,
+        linkLinkedIn: form.get('linkLinkedIn').value ? form.get('linkLinkedIn').value : null,
+        linkTwitter: form.get('linkTwitter').value ? form.get('linkTwitter').value : null,
+        linkInstagram: form.get('linkInstagram').value ? form.get('linkInstagram').value : null,
+        photoLink: form.get('photoLink').value ? form.get('photoLink').value : null,
+        videoLink: form.get('videoLink').value ? form.get('videoLink').value : null
     }
     this.signUpService.createAccount(reqObj)
     .subscribe(data => {
