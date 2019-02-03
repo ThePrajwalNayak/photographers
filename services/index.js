@@ -18,6 +18,8 @@ console.log('Starting application');
 
 app.use(function (req, res, next) {
     console.log('We are the router, move next');
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
 
