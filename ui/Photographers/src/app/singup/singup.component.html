@@ -5,7 +5,7 @@
         <form [formGroup]='signupForm' (ngSubmit)="createPhotographer(signupForm)">
             <div class="photographer-image relative">
                     <input #fileUpload type="file" (click)="fileUpload.value = null"(change)="importFile($event)" style="display:none"
-accept="image/*">
+                    accept="image/*">
                     <img class="img-thumbnail pointer" (click)="fileUpload.click()" *ngIf="profilePicture" [src]="profilePicture"
                     />
                     <img class="img-thumbnail pointer" (click)="fileUpload.click()" *ngIf="!profilePicture" src="../../assets/images/placeholder_person.png"
@@ -138,6 +138,27 @@ accept="image/*">
                     <div class="error-message-wrapper" *ngIf="signupForm.controls['videoLink'].touched && !signupForm.controls['videoLink'].valid">
                         <span class="error-message" *ngIf="signupForm.controls['videoLink'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.videoLinkMinLength}}</span>
                         <span class="error-message" *ngIf="signupForm.controls['videoLink'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.videoLinkMaxLength}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row margin-bottom-one">
+                <div class="col-md-6">
+                    <label class="label" for="password">Password: *</label>
+                    <input formControlName="password" id="password" class="form-control item" type="text" name="password" placeholder="*******">
+                    <div class="error-message-wrapper" *ngIf="signupForm.controls['password'].touched && !signupForm.controls['password'].valid">
+                        <span class="error-message" *ngIf="signupForm.controls['password'].hasError('required')"> {{errorMessage.required}}</span>
+                        <span class="error-message" *ngIf="signupForm.controls['password'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.passwordMinLength}}</span>
+                        <span class="error-message" *ngIf="signupForm.controls['password'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.passwordMaxLength}}</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label class="label" for="confirmPassword">Confirm Password : *</label>
+                    <input formControlName="confirmPassword" id="confirmPassword" class="form-control item" type="text" name="confirmPassword" placeholder="******">
+                    <div class="error-message-wrapper" *ngIf="signupForm.controls['confirmPassword'].touched && !signupForm.controls['confirmPassword'].valid">
+                        <span class="error-message" *ngIf="signupForm.controls['confirmPassword'].hasError('required')"> {{errorMessage.required}}</span>
+                        <span class="error-message" *ngIf="signupForm.controls['confirmPassword'].hasError('matchPassword')">Password Mismtach</span>
+                        <span class="error-message" *ngIf="signupForm.controls['confirmPassword'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.passwordMinLength}}</span>
+                        <span class="error-message" *ngIf="signupForm.controls['confirmPassword'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.passwordMaxLength}}</span>
                     </div>
                 </div>
             </div>

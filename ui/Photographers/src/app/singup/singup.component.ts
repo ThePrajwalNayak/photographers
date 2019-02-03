@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 
 import { SingupService } from './singup.service';
+import { PasswordValidation } from './passwordValidation';
 
 @Component({
   selector: 'app-singup',
@@ -58,6 +59,7 @@ export class SingupComponent implements OnInit {
       username: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.usernameMaxLength), Validators.minLength(this.validation.usernameMinLength)])],
       profilePicture: [''],
       password: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.passwordMaxLength), Validators.minLength(this.validation.passwordMinLength)])],
+      confirmPassword: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.passwordMaxLength), Validators.minLength(this.validation.passwordMinLength), PasswordValidation.MatchPassword])],
       firstName: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.firstNameMaxLength), Validators.minLength(this.validation.firstNameMinLength)])],
       lastName: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.lastNameMaxLength), Validators.minLength(this.validation.lastNameMinLength)])],
       email: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.emailMaxLength), Validators.minLength(this.validation.emailMinLength)])],
@@ -94,27 +96,26 @@ export class SingupComponent implements OnInit {
     this.profilePicture = this.base64textString;
   }
   createPhotographer(signupForm) {
-    // var form = this.signupForm;
-    // var reqObj = {
-    //     username: form.get('username').value,
-    //     profilePicture: form.get('profilePicture').value,
-    //     password: 'password',
-    //     firstName: form.get('firstName').value,
-    //     lastName: form.get('lastName').value,
-    //     email: form.get('email').value,    
-    //     phoneNumber: form.get('phoneNumber').value,
-    //     location : form.get('location').value,
-    //     dob: form.get('dob').value,
-    //     sex: form.get('sex').value == 'Male' ? 'M' : 'F',
-    //     about: form.get('about').value,
-    //     linkFacebook: form.get('linkFacebook').value,
-    //     linkLinkedIn: form.get('linkLinkedIn').value,
-    //     linkTwitter: form.get('linkTwitter').value,
-    //     linkInstagram: form.get('linkInstagram').value,
-    //     photoLink: form.get('photoLink').value,
-    //     videoLink: form.get('videoLink').value
-    // }
-    var reqObj = JSON.parse(localStorage.getItem('req'));
+    var form = this.signupForm;
+    var reqObj = {
+        username: form.get('username').value,
+        profilePicture: form.get('profilePicture').value,
+        password: form.get('password').value,
+        firstName: form.get('firstName').value,
+        lastName: form.get('lastName').value,
+        email: form.get('email').value,    
+        phoneNumber: form.get('phoneNumber').value,
+        location : form.get('location').value,
+        dob: form.get('dob').value,
+        sex: form.get('sex').value == 'Male' ? 'M' : 'F',
+        about: form.get('about').value,
+        linkFacebook: form.get('linkFacebook').value,
+        linkLinkedIn: form.get('linkLinkedIn').value,
+        linkTwitter: form.get('linkTwitter').value,
+        linkInstagram: form.get('linkInstagram').value,
+        photoLink: form.get('photoLink').value,
+        videoLink: form.get('videoLink').value
+    }
     this.signUpService.createAccount(reqObj)
     .subscribe(data => {
       console.log(data);
