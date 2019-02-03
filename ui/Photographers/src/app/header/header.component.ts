@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   IMAGES : string = 'Images';
   EXPLORE : string = 'Explore';
   CONTACT : string = 'Contact';
-  selectedNavMenu : string;
+  selectedNavMenu : string = this.HOME;
   currentUrl : string;
 
   constructor(location: Location, router: Router) {
@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.selectedNavMenu = this.HOME;
+    // this.selectedNavMenu = this.HOME;
   }
 
   setSelectedNavMenu(path : string){

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 
+import { SingupService } from './singup.service';
+
 @Component({
   selector: 'app-singup',
   templateUrl: './singup.component.html',
@@ -22,10 +24,10 @@ export class SingupComponent implements OnInit {
     firstNameMaxLength: 20,
     lastNameMinLength: 3,
     lastNameMaxLength: 20,
-    emailMinLength: 3,
-    emailMaxLength: 20,
+    emailMinLength: 5,
+    emailMaxLength: 40,
     phoneNumberMinLength: 3,
-    phoneNumberLength: 20,
+    phoneNumberMaxLength: 20,
     locationMinLength: 3,
     locationMaxLength: 20,
     dobMinLength: 3,
@@ -33,9 +35,9 @@ export class SingupComponent implements OnInit {
     sexMinLength: 3,
     sexMaxLength: 20,
     aboutMinLength: 100,
-    aboutMaxLength: 150,
+    aboutMaxLength: 500,
     socailLinkMinLength: 10,
-    socailLinkMaxLength: 50,
+    socailLinkMaxLength: 100,
     photoLinkMinLength: 5,
     photoLinkMaxLength: 100,
     videoLinkMinLength: 5,
@@ -44,7 +46,7 @@ export class SingupComponent implements OnInit {
   photographer: any = {};
 
   signupForm: FormGroup;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private signUpService : SingupService) { }
 
   ngOnInit() {
     this.initSignupForm();
@@ -58,8 +60,8 @@ export class SingupComponent implements OnInit {
       firstName: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.firstNameMaxLength), Validators.minLength(this.validation.firstNameMinLength)])],
       lastName: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.lastNameMaxLength), Validators.minLength(this.validation.lastNameMinLength)])],
       email: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.emailMaxLength), Validators.minLength(this.validation.emailMinLength)])],
-      phoneNumber: ['', Validators.compose([Validators.maxLength(this.validation.passwordMaxLength), Validators.minLength(this.validation.passwordMinLength)])],
-      location: ['', Validators.compose([Validators.maxLength(this.validation.lastNameMaxLength), Validators.minLength(this.validation.locationMinLength)])],
+      phoneNumber: ['', Validators.compose([Validators.maxLength(this.validation.phoneNumberMaxLength), Validators.minLength(this.validation.phoneNumberMinLength)])],
+      location: ['', Validators.compose([Validators.maxLength(this.validation.locationMaxLength), Validators.minLength(this.validation.locationMinLength)])],
       dob: ['', Validators.compose([Validators.maxLength(this.validation.dobMaxLength), Validators.minLength(this.validation.dobMinLength)])],
       sex: ['', Validators.compose([Validators.maxLength(this.validation.sexMaxLength), Validators.minLength(this.validation.sexMinLength)])],
       about: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.aboutMaxLength), Validators.minLength(this.validation.aboutMinLength)])],
@@ -67,12 +69,38 @@ export class SingupComponent implements OnInit {
       linkInstagram: ['', Validators.compose([Validators.maxLength(this.validation.socailLinkMaxLength), Validators.minLength(this.validation.socailLinkMinLength)])],
       linkTwitter: ['', Validators.compose([Validators.maxLength(this.validation.socailLinkMaxLength), Validators.minLength(this.validation.socailLinkMinLength)])],
       linkLinkedIn: ['', Validators.compose([Validators.maxLength(this.validation.socailLinkMaxLength), Validators.minLength(this.validation.socailLinkMinLength)])],
-      photoLink: ['', Validators.compose([Validators.maxLength(this.validation.photoLinkMinLength), Validators.minLength(this.validation.photoLinkMinLength)])],
-      videoLink: ['', Validators.compose([Validators.maxLength(this.validation.videoLinkMaxLength), Validators.minLength(this.validation.videoLinkMaxLength)])],
+      photoLink: ['', Validators.compose([Validators.maxLength(this.validation.photoLinkMaxLength), Validators.minLength(this.validation.photoLinkMinLength)])],
+      videoLink: ['', Validators.compose([Validators.maxLength(this.validation.videoLinkMaxLength), Validators.minLength(this.validation.videoLinkMinLength)])],
     });
   }
 
   createPhotographer(signupForm) {
-    console.log(signupForm.controls);
+    // var form = this.signupForm;
+    // var reqObj = {
+    //     username: form.get('username').value,
+    //     profilePicture: form.get('profilePicture').value,
+    //     password: 'password',
+    //     firstName: form.get('firstName').value,
+    //     lastName: form.get('lastName').value,
+    //     email: form.get('email').value,    
+    //     phoneNumber: form.get('phoneNumber').value,
+    //     location : form.get('location').value,
+    //     dob: form.get('dob').value,
+    //     sex: form.get('sex').value,
+    //     about: form.get('about').value,
+    //     linkFacebook: form.get('linkFacebook').value,
+    //     linkLinkedIn: form.get('linkLinkedIn').value,
+    //     linkTwitter: form.get('linkTwitter').value,
+    //     linkInstagram: form.get('linkInstagram').value,
+    //     photoLink: form.get('photoLink').value,
+    //     videoLink: form.get('videoLink').value
+    // }
+    var reqObj = JSON.parse(localStorage.getItem('req'));
+    this.signUpService.createAccount(reqObj)
+    .subscribe(data => {
+      console.log(data);
+    }, err => {
+      console.log(err);
+    });
   }
 }

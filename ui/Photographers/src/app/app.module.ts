@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { ImagesComponent } from './images/images.component';
 import { VideosComponent } from './videos/videos.component';
 import { ContactComponent } from './contact/contact.component';
 import { SingupComponent } from './singup/singup.component';
+import { SingupService } from './singup/singup.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,7 @@ import { SingupComponent } from './singup/singup.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [PhotographersService],
+  providers: [PhotographersService, {provide: LocationStrategy, useClass: HashLocationStrategy}, SingupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

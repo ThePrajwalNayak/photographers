@@ -37,7 +37,7 @@
                     <input formControlName="phoneNumber" id="phoneNumber" class="form-control item" type="text" name="phoneNumber" placeholder="7760051883">
                     <div class="error-message-wrapper" *ngIf="signupForm.controls['phoneNumber'].touched && !signupForm.controls['phoneNumber'].valid">
                         <span class="error-message" *ngIf="signupForm.controls['phoneNumber'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.phoneNumberMinLength}}</span>
-                        <span class="error-message" *ngIf="signupForm.controls['phoneNumber'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.phoneNumberLength}}</span>
+                        <span class="error-message" *ngIf="signupForm.controls['phoneNumber'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.phoneNumberMaxLength}}</span>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -137,7 +137,8 @@
                     <button (click)="initSignupForm()" class="btn app-btn app-btn-secondary">Reset</button>
                 </div>
                 <div class="col-md-6">
-                    <button [disabled]="!signupForm.valid" type="submit" class="btn app-btn app-btn-primary">Submit</button>
+                    <!--<button [disabled]="!signupForm.valid" type="submit" class="btn app-btn app-btn-primary">Submit</button>-->
+                    <button type="submit" class="btn app-btn app-btn-primary">Submit</button>
                 </div>
             </div>
         </form>
