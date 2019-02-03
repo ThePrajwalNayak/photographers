@@ -22,4 +22,5 @@ export class HomeService {
   getAllPhotographers(){
     return this.http.get(this.BASE_URL + "/photographers");
   }
+
 }
