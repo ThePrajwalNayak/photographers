@@ -1,14 +1,15 @@
 <div id="header">
-    <div class="row">
-        <div class="col-md-4 margin-top-one">
-            <a>
+    <div class="row nav-wrapper margin-top-one margin-bottom-one">
+        <div class="logo-wrapper col-md-4">
+            <a class="logo" routerLink="/home" >
                 <fa name="camera" animation="spin"></fa>
-                Photographers
+                <span class="first">PHOTO</span><span class="second">GRAPHERS</span>
             </a>
         </div>
         <div class="col-md-5"></div>
-        <div class="col-md-3">
-             <a routerLink="/signup">Signup</a>
+        <div class="signup-login col-md-3">
+             <a class="signup" routerLink="/signup">Signup</a>
+             <a class="login margin-left-one">Login</a>
         </div>
     </div>
     <div class="row row-nav" *ngIf="currentUrl !== '/signup'">

@@ -2,13 +2,6 @@
 #singup {
   background-image: linear-gradient(to right top, rgb(252, 44, 119) 0%, rgb(108, 64, 121) 100%);
   padding: 5% 0;
-  //   .ng-valid,
-  // .ng-valid.required {
-  //   background-color: lightgreen;
-  // }
-  // .ng-invalid:not(form) {
-  //   background-color: lightcoral !important;
-  // }
   .card-singup {
     background-color: $card-color-background;
     border-radius: $app-card-border-radius;
@@ -16,6 +9,10 @@
     width: 55%;
     padding: 5% 10%;
     margin: 0 auto;
+    .signup-header {
+      margin-left: 32%;
+      margin-bottom: 5%;
+    }
     form {
         .photographer-image{
               margin-left: 50%;

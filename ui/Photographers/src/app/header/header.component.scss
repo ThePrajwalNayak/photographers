@@ -1,5 +1,34 @@
 @import "../../_variables";
 #header {
+  .nav-wrapper {
+    .logo-wrapper {
+      .logo {
+        color: $app-color-primary;
+        margin-left: 2rem;
+        text-decoration: none;
+        .first {
+          margin-left: 1rem;
+          font-family: MontserratBold;
+        }
+        .second {
+          color: $app-color-secondary;
+        }
+      }
+    }
+    .signup-login {
+      a{
+        color: $app-color-primary;
+        text-decoration: none;
+      }
+      .signup{
+
+      }
+      .login{
+        cursor : not-allowed;
+      }
+    }
+  }
+
   .row-nav {
     margin: 0;
     // active-link for present nav menu

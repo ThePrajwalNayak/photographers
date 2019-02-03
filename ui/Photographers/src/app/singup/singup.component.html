@@ -1,7 +1,6 @@
 <div id="singup">
     <div class="card-singup padding-one">
-        <p>Registration</p>
-        
+        <h2 class="signup-header">Sing up</h2>
         <form [formGroup]='signupForm' (ngSubmit)="createPhotographer(signupForm)">
             <div class="photographer-image relative">
                     <input #fileUpload type="file" (click)="fileUpload.value = null"(change)="importFile($event)" style="display:none"
@@ -13,7 +12,7 @@
             </div>
             <div class="row margin-bottom-one">
                 <div class="col-md-4">
-                    <label class="label" for="username">User Name : *</label>
+                    <label class="label" for="username">User Name *</label>
                     <input formControlName="username" id="username" class="form-control item" type="text" name="username" placeholder="iamjohn">
                     <div class="error-message-wrapper" *ngIf="signupForm.controls['username'].touched && !signupForm.controls['username'].valid">
                         <span class="error-message" *ngIf="signupForm.controls['username'].hasError('required')"> {{errorMessage.required}}</span>
@@ -22,7 +21,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <label class="label" for="firstName">First Name  : *</label>
+                    <label class="label" for="firstName">First Name *</label>
                     <input formControlName="firstName" id="firstName" class="form-control item" type="text" name="firstName" placeholder="John">
                     <div class="error-message-wrapper" *ngIf="signupForm.controls['firstName'].touched && !signupForm.controls['firstName'].valid">
                         <span class="error-message" *ngIf="signupForm.controls['firstName'].hasError('required')"> {{errorMessage.required}}</span>
@@ -31,7 +30,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <label class="label" for="lastName">Last Name</label>
+                    <label class="label" for="lastName">Last Name *</label>
                     <input formControlName="lastName" id="lastName" class="form-control item" type="text" name="lastName" placeholder="Hayden">
                     <div class="error-message-wrapper" *ngIf="signupForm.controls['lastName'].touched && !signupForm.controls['lastName'].valid">
                         <span class="error-message" *ngIf="signupForm.controls['lastName'].hasError('required')"> {{errorMessage.required}}</span>
@@ -67,7 +66,7 @@
             </div>
             <div class="row margin-bottom-one">
                 <div class="col-md-7">
-                    <label class="label" for="email">Email : *</label>
+                    <label class="label" for="email">Email *</label>
                     <input formControlName="email" id="email" class="form-control item" type="text" name="email" placeholder="a@b.com">
                     <div class="error-message-wrapper" *ngIf="signupForm.controls['email'].touched && !signupForm.controls['email'].valid">
                         <span class="error-message" *ngIf="signupForm.controls['email'].hasError('required')"> {{errorMessage.required}}</span>
@@ -82,7 +81,7 @@
             </div>
             <div class="row margin-bottom-one">
                 <div class="col-md-12">
-                    <label class="label" for="about">About Me : *</label>
+                    <label class="label" for="about">About Me *</label>
                     <textarea formControlName="about" id="about" class="form-control item aboutme" type="text" name="about" placeholder="about me"></textarea>
                     <div class="error-message-wrapper" *ngIf="signupForm.controls['about'].touched && !signupForm.controls['about'].valid">
                         <span class="error-message" *ngIf="signupForm.controls['about'].hasError('required')"> {{errorMessage.required}}</span>
@@ -143,8 +142,8 @@
             </div>
             <div class="row margin-bottom-one">
                 <div class="col-md-6">
-                    <label class="label" for="password">Password: *</label>
-                    <input formControlName="password" id="password" class="form-control item" type="text" name="password" placeholder="*******">
+                    <label class="label" for="password">Password *</label>
+                    <input formControlName="password" id="password" class="form-control item" type="text" name="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
                     <div class="error-message-wrapper" *ngIf="signupForm.controls['password'].touched && !signupForm.controls['password'].valid">
                         <span class="error-message" *ngIf="signupForm.controls['password'].hasError('required')"> {{errorMessage.required}}</span>
                         <span class="error-message" *ngIf="signupForm.controls['password'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.passwordMinLength}}</span>
@@ -152,8 +151,8 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <label class="label" for="confirmPassword">Confirm Password : *</label>
-                    <input formControlName="confirmPassword" id="confirmPassword" class="form-control item" type="text" name="confirmPassword" placeholder="******">
+                    <label class="label" for="confirmPassword">Confirm Password *</label>
+                    <input formControlName="confirmPassword" id="confirmPassword" class="form-control item" type="text" name="confirmPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
                     <div class="error-message-wrapper" *ngIf="signupForm.controls['confirmPassword'].touched && !signupForm.controls['confirmPassword'].valid">
                         <span class="error-message" *ngIf="signupForm.controls['confirmPassword'].hasError('required')"> {{errorMessage.required}}</span>
                         <span class="error-message" *ngIf="signupForm.controls['confirmPassword'].hasError('matchPassword')">Password Mismtach</span>
@@ -167,8 +166,7 @@
                     <button (click)="initSignupForm()" class="btn app-btn app-btn-secondary">Reset</button>
                 </div>
                 <div class="col-md-6">
-                    <!--<button [disabled]="!signupForm.valid" type="submit" class="btn app-btn app-btn-primary">Submit</button>-->
-                    <button type="submit" class="btn app-btn app-btn-primary">Submit</button>
+                    <button [disabled]="!signupForm.valid" type="submit" class="btn app-btn app-btn-primary">Submit</button> 
                 </div>
             </div>
         </form>
