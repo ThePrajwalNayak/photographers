@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
+declare var $: any;
+import { Router } from '@angular/router';
 
 import { SingupService } from './singup.service';
 import { PasswordValidation } from './passwordValidation';
@@ -48,7 +50,8 @@ export class SingupComponent implements OnInit {
   profilePicture : any;
   base64textString = [];
   signupForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private signUpService : SingupService) { }
+  signupResponse : any;
+  constructor(private formBuilder: FormBuilder, private signUpService : SingupService, private router : Router) { }
 
   ngOnInit() {
     this.initSignupForm();
@@ -123,10 +126,17 @@ export class SingupComponent implements OnInit {
     }
     this.signUpService.createAccount(reqObj)
     .subscribe(data => {
-      console.log(data);
-      
+      this.signupResponse = data;
+      if(this.signupResponse && this.signupResponse._id){
+        this.initSignupForm();
+        $("#successModal").modal('show');
+      }
     }, err => {
       console.log(err);
     });
+  }
+
+  navigateToHome(){
+    this.router.navigateByUrl('/home');
   }
 }

@@ -143,7 +143,7 @@
             <div class="row margin-bottom-one">
                 <div class="col-md-6">
                     <label class="label" for="password">Password *</label>
-                    <input formControlName="password" id="password" class="form-control item" type="text" name="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+                    <input formControlName="password" id="password" class="form-control item" type="password" name="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
                     <div class="error-message-wrapper" *ngIf="signupForm.controls['password'].touched && !signupForm.controls['password'].valid">
                         <span class="error-message" *ngIf="signupForm.controls['password'].hasError('required')"> {{errorMessage.required}}</span>
                         <span class="error-message" *ngIf="signupForm.controls['password'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.passwordMinLength}}</span>
@@ -152,7 +152,7 @@
                 </div>
                 <div class="col-md-6">
                     <label class="label" for="confirmPassword">Confirm Password *</label>
-                    <input formControlName="confirmPassword" id="confirmPassword" class="form-control item" type="text" name="confirmPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+                    <input formControlName="confirmPassword" id="confirmPassword" class="form-control item" type="password" name="confirmPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
                     <div class="error-message-wrapper" *ngIf="signupForm.controls['confirmPassword'].touched && !signupForm.controls['confirmPassword'].valid">
                         <span class="error-message" *ngIf="signupForm.controls['confirmPassword'].hasError('required')"> {{errorMessage.required}}</span>
                         <span class="error-message" *ngIf="signupForm.controls['confirmPassword'].hasError('matchPassword')">Password Mismtach</span>
@@ -166,9 +166,25 @@
                     <button (click)="initSignupForm()" class="btn app-btn app-btn-secondary">Reset</button>
                 </div>
                 <div class="col-md-6">
-                    <button [disabled]="!signupForm.valid" type="submit" class="btn app-btn app-btn-primary">Submit</button> 
+                    <button [disabled]="!signupForm.valid" type="submit" class="btn app-btn app-btn-primary">Submit</button>
                 </div>
             </div>
         </form>
+    </div>
+</div>
+
+<div id="successModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><strong>Account successfully created</strong></h3>
+            </div>
+            <div class="modal-body">
+                <p>Thank you for your registration! Your account is now ready to use.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" (click)="navigateToHome()" class="btn app-btn app-btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
 </div>
