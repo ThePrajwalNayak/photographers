@@ -33,4 +33,9 @@ export class PhotographersComponent implements OnInit {
     this.selectedPhotographer = photographer;
   }
 
+  openLink(link) {
+    if (link) {
+      window.open(link, "_blank");
+    }
+  }
 }

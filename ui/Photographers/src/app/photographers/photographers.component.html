@@ -29,12 +29,12 @@
                         <span class="col-md-3"><i class="fa fa-mobile margin-right-half"></i>{{selectedPhotographer.phoneNumber}}</span>-->
                     </div>
                     <p>
-                        <a title="Image Link" href="{{selectedPhotographer.photoLink}}" target="_blank">
+                        <a title="Image Link" [ngClass]="{'pointer-not-allowed' : selectedPhotographer.photoLink === null}" (click)="openLink(selectedPhotographer.photoLink)" target="_blank">
                             <i class="fa fa-link margin-right-half"></i>Image Link
                         </a>
                     </p>
                     <p>
-                        <a title="Video Link" href="{{selectedPhotographer.videoLink}}" target="_blank">
+                        <a title="Video Link" [ngClass]="{'pointer-not-allowed' : selectedPhotographer.videoLink === null}" (click)="openLink(selectedPhotographer.videoLink)" target="_blank">
                             <i class="fa fa-link margin-right-half"></i>Video Link
                         </a>
                     </p>
@@ -44,10 +44,10 @@
                 </div>
                 <div class="card card-contact margin-top-one padding-one">
                     <div class="text-center">
-                        <a class="margin-right-one" title="Facebook Page" href="{{selectedPhotographer.linkFacebook}}" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a class="margin-right-one" title="Twitter Page" href="{{selectedPhotographer.linkTwitter}}" target="_blank"><i class="fa fa-twitter"></i></a>
-                        <a class="margin-right-one" title="Instagram Page" href="{{selectedPhotographer.linkInstagram}}" target="_blank"><i class="fa fa-instagram"></i></a>
-                        <a class="margin-right-one" title="Linked Page" href="{{selectedPhotographer.linkLinkedIn}}" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        <a class="margin-right-one" [ngClass]="{'pointer-not-allowed' : selectedPhotographer.linkFacebook === null}" title="Facebook Page" (click)="openLink(selectedPhotographer.linkFacebook)" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a class="margin-right-one" [ngClass]="{'pointer-not-allowed' : selectedPhotographer.linkTwitter === null}" title="Twitter Page" (click)="openLink(selectedPhotographer.linkTwitter)" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a class="margin-right-one" [ngClass]="{'pointer-not-allowed' : selectedPhotographer.linkInstagram === null}" title="Instagram Page" (click)="openLink(selectedPhotographer.linkInstagram)" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a class="margin-right-one" [ngClass]="{'pointer-not-allowed' : selectedPhotographer.linkLinkedIn === null}" title="Linked Page" (click)="openLink(selectedPhotographer.linkLinkedIn)" target="_blank"><i class="fa fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
