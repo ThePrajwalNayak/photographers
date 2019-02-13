@@ -6,6 +6,10 @@
       overflow-y: scroll;
       .photographers-card {
         background-color: $card-color-background;
+        .photographers-photo-size{
+          width: 50px;
+          height: 50px;
+        }
         .author {
           color: $card-color-author;
           font-size: 1rem;

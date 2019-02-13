@@ -6,9 +6,9 @@
         <source src="../../assets/images/videos/{{videoCard.video}}" type="video/mp4" />
       </video>
       <div class="padding-one clearfix">
-        <img class="img-thumbnail left margin-right-one" width="100" height="100" src="../../assets/images/videos_photographers_thumbnail/{{videoCard.photographerImage}}"
+        <img class="img-thumbnail left margin-right-one photographers-photo-size" src="../../assets/images/videos_photographers_thumbnail/{{videoCard.photographerImage}}"
         />
-        <span class="author block margin-top-half">{{videoCard.photographer}}</span>
+        <span class="author block">{{videoCard.photographer}}</span>
         <span class="time block">{{videoCard.time}} hours ago</span>
       </div>
     </div>
@@ -18,24 +18,24 @@
   <div class="col-md-6 image-wrapper">
     <div class="image-card margin-top-half" *ngFor="let imageCard of imageCards">
       <div class="padding-one clearfix">
-        <img class="img-thumbnail left margin-right-one" width="100" height="100" src="../../assets/images/images_photographers_thumbnail/{{imageCard.photographerImage}}.jpeg"
+        <img class="img-thumbnail left margin-right-one photographers-photo-size" src="../../assets/images/images_photographers_thumbnail/{{imageCard.photographerImage}}.jpeg"
         />
         <span class="author block margin-top-half">{{imageCard.photographer}}</span>
         <span class="time block">{{imageCard.time}} hours ago</span>
       </div>
       <img class="feed-image width-full" src="../../assets/images/images/{{imageCard.photographerImage}}.jpg" />
       <div class="padding-one text-center">
-        <span class="margin-right-one"><i class="fa fa-thumbs-up">{{imageCard.likes}}</i></span>
-        <span class="margin-right-one fa-thumsup-color"><i class="fa fa-thumbs-up">{{imageCard.thumbsup}}</i></span>
-        <span><i class="fa fa-heart fa-heart-color">{{imageCard.heart}}</i></span>
+        <span class="margin-right-one"><i class="fa fa-thumbs-up fa-thumbsup-color margin-right-quater"></i>{{imageCard.likes}}</span>
+        <span class="margin-right-one"><i class="fa fa-comment fa-comment-color margin-right-quater"></i>{{imageCard.thumbsup}}</span>
+        <span><i class="fa fa-heart fa-heart-color margin-right-quater"></i>{{imageCard.heart}}</span>
       </div>
     </div>
      <a class="app-btn app-btn-primary margin-top-half" routerLink="/images">More images</a>
   </div>
   <div class="col-md-3 photographers-wrapper margin-top-half">
       <div class="photographers-card clearfix padding-one" *ngFor="let photographer of photographers">
-        <img class="img-thumbnail left margin-right-one " width="50" height="50" *ngIf="photographer.profilePicture" [src]="'data:image/jpg;base64,'+photographer.profilePicture"/>
-        <img class="img-thumbnail left margin-right-one " width="50" height="50"  *ngIf="!photographer.profilePicture" src="../../assets/images/placeholder_person.png"/>
+        <img class="img-thumbnail left margin-right-one photographers-photo-size" *ngIf="photographer.profilePicture" [src]="'data:image/jpg;base64,'+photographer.profilePicture"/>
+        <img class="img-thumbnail left margin-right-one photographers-photo-size" *ngIf="!photographer.profilePicture" src="../../assets/images/placeholder_person.png"/>
         <span class="author">{{photographer.firstName}} {{photographer.lastName}}</span>
       </div>
       <a class="app-btn app-btn-primary margin-top-half" routerLink="/photographers">View more</a>

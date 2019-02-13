@@ -2,9 +2,9 @@
     <div class="row">
         <div class="col-md-3 card-left">
             <div class="photographers-card clearfix padding-one pointer" [ngClass]="{'selected-photographer' : photographer._id== selectedPhotographer._id}" (click)="setPhotographer(photographer)" *ngFor="let photographer of photographers">
-                <img class="img-thumbnail left margin-right-one " width="50" height="50" *ngIf="photographer.profilePicture" [src]="'data:image/jpg;base64,'+photographer.profilePicture"
+                <img class="img-thumbnail left margin-right-one photographers-photo-size" *ngIf="photographer.profilePicture" [src]="'data:image/jpg;base64,'+photographer.profilePicture"
                 />
-                <img class="img-thumbnail left margin-right-one " width="50" height="50" *ngIf="!photographer.profilePicture" src="../../assets/images/placeholder_person.png"
+                <img class="img-thumbnail left margin-right-one photographers-photo-size" *ngIf="!photographer.profilePicture" src="../../assets/images/placeholder_person.png"
                 />
                 <span class="author">{{photographer.firstName}} {{photographer.lastName}}</span>
             </div>
