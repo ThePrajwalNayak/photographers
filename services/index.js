@@ -7,8 +7,14 @@ var randomstring = require("randomstring");
 
 // const dbConnection = "mongodb://accountUser:password@localhost:27017/dbname";
 const dbConnection = "mongodb://admin:Pass1234@ds129904.mlab.com:29904/photographers";
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use( bodyParser.json({limit: '50mb'}) );
+app.use(bodyParser.urlencoded({
+  limit: '50mb',
+  extended: true,
+  parameterLimit:50000
+}));
+
 
 mongoose.Promise = require('bluebird');
 mongoose.connect(dbConnection);
@@ -27,9 +33,10 @@ app.get('/', function (req, res) {
     res.json({ message: 'Hey!' });
 });
 
+//Sorting by entered date
 app.get('/api/photographers', function (req, res) {
     console.log('GET PHOTOGRAPHERS');
-    Photographers.find({}).then(eachOne => {
+    Photographers.find({}).sort({enterdDt: -1}).then(eachOne => {
         res.json(eachOne);
     });
 });
