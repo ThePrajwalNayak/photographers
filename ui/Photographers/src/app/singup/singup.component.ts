@@ -99,7 +99,6 @@ export class SingupComponent implements OnInit {
   }
 
   createPhotographer(signupForm) {
-    alert('ok');
     var form = this.signupForm;
     var picture;
     if(this.profilePicture){
