@@ -9,27 +9,26 @@ import { PhotographersService } from '../photographers.service';
 })
 export class PhotographersComponent implements OnInit {
 
-  photographers : any;
-  selectedPhotographer : any;
-  constructor(private photographersService : PhotographersService) { }
+  photographers: any;
+  selectedPhotographer: any;
+  constructor(private photographersService: PhotographersService) { }
 
   ngOnInit() {
-    if (localStorage.getItem('photographers')) {
-      this.photographers = JSON.parse(localStorage.getItem('photographers'));
-      this.selectedPhotographer = this.photographers[0];
-    }
+    this.loadAllPhotographers();
   }
 
-  loadAllPhotographers(){
+  loadAllPhotographers() {
     this.photographersService.getAllPhotographers()
-    .subscribe(data => {
-      console.log(data);
-    }, err => {
-      console.log(err);
-    });
+      .subscribe(data => {
+        console.log(data);
+        this.photographers = data
+        this.selectedPhotographer = this.photographers[0];
+      }, err => {
+        console.log(err);
+      });
   }
 
-  setPhotographer(photographer){
+  setPhotographer(photographer) {
     this.selectedPhotographer = photographer;
   }
 
