@@ -58,7 +58,7 @@
                 </div>
                 <div class="col-md-4">
                     <label class="label" for="sex">Sex</label>
-                    <select formControlName="sex" id="sex" class="form-control item">
+                    <select id="sex" class="form-control item">
                             <option>Male</option>
                              <option>Female</option>
                      </select>
@@ -100,7 +100,7 @@
             </div>
             <div class="margin-bottom-one">
                 <label class="label" for="instagramLink">Instagram Link</label>
-                <input formControlName="linkInstagram" id="facebookLink" class="form-control item" type="text" name="instagramLink" placeholder="https://www.instagram.com/[username]">
+                <input formControlName="linkInstagram" id="instagramLink" class="form-control item" type="text" name="instagramLink" placeholder="https://www.instagram.com/[username]">
                 <div class="error-message-wrapper" *ngIf="signupForm.controls['linkInstagram'].touched && !signupForm.controls['linkInstagram'].valid">
                     <span class="error-message" *ngIf="signupForm.controls['linkInstagram'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.socailLinkMinLength}}</span>
                     <span class="error-message" *ngIf="signupForm.controls['linkInstagram'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.socailLinkMaxLength}}</span>
@@ -141,7 +141,7 @@
                 </div>
             </div>
             <div class="row margin-bottom-one">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <label class="label" for="password">Password *</label>
                     <input formControlName="password" id="password" class="form-control item" type="password" name="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
                     <div class="error-message-wrapper" *ngIf="signupForm.controls['password'].touched && !signupForm.controls['password'].valid">
@@ -150,7 +150,7 @@
                         <span class="error-message" *ngIf="signupForm.controls['password'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.passwordMaxLength}}</span>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <!--<div class="col-md-6">
                     <label class="label" for="confirmPassword">Confirm Password *</label>
                     <input formControlName="confirmPassword" id="confirmPassword" class="form-control item" type="password" name="confirmPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
                     <div class="error-message-wrapper" *ngIf="signupForm.controls['confirmPassword'].touched && !signupForm.controls['confirmPassword'].valid">
@@ -159,14 +159,14 @@
                         <span class="error-message" *ngIf="signupForm.controls['confirmPassword'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.passwordMinLength}}</span>
                         <span class="error-message" *ngIf="signupForm.controls['confirmPassword'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.passwordMaxLength}}</span>
                     </div>
-                </div>
+                </div>-->
             </div>
             <div class="row margin-bottom-one">
                 <div class="col-md-6">
-                    <button (click)="initSignupForm()" class="btn app-btn app-btn-secondary">Reset</button>
+                    <button (click)="revert()" class="btn app-btn app-btn-secondary">Reset</button>
                 </div>
                 <div class="col-md-6">
-                    <button [disabled]="!signupForm.valid" type="submit" class="btn app-btn app-btn-primary">Submit</button>
+                    <button [disabled]="!signupForm.valid" [ngClass]="{'pointer-not-allowed' : !signupForm.valid}" type="submit" class="btn app-btn app-btn-primary">Submit</button>
                 </div>
             </div>
         </form>

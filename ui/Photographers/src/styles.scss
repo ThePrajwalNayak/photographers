@@ -232,7 +232,7 @@ body {
 }
 
 .app-btn {
-    cursor: pointer;
+    cursor: pointer !important;
     background: orange;
     display: block;
     padding: 10px;
@@ -269,7 +269,7 @@ body {
 }
 
 .pointer-not-allowed {
-  cursor: not-allowed;
+  cursor: not-allowed !important;
 }
 
 .app-conatiner{
