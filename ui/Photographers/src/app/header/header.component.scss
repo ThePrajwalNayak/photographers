@@ -10,21 +10,9 @@
           margin-left: 1rem;
         }
         .second {
-                    font-family: MontserratBold;
+          font-family: MontserratBold;
           color: $app-color-secondary;
         }
-      }
-    }
-    .signup-login {
-      a{
-        color: $app-color-primary;
-        text-decoration: none;
-      }
-      .signup{
-
-      }
-      .login{
-        cursor : not-allowed;
       }
     }
   }
