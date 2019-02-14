@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
            this.selectedNavMenu = this.IMAGES;
          }else  if(this.currentUrl === '/explore'){
            this.selectedNavMenu = this.EXPLORE;
-         }else if(this.currentUrl === '/contatc'){
+         }else if(this.currentUrl === '/contact'){
            this.selectedNavMenu = this.CONTACT;
          }
          console.log(this.currentUrl);
