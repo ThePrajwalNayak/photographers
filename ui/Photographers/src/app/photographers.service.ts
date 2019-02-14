@@ -7,8 +7,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class PhotographersService {
 
-// BASE_URL = "http://pickphotographersapi.tk/api";
-  BASE_URL = 'http://localhost:3000';
+BASE_URL = "http://pickphotographersapi.tk/api";
+  // BASE_URL = 'http://localhost:3000';
   constructor(private http:HttpClient) { }
 
     getAllPhotographers() {
