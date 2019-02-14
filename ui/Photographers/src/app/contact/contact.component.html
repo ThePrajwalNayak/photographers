@@ -33,8 +33,65 @@
         </div>
       </div>
       <div class="col-md-6 contact-card-right">
-        Form
+        <form [formGroup]='contactForm' (ngSubmit)="createContact(contactForm)">
+          <div class="margin-bottom-one">
+            <label class="label" for="fullName">Full Name *</label>
+            <input formControlName="fullName" id="fullName" class="form-control item" type="text" name="fullName" placeholder="Mark Taylor">
+            <div class="error-message-wrapper" *ngIf="contactForm.controls['fullName'].touched && !contactForm.controls['fullName'].valid">
+              <span class="error-message" *ngIf="contactForm.controls['fullName'].hasError('required')"> {{errorMessage.required}}</span>
+              <span class="error-message" *ngIf="contactForm.controls['fullName'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.nameMinLength}}</span>
+              <span class="error-message" *ngIf="contactForm.controls['fullName'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.nameMaxLength}}</span>
+            </div>
+          </div>
+          <div class="margin-bottom-one">
+            <label class="label" for="email">Email *</label>
+            <input formControlName="email" id="email" class="form-control item" type="text" name="email" placeholder="mark.taylor@abc.com">
+            <div class="error-message-wrapper" *ngIf="contactForm.controls['email'].touched && !contactForm.controls['email'].valid">
+              <span class="error-message" *ngIf="contactForm.controls['email'].hasError('required')"> {{errorMessage.required}}</span>
+              <span class="error-message" *ngIf="contactForm.controls['email'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.emailMinLength}}</span>
+              <span class="error-message" *ngIf="contactForm.controls['email'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.emailMaxLength}}</span>
+            </div>
+          </div>
+          <div class="margin-bottom-one">
+            <label class="label" for="mobile">Mobile *</label>
+            <input formControlName="mobile" id="mobile" class="form-control item" type="text" name="mobile" placeholder="+91 1234567890">
+            <div class="error-message-wrapper" *ngIf="contactForm.controls['mobile'].touched && !contactForm.controls['mobile'].valid">
+              <span class="error-message" *ngIf="contactForm.controls['mobile'].hasError('required')"> {{errorMessage.required}}</span>
+              <span class="error-message" *ngIf="contactForm.controls['mobile'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.mobileMinLength}}</span>
+              <span class="error-message" *ngIf="contactForm.controls['mobile'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.mobileMaxLength}}</span>
+            </div>
+          </div>
+          <div class="margin-bottom-one">
+            <label class="label" for="message">Message *</label>
+            <textarea formControlName="message" id="message" class="form-control item message" type="text" name="message" placeholder="Write us a message"></textarea>
+            <div class="error-message-wrapper" *ngIf="contactForm.controls['message'].touched && !contactForm.controls['message'].valid">
+              <span class="error-message" *ngIf="contactForm.controls['mobile'].hasError('required')"> {{errorMessage.required}}</span>
+              <span class="error-message" *ngIf="contactForm.controls['message'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.messageMinLength}}</span>
+              <span class="error-message" *ngIf="contactForm.controls['message'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.messageMaxLength}}</span>
+            </div>
+          </div>
+          <div class="">
+            <button [disabled]="!contactForm.valid" [ngClass]="{'pointer-not-allowed' : !contactForm.valid}" type="submit" class="btn app-btn app-btn-primary btn-block">Send Message</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
+</div>
+
+
+<div id="contactModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><strong>Thank you!</strong></h3>
+            </div>
+            <div class="modal-body">
+                <p>Your message has been successfully sent. We will contact you very soon!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn app-btn app-btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>

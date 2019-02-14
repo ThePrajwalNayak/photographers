@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
+declare var $: any;
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +9,52 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  contactForm: FormGroup;
+
+  errorMessage: any = {
+    required: 'Required',
+    minlength: 'Min length is',
+    maxLength: 'Max length is'
+  }
+
+  validation: any = {
+    nameMinLength: 5,
+    nameMaxLength: 30,
+    emailMinLength: 5,
+    emailMaxLength: 30,
+    mobileMinLength: 5,
+    mobileMaxLength: 30,
+    messageMinLength: 5,
+    messageMaxLength: 100,
+  }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.initContactForm();
+  }
+
+  initContactForm() {
+    this.contactForm = this.formBuilder.group({
+      fullName: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.nameMaxLength), Validators.minLength(this.validation.nameMinLength)])],
+      email: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.emailMaxLength), Validators.minLength(this.validation.emailMinLength)])],
+      mobile: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.mobileMaxLength), Validators.minLength(this.validation.mobileMinLength)])],
+      message: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.messageMaxLength), Validators.minLength(this.validation.messageMinLength)])],
+    });
+  }
+
+  createContact(contactForm) {
+    if (contactForm.status === 'VALID') {
+      var form = contactForm;
+      var reqObj = {
+        fullname: form.get('fullName').value,
+        email: form.get('email').value,
+        mobile: form.get('mobile').value,
+        message: form.get('message').value
+      };
+      this.initContactForm();
+      $("#contactModal").modal('show');
+
+    }
   }
 
 }
