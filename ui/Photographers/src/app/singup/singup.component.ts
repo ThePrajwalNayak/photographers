@@ -34,7 +34,7 @@ export class SingupComponent implements OnInit {
     locationMinLength: 3,
     locationMaxLength: 20,
     dobMinLength: 3,
-    dobMaxLength: 20,
+    dobMaxLength: 40,
     sexMinLength: 3,
     sexMaxLength: 20,
     aboutMinLength: 100,
@@ -47,11 +47,11 @@ export class SingupComponent implements OnInit {
     videoLinkMaxLength: 100,
   }
   photographer: any = {};
-  profilePicture : any;
+  profilePicture: any;
   base64textString = [];
   signupForm: FormGroup;
-  signupResponse : any;
-  constructor(private formBuilder: FormBuilder, private signUpService : SingupService, private router : Router) { }
+  signupResponse: any;
+  constructor(private formBuilder: FormBuilder, private signUpService: SingupService, private router: Router) { }
 
   ngOnInit() {
     this.initSignupForm();
@@ -99,49 +99,50 @@ export class SingupComponent implements OnInit {
   }
 
   createPhotographer(signupForm) {
-    var form = this.signupForm;
-    var picture;
-    if(this.profilePicture){
-      picture = this.profilePicture[0].split(',');
-      picture = picture[1];
-    }
-    var reqObj = {
+    if (signupForm.status === 'VALID') {
+      var form = this.signupForm;
+      var picture;
+      if (this.profilePicture) {
+        picture = this.profilePicture[0].split(',');
+        picture = picture[1];
+      }
+      var reqObj = {
         username: form.get('username').value,
         profilePicture: picture ? picture : null,
         password: form.get('password').value,
         firstName: form.get('firstName').value,
         lastName: form.get('lastName').value,
-        email: form.get('email').value,    
+        email: form.get('email').value,
         phoneNumber: form.get('phoneNumber').value ? form.get('phoneNumber').value : null,
-        location : form.get('location').value ? form.get('location').value : null,
+        location: form.get('location').value ? form.get('location').value : null,
         dob: form.get('dob').value ? form.get('dob').value : null,
         sex: form.get('sex').value ? (form.get('sex').value == 'Male' ? 'M' : 'F') : null,
         about: form.get('about').value,
-        linkFacebook: form.get('linkFacebook').value ? form.get('linkFacebook').value : null ,
+        linkFacebook: form.get('linkFacebook').value ? form.get('linkFacebook').value : null,
         linkLinkedIn: form.get('linkLinkedIn').value ? form.get('linkLinkedIn').value : null,
         linkTwitter: form.get('linkTwitter').value ? form.get('linkTwitter').value : null,
         linkInstagram: form.get('linkInstagram').value ? form.get('linkInstagram').value : null,
         photoLink: form.get('photoLink').value ? form.get('photoLink').value : null,
         videoLink: form.get('videoLink').value ? form.get('videoLink').value : null
-    };
-    debugger;
-    this.signUpService.createAccount(reqObj)
-    .subscribe(data => {
-      this.signupResponse = data;
-      if(this.signupResponse && this.signupResponse._id){
-        this.initSignupForm();
-        $("#successModal").modal('show');
-      }
-    }, err => {
-      console.log(err);
-    });
+      };
+      this.signUpService.createAccount(reqObj)
+        .subscribe(data => {
+          this.signupResponse = data;
+          if (this.signupResponse && this.signupResponse._id) {
+            this.initSignupForm();
+            $("#successModal").modal('show');
+          }
+        }, err => {
+          console.log(err);
+        });
+    }
   }
 
-  navigateToHome(){
+  navigateToHome() {
     this.router.navigateByUrl('/home');
   }
 
   revert() {
-  this.signupForm.reset();
-}
+    this.signupForm.reset();
+  }
 }
