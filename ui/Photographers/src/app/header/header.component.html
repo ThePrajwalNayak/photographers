@@ -1,15 +1,30 @@
 <div id="header">
     <div class="row nav-wrapper margin-top-one margin-bottom-one">
         <div class="logo-wrapper col-md-4">
-            <a class="logo" routerLink="/home" >
+            <a class="logo" routerLink="/home">
                 <fa name="camera" animation="spin"></fa>
                 <span class="first">PICK</span><span class="second">PHOTOGRAPHERS</span>
             </a>
         </div>
-        <div class="col-md-5"></div>
-        <div class="signup-login col-md-3">
-             <a class="signup" routerLink="/signup">Signup</a>
-             <a class="login margin-left-one">Login</a>
+        <div class="col-md-4"></div>
+        <div class="col-md-2">
+            <div class="dropdown">
+                <button type="button" class="btn app-btn app-btn-primary dropdown-toggle right" data-toggle="dropdown">Signup</button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" routerLink="/signup">Photographer</a>
+                    <a class="dropdown-item disabled" href="#">Visitor</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="dropdown">
+                <button type="button" class="btn app-btn app-btn-primary dropdown-toggle" data-toggle="dropdown">Login</button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item disabled" href="#">Photographer</a>
+                    <a class="dropdown-item disabled" href="#">Visitor</a>
+                    <a class="dropdown-item disabled" href="#">Admin</a>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row row-nav" *ngIf="currentUrl !== '/signup'">
