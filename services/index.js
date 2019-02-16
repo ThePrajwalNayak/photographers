@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Photographers = require('./models/photographers.js');
+const Contacts = require('./models/contacts.js');
 var randomstring = require("randomstring");
 
 // const dbConnection = "mongodb://accountUser:password@localhost:27017/dbname";
@@ -32,6 +33,8 @@ app.use(function (req, res, next) {
 app.get('/', function (req, res) {
     res.json({ message: 'Hey!' });
 });
+
+//START PHOTOGRAPHERS
 
 //Sorting by entered date
 app.get('/api/photographers', function (req, res) {
@@ -104,3 +107,32 @@ app.post('/api/login', function (req, res) {
        res.json(photographer)
       });
 });
+
+//END PHOTOGRAPHERS
+
+
+//START CONTACTS
+
+app.post('/api/contacts', function (req, res) {
+    console.log('SAVE CONTATCS');
+    Contacts.create({
+        fullName: req.body.fullName,
+        email: req.body.email,
+        mobile:  req.body.mobile,
+        message: req.body.message
+    }).then(Contacts => {
+        res.json(Contacts);
+    }, err => {
+        res.json(err.message);
+    })
+});
+
+//Sorting by entered date
+app.get('/api/contacts', function (req, res) {
+    console.log('GET CONTATCS');
+    Contacts.find({}).sort({enterdDt: -1}).then(eachOne => {
+        res.json(eachOne);
+    });
+});
+
+//END CONTACTS
