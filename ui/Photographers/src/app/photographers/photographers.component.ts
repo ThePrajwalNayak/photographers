@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { PhotographersService } from '../photographers.service';
+import { PhotographersService } from './photographers.service';
 
 @Component({
   selector: 'app-photographers',
