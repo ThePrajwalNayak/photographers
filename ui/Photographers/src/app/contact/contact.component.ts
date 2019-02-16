@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 declare var $: any;
+import { ContactService } from './contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -25,9 +26,12 @@ export class ContactComponent implements OnInit {
     mobileMinLength: 5,
     mobileMaxLength: 30,
     messageMinLength: 5,
-    messageMaxLength: 100,
+    messageMaxLength: 500,
   }
-  constructor(private formBuilder: FormBuilder) { }
+
+  response: any;
+
+  constructor(private formBuilder: FormBuilder, private contactService: ContactService) { }
 
   ngOnInit() {
     this.initContactForm();
@@ -51,9 +55,16 @@ export class ContactComponent implements OnInit {
         mobile: form.get('mobile').value,
         message: form.get('message').value
       };
-      this.initContactForm();
-      $("#contactModal").modal('show');
-
+      this.contactService.createContact(reqObj)
+        .subscribe(data => {
+          this.response = data;
+          if (this.response._id) {
+            this.initContactForm();
+            $("#contactModal").modal('show');
+          }
+        }, err => {
+          console.log(err);
+        });
     }
   }
 

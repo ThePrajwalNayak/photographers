@@ -18,6 +18,7 @@ import { VideosComponent } from './videos/videos.component';
 import { ContactComponent } from './contact/contact.component';
 import { SingupComponent } from './singup/singup.component';
 import { SingupService } from './singup/singup.service';
+import { ContactService } from './contact/contact.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { SingupService } from './singup/singup.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [PhotographersService, {provide: LocationStrategy, useClass: HashLocationStrategy}, SingupService],
+  providers: [PhotographersService, {provide: LocationStrategy, useClass: HashLocationStrategy}, SingupService, ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
