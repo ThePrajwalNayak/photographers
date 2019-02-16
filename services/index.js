@@ -36,6 +36,13 @@ app.get('/', function (req, res) {
 
 //START PHOTOGRAPHERS
 
+// app.get('/api/photographers', function (req, res) {
+//     console.log('GET PHOTOGRAPHERS WITH LIMIT : '+parseInt(req.query.limit));
+//     Photographers.find({}).sort({enterdDt: -1}).limit(parseInt(req.query.limit)).then(eachOne => {
+//         res.json(eachOne);
+//     });
+// });
+
 //Sorting by entered date
 app.get('/api/photographers', function (req, res) {
     console.log('GET PHOTOGRAPHERS');
@@ -43,6 +50,7 @@ app.get('/api/photographers', function (req, res) {
         res.json(eachOne);
     });
 });
+
 
 app.post('/api/photographers', function (req, res) {
     console.log('SAVE PHOTOGRAPHERS');
