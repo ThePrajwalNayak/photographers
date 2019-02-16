@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+import { environment } from '../../environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ContactService {
 
-  BASE_URL = "http://pickphotographersapi.tk/api";
-  // BASE_URL = "http://localhost:3000/api";
+  BASE_URL = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
 
