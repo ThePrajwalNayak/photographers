@@ -6,7 +6,7 @@
       overflow-y: scroll;
       .photographers-card {
         background-color: $card-color-background;
-        .photographers-photo-size{
+        .photographers-photo-size {
           width: 50px;
           height: 50px;
         }
@@ -16,27 +16,35 @@
           font-family: MontserratSemiBold;
         }
       }
-      .selected-photographer{
-          background: $app-color-secondary;
+      .selected-photographer {
+        background: $app-color-secondary;
       }
     }
     .card-right {
       .selected-photographer {
-        .background {
-          border: 1px solid $card-color-background;
-          background-image: url('../../assets/images/images/image3.jpg');
-          background-color: $card-color-background;
-          height: 300px;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-          img {
-            position: absolute;
-            bottom: -25%;
-            margin-left: 50%;
-            transform: translate(-50%, 0);
-            height: 200px;
-            width: 200px;
+        .fullscreen-bg {
+          position: relative;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          overflow: hidden;
+          z-index: -100;
+          margin-bottom: -170px;
+          .fullscreen-bg__video {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 300px
+          }
+          .img-thumbnail {
+            position: relative;
+            width: 200px !important;
+            height: 200px !important;
+            left: 50%;
+            top: -110px;
+            transform: translateX(-50%);
           }
         }
         .card {

@@ -1,7 +1,8 @@
 <div id="photographers" class="app-conatiner">
     <div class="row">
         <div class="col-md-3 card-left">
-            <div class="photographers-card clearfix padding-one pointer" [ngClass]="{'selected-photographer' : photographer._id== selectedPhotographer._id}" (click)="setPhotographer(photographer)" *ngFor="let photographer of photographers">
+            <div class="photographers-card clearfix padding-one pointer" [ngClass]="{'selected-photographer' : photographer._id== selectedPhotographer._id}"
+                (click)="setPhotographer(photographer)" *ngFor="let photographer of photographers">
                 <img class="img-thumbnail left margin-right-one photographers-photo-size" *ngIf="photographer.profilePicture" [src]="'data:image/jpg;base64,'+photographer.profilePicture"
                 />
                 <img class="img-thumbnail left margin-right-one photographers-photo-size" *ngIf="!photographer.profilePicture" src="../../assets/images/placeholder_person.png"
@@ -11,7 +12,12 @@
         </div>
         <div class="col-md-9 card-right">
             <div class="selected-photographer" *ngIf="selectedPhotographer">
-                <div class="background relative">
+                <div class="fullscreen-bg">
+                    <video loop muted autoplay poster="/assets/images/Beach-Camera/Snapshots/Beach-Camera.jpg" class="fullscreen-bg__video">
+                        <source src="/assets/images/Beach-Camera/WEBM/Beach-Camera..webm" type="video/webm">
+                        <source src="/assets/images/Beach-Camera/MP4/Beach-Camera.mp4" type="video/mp4">
+                        <source src="/assets/images/Beach-Camera/OGV/Beach-Camera.ogv" type="video/ogv">
+                    </video>
                     <img class="img-thumbnail" *ngIf="selectedPhotographer.profilePicture" [src]="'data:image/jpg;base64,'+selectedPhotographer.profilePicture"
                     />
                     <img class="img-thumbnail" *ngIf="!selectedPhotographer.profilePicture" src="../../assets/images/placeholder_person.png"
@@ -29,12 +35,14 @@
                         <span class="col-md-3 pointer"><i class="fa fa-mobile margin-right-half"></i>Unlock Phone</span>
                     </div>
                     <p>
-                        <a title="Image Link" class="pointer" [ngClass]="{'pointer-not-allowed' : selectedPhotographer.photoLink === null}" (click)="openLink(selectedPhotographer.photoLink)" target="_blank">
+                        <a title="Image Link" class="pointer" [ngClass]="{'pointer-not-allowed' : selectedPhotographer.photoLink === null}" (click)="openLink(selectedPhotographer.photoLink)"
+                            target="_blank">
                             <i class="fa fa-link margin-right-half"></i>Image Link
                         </a>
                     </p>
                     <p>
-                        <a title="Video Link" class="pointer" [ngClass]="{'pointer-not-allowed' : selectedPhotographer.videoLink === null}" (click)="openLink(selectedPhotographer.videoLink)" target="_blank">
+                        <a title="Video Link" class="pointer" [ngClass]="{'pointer-not-allowed' : selectedPhotographer.videoLink === null}" (click)="openLink(selectedPhotographer.videoLink)"
+                            target="_blank">
                             <i class="fa fa-link margin-right-half"></i>Video Link
                         </a>
                     </p>
@@ -44,10 +52,14 @@
                 </div>
                 <div class="card card-contact margin-top-one padding-one">
                     <div class="text-center">
-                        <a class="margin-right-one pointer" [ngClass]="{'pointer-not-allowed' : selectedPhotographer.linkFacebook === null}" title="Facebook Page" (click)="openLink(selectedPhotographer.linkFacebook)" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a class="margin-right-one pointer" [ngClass]="{'pointer-not-allowed' : selectedPhotographer.linkTwitter === null}" title="Twitter Page" (click)="openLink(selectedPhotographer.linkTwitter)" target="_blank"><i class="fa fa-twitter"></i></a>
-                        <a class="margin-right-one pointer" [ngClass]="{'pointer-not-allowed' : selectedPhotographer.linkInstagram === null}" title="Instagram Page" (click)="openLink(selectedPhotographer.linkInstagram)" target="_blank"><i class="fa fa-instagram"></i></a>
-                        <a class="margin-right-one pointer" [ngClass]="{'pointer-not-allowed' : selectedPhotographer.linkLinkedIn === null}" title="Linked Page" (click)="openLink(selectedPhotographer.linkLinkedIn)" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        <a class="margin-right-one pointer" [ngClass]="{'pointer-not-allowed' : selectedPhotographer.linkFacebook === null}" title="Facebook Page"
+                            (click)="openLink(selectedPhotographer.linkFacebook)" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a class="margin-right-one pointer" [ngClass]="{'pointer-not-allowed' : selectedPhotographer.linkTwitter === null}" title="Twitter Page"
+                            (click)="openLink(selectedPhotographer.linkTwitter)" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a class="margin-right-one pointer" [ngClass]="{'pointer-not-allowed' : selectedPhotographer.linkInstagram === null}" title="Instagram Page"
+                            (click)="openLink(selectedPhotographer.linkInstagram)" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a class="margin-right-one pointer" [ngClass]="{'pointer-not-allowed' : selectedPhotographer.linkLinkedIn === null}" title="Linked Page"
+                            (click)="openLink(selectedPhotographer.linkLinkedIn)" target="_blank"><i class="fa fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
