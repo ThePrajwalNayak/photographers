@@ -19,6 +19,8 @@ import { ContactComponent } from './contact/contact.component';
 import { SingupComponent } from './singup/singup.component';
 import { SingupService } from './singup/singup.service';
 import { ContactService } from './contact/contact.service';
+import { HoneymoonPhotographerService } from './honeymoon-photographer/honeymoon-photographer.service';
+import { HoneymoonPhotographerComponent } from './honeymoon-photographer/honeymoon-photographer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { ContactService } from './contact/contact.service';
     ImagesComponent,
     VideosComponent,
     ContactComponent,
-    SingupComponent
+    SingupComponent,
+    HoneymoonPhotographerComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,7 @@ import { ContactService } from './contact/contact.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [PhotographersService, {provide: LocationStrategy, useClass: HashLocationStrategy}, SingupService, ContactService],
+  providers: [PhotographersService, {provide: LocationStrategy, useClass: HashLocationStrategy}, SingupService, ContactService, HoneymoonPhotographerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

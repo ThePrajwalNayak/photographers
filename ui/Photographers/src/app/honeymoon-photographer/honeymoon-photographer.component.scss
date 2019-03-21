@@ -1,0 +1,44 @@
+@import "../../_variables";
+#honeymoonPhotography {
+  #leader-picture {
+    height: 300px;
+    background: url(/assets/images/images/honeymoonLeaderPicture.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  #contact-wrapper {
+    background-color: $app-btn-primary-color-background;
+    padding: 6%;
+    #contact {}
+  }
+  .card-how-it-works-wrapper {
+    .card-how-it-works {
+      padding: 0 3%;
+      .icon {
+        margin-left: 25%;
+        margin-bottom: 15%;
+      }
+      .label {
+        font-family: MontserratSemiBold;
+      }
+      .description {
+        font-size: 16px;
+      }
+    }
+  }
+  #facebook-like-wrapper {
+    background-color: $app-btn-primary-color-background;
+    padding: 6%;
+    height: 650px;
+    #facebook-like {
+      .fb-page{
+        position: absolute;
+        right: 50px;
+        top: 0;
+      }
+    }
+  }
+}
+

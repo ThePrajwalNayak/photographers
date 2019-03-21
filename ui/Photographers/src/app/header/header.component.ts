@@ -12,11 +12,11 @@ export class HeaderComponent implements OnInit {
 
   HOME : string = 'Home';
   PHOTOGRAPHERS : string = 'Photographers';
-  VIDEOS : string = 'Videos';
+  HONEYMOON_PHOTOGRAPGER : string = 'Honeymoon Photographer';
   IMAGES : string = 'Images';
   EXPLORE : string = 'Explore';
   CONTACT : string = 'Contact';
-  selectedNavMenu : string = this.HOME;
+  selectedNavMenu : string = this.HONEYMOON_PHOTOGRAPGER;
   currentUrl : string;
 
   constructor(location: Location, router: Router) {
@@ -26,8 +26,8 @@ export class HeaderComponent implements OnInit {
            this.selectedNavMenu = this.HOME;
          }else  if(this.currentUrl === '/photographers'){
            this.selectedNavMenu = this.PHOTOGRAPHERS;
-         }else  if(this.currentUrl === '/videos'){
-           this.selectedNavMenu = this.VIDEOS;
+         }else  if(this.currentUrl === '/honeymoonPhotographer'){
+           this.selectedNavMenu = this.HONEYMOON_PHOTOGRAPGER;
          }else  if(this.currentUrl === '/images'){
            this.selectedNavMenu = this.IMAGES;
          }else  if(this.currentUrl === '/explore'){

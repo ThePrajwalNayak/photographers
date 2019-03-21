@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl : 'http://pickphotographersapi.tk/api'
+  baseUrl : 'http://1pickphotographersapi.tk/api'
 };
 
 /*
