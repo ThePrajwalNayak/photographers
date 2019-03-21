@@ -18,12 +18,13 @@
   <div class="col-md-6 image-wrapper">
     <div class="image-card margin-top-half" *ngFor="let imageCard of imageCards">
       <div class="padding-one clearfix">
-        <img class="img-thumbnail left margin-right-one photographers-photo-size" src="../../assets/images/images_photographers_thumbnail/{{imageCard.photographerImage}}.jpeg"
+        <img class="img-thumbnail left margin-right-one photographers-photo-size" src="{{imageCard.photographerImage}}"
         />
         <span class="author block margin-top-half">{{imageCard.photographer}}</span>
         <span class="time block">{{imageCard.time}} hours ago</span>
       </div>
-      <img class="feed-image width-full" src="../../assets/images/images/{{imageCard.photographerImage}}.jpg" />
+      <!--<img class="feed-image width-full" src="../../assets/images/images/{{imageCard.photographerImage}}.jpg" />-->
+      <img class="feed-image width-full" src="{{imageCard.photoImage}}" />
       <div class="padding-one text-center">
         <span class="margin-right-one"><i class="fa fa-thumbs-up fa-thumbsup-color margin-right-quater"></i>{{imageCard.likes}}</span>
         <span class="margin-right-one"><i class="fa fa-comment fa-comment-color margin-right-quater"></i>{{imageCard.thumbsup}}</span>

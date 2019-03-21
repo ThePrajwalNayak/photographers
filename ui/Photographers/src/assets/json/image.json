@@ -1,47 +1,52 @@
 [
     {
-        "id" : 1,
-        "photographer" : "Jone Richard",
-        "time" : 2,
-        "photographerImage" : "image1",
-        "likes" : 166,
-        "thumbsup" : 20,
-        "heart" : 7
+        "id": 1,
+        "photographer": "Aarav Sharma",
+        "time": 2,
+        "photographerImage": "/assets/images/ImageComponent/photographerImage/AaravSharma.jpeg",
+        "photoImage": "/assets/images/ImageComponent/photoImage/AaravSharma.jpg",
+        "likes": 166,
+        "thumbsup": 20,
+        "heart": 7
     },
     {
-        "id" : 2,
-        "photographer" : "Mark Wagh",
-        "time" : 3,
-        "photographerImage" : "image2",
-        "likes" : 16,
-        "thumbsup" : 5,
-        "heart" : 3
+        "id": 2,
+        "photographer": "Vivaan Ahuja",
+        "time": 3,
+        "photographerImage": "/assets/images/ImageComponent/photographerImage/VivaanAhuja.jpeg",
+        "photoImage": "/assets/images/ImageComponent/photoImage/VivaanAhuja.jpg",
+        "likes": 16,
+        "thumbsup": 5,
+        "heart": 3
     },
     {
-        "id" : 3,
-        "photographer" : "Andrew Fliontof",
-        "time" : 5,
-        "photographerImage" : "image3",
-        "likes" : 216,
-        "thumbsup" : 34,
-        "heart" : 8
+        "id": 3,
+        "photographer": "Aditya Anand",
+        "time": 5,
+        "photographerImage": "/assets/images/ImageComponent/photographerImage/AdityaAnand.jpeg",
+        "photoImage": "/assets/images/ImageComponent/photoImage/AdityaAnand.jpg",
+        "likes": 216,
+        "thumbsup": 34,
+        "heart": 8
     },
     {
-        "id" : 4,
-        "photographer" : "Steve James",
-        "time" : 6,
-        "photographerImage" : "image4",
-        "likes" : 78,
-        "thumbsup" : 32,
-        "heart" : 12
+        "id": 4,
+        "photographer": "Neha Sharma",
+        "time": 6,
+        "photographerImage": "/assets/images/ImageComponent/photographerImage/NehaSharma.jpeg",
+        "photoImage": "/assets/images/ImageComponent/photoImage/NehaSharma.jpg",
+        "likes": 78,
+        "thumbsup": 32,
+        "heart": 12
     },
     {
-        "id" : 5,
-        "photographer" : "Jony Walker",
-        "time" : 8,
-        "photographerImage" : "image5",
-        "likes" : 54,
-        "thumbsup" : 14,
-        "heart" : 3
+        "id": 5,
+        "photographer": "Ishan Varma",
+        "time": 8,
+        "photographerImage": "/assets/images/ImageComponent/photographerImage/IshanVarma.jpeg",
+        "photoImage": "/assets/images/ImageComponent/photoImage/IshanVarma.jpg",
+        "likes": 54,
+        "thumbsup": 14,
+        "heart": 3
     }
 ]
