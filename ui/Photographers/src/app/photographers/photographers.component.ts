@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 import { PhotographersService } from './photographers.service';
 
@@ -11,18 +12,22 @@ export class PhotographersComponent implements OnInit {
 
   photographers: any;
   selectedPhotographer: any;
-  constructor(private photographersService: PhotographersService) { }
+  constructor(private photographersService: PhotographersService,
+  private spinnerService: Ng4LoadingSpinnerService) { }
 
   ngOnInit() {
+    this.spinnerService.show();
     this.loadAllPhotographers();
   }
 
   loadAllPhotographers() {
+    
     this.photographersService.getAllPhotographers()
       .subscribe(data => {
         console.log(data);
         this.photographers = data
         this.selectedPhotographer = this.photographers[0];
+        this.spinnerService.hide();
       }, err => {
         console.log(err);
       });

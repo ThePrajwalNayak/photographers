@@ -5,6 +5,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,7 +42,8 @@ import { HoneymoonPhotographerComponent } from './honeymoon-photographer/honeymo
     HttpClientModule,
     AngularFontAwesomeModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng4LoadingSpinnerModule.forRoot()
   ],
   providers: [PhotographersService, {provide: LocationStrategy, useClass: HashLocationStrategy}, SingupService, ContactService, HoneymoonPhotographerService],
   bootstrap: [AppComponent]
