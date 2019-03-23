@@ -1,0 +1,83 @@
+[
+    {
+        "id": 1,
+        "photographer": "Sanjay Shekar",
+        "date": "Tomorrow",
+        "price": 100,
+        "eventName": "Nature photography",
+        "eventPlace": "Lalbagh glass house, Bengaluru",
+        "eventImage": "/assets/images/ImageComponent/photographerImage/ArushPatel.jpeg"
+    },
+    {
+        "id": 2,
+        "photographer": "Rohit Gupta",
+        "date": "Tomorrow",
+        "price": 400,
+        "eventName": "International adanced editing course",
+        "eventPlace": "Homi Modi St, Kala Ghoda, Fort, Mumbai",
+        "eventImage": "/assets/images/ImageComponent/photographerImage/ArushPatel.jpeg"
+    },
+    {
+        "id": 3,
+        "photographer": "Rani Savant",
+        "date": "Tomorrow",
+        "price": 600,
+        "eventName": "Basics of wildlife photography",
+        "eventPlace": "G B Road, Delhi",
+        "eventImage": "/assets/images/ImageComponent/photographerImage/ArushPatel.jpeg"
+    },
+    {
+        "id": 4,
+        "photographer": "Mahendra Kumar",
+        "date": "Weekend",
+        "price": 900,
+        "eventName": "Photography workshop",
+        "eventPlace": "ICICI bank road, NCR",
+        "eventImage": "/assets/images/ImageComponent/photographerImage/ArushPatel.jpeg"
+    },
+    {
+        "id": 5,
+        "photographer": "Pramod Bhat",
+        "date": "Weekend",
+        "price": 999,
+        "eventName": "DSLR photography - level 2",
+        "eventPlace": "Cubbon park, Bengaluru",
+        "eventImage": "/assets/images/ImageComponent/photographerImage/ArushPatel.jpeg"
+    },
+    {
+        "id": 6,
+        "photographer": "Rekha Phatak",
+        "date": "Next Week",
+        "price": 1500,
+        "eventName": "Nature photography",
+        "eventPlace": "Bannerghatta Biological Park, Bengaluru",
+        "eventImage": "/assets/images/ImageComponent/photographerImage/ArushPatel.jpeg"
+    },
+    {
+        "id": 7,
+        "photographer": "Nikhil Manju",
+        "date": "Next Week",
+        "price": 500,
+        "eventName": "Kids Post Processing Workshop",
+        "eventPlace": "MR road, Gujarath",
+        "eventImage": "/assets/images/ImageComponent/photographerImage/ArushPatel.jpeg"
+    },
+    {
+        "id": 8,
+        "photographer": "Kareena Rai",
+        "date": "Next Month",
+        "price": 300,
+        "eventName": "Wildlife photography",
+        "eventPlace": "ITPL Tech Park, Bengaluru",
+        "eventImage": "/assets/images/ImageComponent/photographerImage/ArushPatel.jpeg"
+    },
+    {
+        "id": 9,
+        "photographer": "Radhika Lokesh",
+        "date": "Next Month",
+        "price": 2000,
+        "eventName": "Wedding Photography Workshop",
+        "eventPlace": "Tilak road, Mangalore",
+        "eventImage": "/assets/images/ImageComponent/photographerImage/ArushPatel.jpeg"
+    }
+]

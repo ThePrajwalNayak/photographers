@@ -1,3 +1,23 @@
-<p>
-  explore works!
-</p>
+<div id="exploreComponent">
+
+  <div class="row">
+    <div class="row-left col-md-3">Left Menu</div>
+    <div class="row-right col-md-9">
+      <div id="events" class="row">
+        <div class="event-card col-md-4" *ngFor="let eventCard of eventCards">
+          <div class="event-image-wrapper relative">
+            <img src="{{eventCard.eventImage}}" />
+          </div>
+          <p class="photographer">{{eventCard.photographer}}</p>
+          <p class="name">{{eventCard.eventName}}</p>
+          <p class="place">{{eventCard.eventPlace}}</p>
+          <div class="row">
+            <p class="col-md-6 price"><i class="fa fa-rupee margin-right-one"></i>{{eventCard.price}}</p>
+            <p class="col-md-6 date">{{eventCard.date}}</p>
+          </div>
+          <a class="app-btn app-btn-primary margin-top-half" routerLink="/contact">Book tickets</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
