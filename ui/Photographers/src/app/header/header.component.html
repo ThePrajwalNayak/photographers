@@ -6,8 +6,8 @@
                 <span class="first">PICK</span><span class="second">PHOTOGRAPHERS</span>
             </a>
         </div>
-        <div class="col-md-4"></div>
-        <div class="col-md-2">
+        <div class="col-md-4 display-none-mobile"></div>
+        <div class="col-md-2 signup">
             <div class="dropdown">
                 <button type="button" class="btn app-btn app-btn-primary dropdown-toggle right" data-toggle="dropdown">Signup</button>
                 <div class="dropdown-menu">
@@ -16,49 +16,48 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 login">
             <div class="dropdown">
                 <button type="button" class="btn app-btn app-btn-primary dropdown-toggle" data-toggle="dropdown">Login</button>
                 <div class="dropdown-menu">
                     <a class="dropdown-item disabled" href="#">Photographer</a>
                     <a class="dropdown-item disabled" href="#">Visitor</a>
-                    <a class="dropdown-item disabled" href="#">Admin</a>
                 </div>
             </div>
         </div>
     </div>
     <div class="row row-nav" *ngIf="currentUrl !== '/signup'">
-        <div class="col-md-2 clean-black relative" [ngClass]="{'active-link' : selectedNavMenu === HOME}">
+        <div class="col-md-2 col-xs-3 clean-black relative" [ngClass]="{'active-link' : selectedNavMenu === HOME}">
             <a class="center-absolute text-center" routerLink="/home" (click)="setSelectedNavMenu(HOME)">
                 <i class="fa fa-home "></i>
                 <span class="block">Home</span>
             </a>
         </div>
-        <div class="col-md-2 dark-black relative" [ngClass]="{'active-link' : selectedNavMenu === PHOTOGRAPHERS}">
+        <div class="col-md-2 col-xs-3 dark-black relative" [ngClass]="{'active-link' : selectedNavMenu === PHOTOGRAPHERS}">
             <a class="center-absolute text-center" routerLink="/photographers" (click)="setSelectedNavMenu(PHOTOGRAPHERS)">
                 <i class="fa fa-user"></i>
                 <span class="block">Photographers</span>
             </a>
         </div>
-        <div class="col-md-2 clean-black relative" [ngClass]="{'active-link' : selectedNavMenu === HONEYMOON_PHOTOGRAPGER}">
+        <div class="col-md-2 col-xs-3 clean-black relative" [ngClass]="{'active-link' : selectedNavMenu === HONEYMOON_PHOTOGRAPGER}">
             <a class="center-absolute text-center" routerLink="/honeymoonPhotographer" (click)="setSelectedNavMenu(HONEYMOON_PHOTOGRAPGER)">
                   <i class="fa fa-align-left"></i>
                 <span class="block">Honeymoon Photography</span>
             </a>
         </div>
-        <div class="col-md-2 dark-black relative" [ngClass]="{'active-link' : selectedNavMenu === IMAGES}">
+        <div class="col-md-2 col-xs-3 dark-black relative" [ngClass]="{'active-link' : selectedNavMenu === IMAGES}">
             <a class="center-absolute text-center" routerLink="/images" (click)="setSelectedNavMenu(IMAGES)">
                 <i class="fa fa-crosshairs"></i>
                 <span class="block">Images</span>
             </a>
         </div>
-        <div class="col-md-2 clean-black relative" [ngClass]="{'active-link' : selectedNavMenu === EXPLORE}">
+        <div class="col-md-2 col-xs-3 clean-black relative" [ngClass]="{'active-link' : selectedNavMenu === EXPLORE}">
             <a class="center-absolute text-center" routerLink="/explore" (click)="setSelectedNavMenu(EXPLORE)">
                   <i class="fa fa-align-left"></i>
                 <span class="block">Explore</span>
             </a>
         </div>
-        <div class="col-md-2 dark-black relative" [ngClass]="{'active-link' : selectedNavMenu === CONTACT}">
+        <div class="col-md-2 col-xs-3 dark-black relative" [ngClass]="{'active-link' : selectedNavMenu === CONTACT}">
             <a class="center-absolute text-center" routerLink="/contact" (click)="setSelectedNavMenu(CONTACT)">
                 <i class="fa fa-crosshairs"></i>
                 <span class="block">Contact</span>
