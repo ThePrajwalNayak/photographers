@@ -36,7 +36,7 @@
         <form [formGroup]='contactForm' (ngSubmit)="createContact(contactForm)">
           <div class="margin-bottom-one">
             <label class="label" for="fullName">Full Name *</label>
-            <input formControlName="fullName" id="fullName" class="form-control item" type="text" name="fullName" placeholder="Mark Taylor">
+            <input formControlName="fullName" id="fullName" class="form-control item" type="text" name="fullName" placeholder="Aayush Varma">
             <div class="error-message-wrapper" *ngIf="contactForm.controls['fullName'].touched && !contactForm.controls['fullName'].valid">
               <span class="error-message" *ngIf="contactForm.controls['fullName'].hasError('required')"> {{errorMessage.required}}</span>
               <span class="error-message" *ngIf="contactForm.controls['fullName'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.nameMinLength}}</span>
@@ -45,7 +45,7 @@
           </div>
           <div class="margin-bottom-one">
             <label class="label" for="email">Email *</label>
-            <input formControlName="email" id="email" class="form-control item" type="text" name="email" placeholder="mark.taylor@abc.com">
+            <input formControlName="email" id="email" class="form-control item" type="text" name="email" placeholder="aayush.varma@abc.com">
             <div class="error-message-wrapper" *ngIf="contactForm.controls['email'].touched && !contactForm.controls['email'].valid">
               <span class="error-message" *ngIf="contactForm.controls['email'].hasError('required')"> {{errorMessage.required}}</span>
               <span class="error-message" *ngIf="contactForm.controls['email'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.emailMinLength}}</span>

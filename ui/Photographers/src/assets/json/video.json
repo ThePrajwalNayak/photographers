@@ -1,23 +1,23 @@
 [{
-    "photographer": "Carla Houston",
+    "photographer": "Nikitha Arora",
     "photographerImage": "Carla Houston.jpeg",
     "video": "video1.mp4",
     "time": 1
   },
   {
-    "photographer": "Jim Hayden",
+    "photographer": "Pranay Acharya",
     "photographerImage": "Jim Hayden.jpeg",
     "video": "video2.mp4",
     "time": 2
   },
   {
-    "photographer": "Kaitlyn Kristy",
+    "photographer": "Ahana Anand",
     "photographerImage": "Kaitlyn Kristy.jpeg",
     "video": "video3.mp4",
     "time": 2
   },
   {
-    "photographer": "Natosha Jacobs",
+    "photographer": "Reema Gupta",
     "photographerImage": "Natosha Jacobs.jpg",
     "video": "video4.mp4",
     "time": 3
@@ -29,7 +29,7 @@
     "time": 5
   },
   {
-    "photographer": "Richard Jones",
+    "photographer": "Madhav Khatri",
     "photographerImage": "Richard Jones.jpeg",
     "video": "video6.mp4",
     "time": 6
