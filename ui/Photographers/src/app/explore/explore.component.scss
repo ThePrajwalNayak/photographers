@@ -55,3 +55,32 @@
   }
 }
 
+//Mobile media query
+@media (min-width: 320px) and (max-width: 480px) {
+  #exploreComponent {
+    padding: 3rem 2rem;
+    .row {
+      .row-left {
+        .add-wrapper {
+          display: none;
+        }
+      }
+      .row-right {
+        #events {
+          .event-card {
+            .row {
+              .price {
+                width: 50%;
+                float: left;
+              }
+              .date {
+                width: 50%;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
