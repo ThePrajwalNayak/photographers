@@ -1,12 +1,10 @@
 @import "../../_variables";
 #imageComponent {
   #images {
-        padding: 1% 7%;
-       display: flex;
-    // justify-content: space-between;
+    padding: 1% 7%;
+    display: flex; // justify-content: space-between;
     .image-card {
-      border: 1px solid $card-color-border;
-    // border: 1px solid red;
+      border: 1px solid $card-color-border; // border: 1px solid red;
       border-radius: $app-card-border-radius;
       background: $card-color-background;
       height: 725px;
@@ -44,3 +42,16 @@
   }
 }
 
+//Mobile media query
+@media (min-width: 320px) and (max-width: 480px) {
+  #imageComponent {
+    #images {
+      .image-card {
+        .photographers-photo-size {
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+  }
+}
