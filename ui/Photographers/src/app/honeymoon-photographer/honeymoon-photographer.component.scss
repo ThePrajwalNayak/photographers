@@ -53,6 +53,9 @@
     padding: 6%;
     height: 700px;
     #facebook-like {
+      .display-none-web {
+        display: none;
+      }
       .fb-page {
         position: absolute;
         right: 50px;
@@ -321,5 +324,83 @@
     left: 0;
     opacity: 1;
   } // END TESTIMONIALS
+}
+
+//Mobile media query
+@media (min-width: 320px) and (max-width: 480px) {
+  #honeymoonPhotography {
+    overflow-x: hidden;
+    #leader-picture {
+      #leader-message-wrapper {
+        p {
+          display: none;
+        }
+      }
+    }
+    #price {
+      padding: 15px 0;
+      .plan {
+        .plan-inner {
+          max-width: 325px;
+        }
+      }
+    }
+    #contact-wrapper {
+      padding: 10% 3%;
+      #contact {
+        padding: 10px 15px;
+        h4 {
+          margin-bottom: 3rem;
+          padding: 0 3%;
+        }
+        h1 {
+          font-size: 1.2rem;
+          text-align: left;
+        }
+        .book-now-position {
+          position: absolute;
+          right: 5%;
+          bottom: 0%;
+          top: auto;
+        }
+      }
+    }
+    .card-how-it-works-wrapper {
+      .card-how-it-works {
+        padding: 0 15%;
+        margin-bottom: 20px;
+        text-align: center;
+        .icon {
+          margin-left: 0%;
+          margin-bottom: 5%;
+        }
+        h3 {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+    #facebook-like-wrapper {
+      height: 250px;
+      #facebook-like {
+        .display-none-mobile {
+          display: none;
+        }
+        h1 {
+          font-size: 1.7rem;
+        }
+        .display-none-web {
+          display: block;
+          font-size: 16px;
+          text-align: center;
+        }
+        .tesimonials-container {
+          display: none;
+        }
+        .fb-page {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
