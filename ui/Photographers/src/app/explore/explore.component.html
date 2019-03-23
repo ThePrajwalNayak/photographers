@@ -1,7 +1,27 @@
 <div id="exploreComponent">
 
   <div class="row">
-    <div class="row-left col-md-3">Left Menu</div>
+    <div class="row-left col-md-3">
+      <div class="add-wrapper padding-one">
+        <!--START CAROUSEL-->
+        <div id="demo" class="carousel slide" data-ride="carousel">
+          <!-- The slideshow -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="/assets/images/ExploreComponent/add1.jpg" alt="Los Angeles">
+            </div>
+            <div class="carousel-item">
+              <img src="/assets/images/ExploreComponent/add2.jpg" alt="Chicago">
+            </div>
+            <div class="carousel-item">
+              <img src="/assets/images/ExploreComponent/add3.jpg" alt="New York">
+            </div>
+          </div>
+        </div>
+        <!--END CAROUSEL-->
+      </div>
+
+    </div>
     <div class="row-right col-md-9">
       <div id="events" class="row">
         <div class="event-card col-md-4 padding-top-one" *ngFor="let eventCard of eventCards">

@@ -2,7 +2,18 @@
 #exploreComponent {
   padding: 3rem 2rem;
   .row {
-    .row-left {}
+    .row-left {
+      .add-wrapper {
+        height: 344px;
+        background: $white;
+        #demo {
+          img {
+            height: 300px;
+            width: 100%;
+          }
+        }
+      }
+    }
     .row-right {
       #events {
         display: flex;
