@@ -52,3 +52,21 @@
   }
 }
 
+//Mobile media query
+@media (min-width: 320px) and (max-width: 480px) {
+  #contact {
+    #contact-wrapper {
+      width: 90%;
+      margin: 5% auto;
+      .contact-card {
+        .contact-card-left {
+          padding: 7% 5%;
+          font-size: 1rem;
+          .row{
+            margin-bottom: -20px;
+          }
+        }
+      }
+    }
+  }
+}
