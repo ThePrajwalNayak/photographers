@@ -75,3 +75,27 @@
   }
 }
 
+//Mobile media query
+@media (min-width: 320px) and (max-width: 480px) {
+  #home {
+    padding: 1rem;
+    .video-wrapper {
+      margin-bottom: 70px;
+      h3 {
+        font-size: 20px;
+      }
+    }
+    .image-wrapper {
+      margin-bottom: 70px;
+      h3 {
+        font-size: 20px;
+      }
+    }
+    .photographers-wrapper {
+      h3 {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
