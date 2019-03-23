@@ -1,0 +1,42 @@
+@import "../../_variables";
+#imageComponent {
+  #images {
+    //    display: flex;
+    // justify-content: space-between;
+    .image-card {
+      border: 1px solid $card-color-border;
+      border-radius: $app-card-border-radius;
+      background: $card-color-background;
+      .photographers-photo-size {
+        width: 100px;
+        height: 100px;
+      }
+      .author {
+        color: $card-color-author;
+        font-size: 1rem;
+        font-family: MontserratSemiBold;
+      }
+      .time {
+        color: $card-color-author-secondary;
+        font-size: 0.8rem;
+      }
+      .more-info {
+        top: 25px;
+        right: 25px;
+        .dropdown-menu {
+          left: -122px !important;
+        }
+      }
+      .feed-image {
+        width: 100%;
+      }
+      .fa-thumbsup-color {
+        color: $thumbup-color;
+      }
+      .fa-comment-color {
+        color: $comment-color;
+      }
+    }
+  }
+}
+

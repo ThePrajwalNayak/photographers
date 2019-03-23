@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ImageService } from './images.service';
+
 @Component({
   selector: 'app-images',
   templateUrl: './images.component.html',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImagesComponent implements OnInit {
 
-  constructor() { }
+  imageCards: any;
+  constructor(private homeService: ImageService) { }
 
   ngOnInit() {
+    this.initImageCard();
+  }
+
+  initImageCard() {
+    this.homeService.getAllImages()
+      .subscribe(data => {
+        this.imageCards = data;
+      }, err => {
+        console.log(err);
+      });
   }
 
 }

@@ -5,10 +5,10 @@
       border: 1px solid $card-color-border;
       border-radius: $app-card-border-radius;
       background: $card-color-background;
-      video{
+      video {
         width: 100%;
       }
-      .photographers-photo-size{
+      .photographers-photo-size {
         width: 50px;
         height: 50px;
       }
@@ -28,7 +28,7 @@
       border: 1px solid $card-color-border;
       border-radius: $app-card-border-radius;
       background: $card-color-background;
-      .photographers-photo-size{
+      .photographers-photo-size {
         width: 100px;
         height: 100px;
       }
@@ -41,21 +41,28 @@
         color: $card-color-author-secondary;
         font-size: 0.8rem;
       }
-      .feed-image{
+      .more-info {
+        top: 25px;
+        right: 25px;
+        .dropdown-menu {
+          left: -122px !important;
+        }
+      }
+      .feed-image {
         width: 100%;
       }
-      .fa-thumbsup-color{
-          color: $thumbup-color;
+      .fa-thumbsup-color {
+        color: $thumbup-color;
       }
-      .fa-comment-color{
-          color: $comment-color;
+      .fa-comment-color {
+        color: $comment-color;
       }
     }
   }
   .photographers-wrapper {
     .photographers-card {
       background-color: $card-color-background;
-      .photographers-photo-size{
+      .photographers-photo-size {
         width: 50px;
         height: 50px;
       }

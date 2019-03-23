@@ -1,0 +1,152 @@
+[{
+    "id": 1,
+    "photographer": "Arush Patel",
+    "time": 1,
+    "photographerImage": "/assets/images/ImageComponent/photographerImage/ArushPatel.jpeg",
+    "photoImage": "/assets/images/ImageComponent/photoImage/ArushPatel.jpg",
+    "likes": 126,
+    "thumbsup": 34,
+    "heart": 23
+  },
+  {
+    "id": 2,
+    "photographer": "Ajay Shetty",
+    "time": 2,
+    "photographerImage": "/assets/images/ImageComponent/photographerImage/AjayShetty.jpeg",
+    "photoImage": "/assets/images/ImageComponent/photoImage/AjayShetty.jpg",
+    "likes": 16,
+    "thumbsup": 5,
+    "heart": 3
+  },
+  {
+    "id": 3,
+    "photographer": "Mohan Kumar",
+    "time": 5,
+    "photographerImage": "/assets/images/ImageComponent/photographerImage/MohanKumar.jpeg",
+    "photoImage": "/assets/images/ImageComponent/photoImage/MohanKumar.jpg",
+    "likes": 216,
+    "thumbsup": 34,
+    "heart": 8
+  },
+  {
+    "id": 4,
+    "photographer": "Rahul Anand",
+    "time": 3,
+    "photographerImage": "/assets/images/ImageComponent/photographerImage/RahulAnand.jpeg",
+    "photoImage": "/assets/images/ImageComponent/photoImage/RahulAnand.jpg",
+    "likes": 78,
+    "thumbsup": 32,
+    "heart": 12
+  },
+  {
+    "id": 5,
+    "photographer": "Prem Singh",
+    "time": 8,
+    "photographerImage": "/assets/images/ImageComponent/photographerImage/PremSingh.jpeg",
+    "photoImage": "/assets/images/ImageComponent/photoImage/PremSingh.jpg",
+    "likes": 54,
+    "thumbsup": 14,
+    "heart": 3
+  },
+  {
+    "id": 6,
+    "photographer": "Bhuvan Gowda",
+    "time": 1,
+    "photographerImage": "/assets/images/ImageComponent/photographerImage/BhuvanGowda.jpeg",
+    "photoImage": "/assets/images/ImageComponent/photoImage/BhuvanGowda.jpg",
+    "likes": 13,
+    "thumbsup": 24,
+    "heart": 23
+  },
+  {
+    "id": 7,
+    "photographer": "Raj Shetty",
+    "time": 2,
+    "photographerImage": "/assets/images/ImageComponent/photographerImage/RajShetty.jpeg",
+    "photoImage": "/assets/images/ImageComponent/photoImage/RajShetty.jpg",
+    "likes": 89,
+    "thumbsup": 24,
+    "heart": 5
+  },
+  {
+    "id": 8,
+    "photographer": "Meghna Rajesh",
+    "time": 5,
+    "photographerImage": "/assets/images/ImageComponent/photographerImage/MeghnaRajesh.jpeg",
+    "photoImage": "/assets/images/ImageComponent/photoImage/MeghnaRajesh.jpg",
+    "likes": 183,
+    "thumbsup": 43,
+    "heart": 9
+  },
+  {
+    "id": 9,
+    "photographer": "Chetan Kumar",
+    "time": 3,
+    "photographerImage": "/assets/images/ImageComponent/photographerImage/ChetanKumar.jpeg",
+    "photoImage": "/assets/images/ImageComponent/photoImage/ChetanKumar.jpg",
+    "likes": 48,
+    "thumbsup": 62,
+    "heart": 3
+  },
+  {
+    "id": 10,
+    "photographer": "Manish Malhotra",
+    "time": 8,
+    "photographerImage": "/assets/images/ImageComponent/photographerImage/ManishMalhotra.jpeg",
+    "photoImage": "/assets/images/ImageComponent/photoImage/ManishMalhotra.jpg",
+    "likes": 74,
+    "thumbsup": 34,
+    "heart": 6
+  },
+  {
+    "id": 11,
+    "photographer": "Vijay Shankar",
+    "time": 1,
+    "photographerImage": "/assets/images/ImageComponent/photographerImage/VijayShankar.jpeg",
+    "photoImage": "/assets/images/ImageComponent/photoImage/VijayShankar.jpg",
+    "likes": 90,
+    "thumbsup": 54,
+    "heart": 4
+  },
+  {
+    "id": 12,
+    "photographer": "Neil Nayak",
+    "time": 2,
+    "photographerImage": "/assets/images/ImageComponent/photographerImage/NeilNayak.jpeg",
+    "photoImage": "/assets/images/ImageComponent/photoImage/NeilNayak.jpg",
+    "likes": 87,
+    "thumbsup": 23,
+    "heart": 15
+  },
+  {
+    "id": 13,
+    "photographer": "Yash Bhat",
+    "time": 5,
+    "photographerImage": "/assets/images/ImageComponent/photographerImage/YashBhat.jpeg",
+    "photoImage": "/assets/images/ImageComponent/photoImage/YashBhat.jpg",
+    "likes": 12,
+    "thumbsup": 74,
+    "heart": 4
+  },
+  {
+    "id": 14,
+    "photographer": "Sarthak Shiv",
+    "time": 3,
+    "photographerImage": "/assets/images/ImageComponent/photographerImage/SarthakShiv.jpeg",
+    "photoImage": "/assets/images/ImageComponent/photoImage/SarthakShiv.jpg",
+    "likes": 98,
+    "thumbsup": 22,
+    "heart": 3
+  },
+  {
+    "id": 15,
+    "photographer": "Gautam Kumar",
+    "time": 8,
+    "photographerImage": "/assets/images/ImageComponent/photographerImage/GautamKumar.jpeg",
+    "photoImage": "/assets/images/ImageComponent/photoImage/GautamKumar.jpg",
+    "likes": 34,
+    "thumbsup": 34,
+    "heart": 23
+  }
+]
+

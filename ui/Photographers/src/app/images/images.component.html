@@ -1,3 +1,26 @@
-<p>
-  images works!
-</p>
+<div id="imageComponent">
+  <div id="images">
+    <div class="image-card margin-top-half col-md-3" *ngFor="let imageCard of imageCards">
+      <div class="padding-one clearfix relative">
+        <img class="img-thumbnail left margin-right-one photographers-photo-size" src="{{imageCard.photographerImage}}" />
+        <span class="author block margin-top-half">{{imageCard.photographer}}</span>
+        <span class="time block">{{imageCard.time}} hours ago</span>
+        <div class="dropdown absolute more-info">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"></button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">Contact</a></li>
+            <li><a class="dropdown-item" href="#">Hide Post</a></li>
+            <li><a class="dropdown-item" href="#">Report</a></li>
+          </div>
+        </div>
+      </div>
+      <img class="feed-image width-full" src="{{imageCard.photoImage}}" />
+      <div class="padding-one text-center">
+        <span class="margin-right-one"><i class="fa fa-thumbs-up fa-thumbsup-color margin-right-quater"></i>{{imageCard.likes}}</span>
+        <span class="margin-right-one"><i class="fa fa-comment fa-comment-color margin-right-quater"></i>{{imageCard.thumbsup}}</span>
+        <span><i class="fa fa-heart fa-heart-color margin-right-quater"></i>{{imageCard.heart}}</span>
+      </div>
+    </div>
+  </div>
+</div>
