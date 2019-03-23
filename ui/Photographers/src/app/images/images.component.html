@@ -1,6 +1,6 @@
 <div id="imageComponent">
-  <div id="images">
-    <div class="image-card margin-top-half col-md-3" *ngFor="let imageCard of imageCards">
+  <div id="images" class="row">
+    <div class="image-card margin-top-half col-md-4" *ngFor="let imageCard of imageCards">
       <div class="padding-one clearfix relative">
         <img class="img-thumbnail left margin-right-one photographers-photo-size" src="{{imageCard.photographerImage}}" />
         <span class="author block margin-top-half">{{imageCard.photographer}}</span>
