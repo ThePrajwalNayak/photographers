@@ -351,16 +351,11 @@
         padding: 10px 15px;
         h4 {
           margin-bottom: 3rem;
-          padding: 0 3%;
-        }
-        h1 {
-          font-size: 1.2rem;
-          text-align: left;
         }
         .book-now-position {
           position: absolute;
           right: 5%;
-          bottom: 0%;
+          bottom: -7%;
           top: auto;
         }
       }
@@ -380,7 +375,7 @@
       }
     }
     #facebook-like-wrapper {
-      height: 250px;
+      height: 160px;
       #facebook-like {
         .display-none-mobile {
           display: none;
