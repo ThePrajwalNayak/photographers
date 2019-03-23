@@ -73,3 +73,30 @@
   }
 }
 
+//Mobile media query
+@media (min-width: 320px) and (max-width: 480px) {
+  #photographers {
+    .row {
+      .card-left{
+        margin-bottom: -15%;
+      }
+      .card-right {
+        .selected-photographer {
+          .card {
+            .username {
+              margin-bottom: 10px;
+            }
+            .details {
+              span {
+                margin-bottom: 5px;
+              }
+            }
+            p {
+              margin-bottom: -2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
