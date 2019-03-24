@@ -16,6 +16,9 @@
       }
     }
   }
+  .display-none-web {
+    display: none;
+  }
   .row-nav {
     margin: 0; // active-link for present nav menu
     .active-link {
@@ -41,9 +44,9 @@
 @media (min-width: 320px) and (max-width: 480px) {
   #header {
     .nav-wrapper {
-      height: 100px;
-      .logo-wrapper{
-        .logo{
+      height: 30px;
+      .logo-wrapper {
+        .logo {
           margin-left: 2.3rem;
         }
       }
@@ -54,11 +57,38 @@
         position: absolute;
         top: 70px;
         right: 18%;
+        display: inline;
       }
       .login {
         position: absolute;
         top: 70px;
         left: 22%;
+      }
+    }
+    .display-none-web {
+      display: block;
+      height: 150px;
+      overflow: auto;
+      .left {
+        width: 50%;
+        float: left;
+        position: relative;
+        left: -22%;
+        .dropdown-menu {
+          top: 7px !important;
+          position: absolute;
+          left: 0;
+        }
+      }
+      .right {
+        width: 50%;
+        position: relative;
+        left: 14%;
+        .dropdown-menu {
+          top: 7px !important;
+          position: absolute;
+          left: -26% !important;
+        }
       }
     }
     .row-nav {
