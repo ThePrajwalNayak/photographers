@@ -1,0 +1,10 @@
+.button-back-top {
+  display: none;
+}
+
+//Mobile media query
+@media (min-width: 320px) and (max-width: 480px) {
+  .button-back-top {
+    display: block;
+  }
+}
