@@ -90,6 +90,20 @@
           left: -26% !important;
         }
       }
+      .mobile-sub-navigation {
+        font-size: 19px;
+        nav {
+          background-color: $app-background-color !important;
+          ul {
+            margin-top: 20px;
+            li {
+              a {
+                color: $app-color-primary;
+              }
+            }
+          }
+        }
+      }
     }
     .row-nav {
       div {
