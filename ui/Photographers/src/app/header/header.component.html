@@ -1,102 +1,94 @@
 <div id="header">
-    <div class="row nav-wrapper margin-top-one margin-bottom-one">
-        <div class="logo-wrapper col-md-4">
-            <a class="logo" routerLink="/home">
-                <fa name="camera" animation="spin"></fa>
-                <span class="first">PICK</span><span class="second">PHOTOGRAPHERS</span>
-            </a>
-        </div>
-        <div class="col-md-4 display-none-mobile"></div>
-        <div class="col-md-2 display-none-mobile">
-            <div class="dropdown">
-                <button type="button" class="btn app-btn app-btn-primary dropdown-toggle right" data-toggle="dropdown">Signup</button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" routerLink="/signup">Photographer</a>
-                    <a class="dropdown-item disabled" href="#">Visitor</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2 display-none-mobile">
-            <div class="dropdown">
-                <button type="button" class="btn app-btn app-btn-primary dropdown-toggle" data-toggle="dropdown">Login</button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item disabled" href="#">Photographer</a>
-                    <a class="dropdown-item disabled" href="#">Visitor</a>
-                </div>
-            </div>
-        </div>
+  <div class="row nav-wrapper margin-top-one margin-bottom-one">
+    <div class="logo-wrapper col-md-4">
+      <a class="logo" routerLink="/home">
+        <fa name="camera" animation="spin"></fa>
+        <span class="first">PICK</span><span class="second">PHOTOGRAPHERS</span>
+      </a>
     </div>
-    <div class="display-none-web">
-        <div class="left">
-            <div class="dropdown">
-                <button type="button" class="btn app-btn app-btn-primary dropdown-toggle right" data-toggle="dropdown">Signup</button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" routerLink="/signup">Photographer</a>
-                    <a class="dropdown-item disabled" href="#">Visitor</a>
-                </div>
-            </div>
+    <div class="col-md-4 display-none-mobile"></div>
+    <div class="col-md-2 display-none-mobile">
+      <div class="dropdown">
+        <button type="button" class="btn app-btn app-btn-primary dropdown-toggle right" data-toggle="dropdown">Signup</button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" routerLink="/signup">Photographer</a>
+          <a class="dropdown-item disabled" href="#">Visitor</a>
         </div>
-        <div class="right">
-            <div class="dropdown">
-                <button type="button" class="btn app-btn app-btn-primary dropdown-toggle" data-toggle="dropdown">Login</button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item disabled" href="#">Photographer</a>
-                    <a class="dropdown-item disabled" href="#">Visitor</a>
-                </div>
-            </div>
-        </div>
-        <div class="mobile-sub-navigation">
-            <nav class="navbar navbar-expand-sm bg-light">
-                <ul class="nav nav-pills navbar-right">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Stories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Download App</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+      </div>
     </div>
-    <div class="row row-nav" *ngIf="currentUrl !== '/signup'">
-        <div class="col-md-2 col-xs-3 clean-black relative" [ngClass]="{'active-link' : selectedNavMenu === HOME}">
-            <a class="center-absolute text-center" routerLink="/home" (click)="setSelectedNavMenu(HOME)">
+    <div class="col-md-2 display-none-mobile">
+      <div class="dropdown">
+        <button type="button" class="btn app-btn app-btn-primary dropdown-toggle" data-toggle="dropdown">Login</button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item disabled" href="#">Photographer</a>
+          <a class="dropdown-item disabled" href="#">Visitor</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="display-none-web">
+    <div class="left">
+      <div class="dropdown">
+        <button type="button" class="btn app-btn app-btn-primary dropdown-toggle right" data-toggle="dropdown">Signup</button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" routerLink="/signup">Photographer</a>
+          <a class="dropdown-item disabled" href="#">Visitor</a>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="dropdown">
+        <button type="button" class="btn app-btn app-btn-primary dropdown-toggle" data-toggle="dropdown">Login</button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item disabled" href="#">Photographer</a>
+          <a class="dropdown-item disabled" href="#">Visitor</a>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-sub-navigation">
+      <div class="mobile-nav-wrapper">
+        <span class="mobile-nav">Blog</span>
+        <span class="mobile-nav">Stories</span>
+        <span class="mobile-nav">Gallery</span>
+      </div>
+    </div>
+  </div>
+  <div class="row row-nav" *ngIf="currentUrl !== '/signup'">
+    <div class="col-md-2 col-xs-3 clean-black relative" [ngClass]="{'active-link' : selectedNavMenu === HOME}">
+      <a class="center-absolute text-center" routerLink="/home" (click)="setSelectedNavMenu(HOME)">
                 <i class="fa fa-home "></i>
                 <span class="block">Home</span>
             </a>
-        </div>
-        <div class="col-md-2 col-xs-3 dark-black relative" [ngClass]="{'active-link' : selectedNavMenu === PHOTOGRAPHERS}">
-            <a class="center-absolute text-center" routerLink="/photographers" (click)="setSelectedNavMenu(PHOTOGRAPHERS)">
+    </div>
+    <div class="col-md-2 col-xs-3 dark-black relative" [ngClass]="{'active-link' : selectedNavMenu === PHOTOGRAPHERS}">
+      <a class="center-absolute text-center" routerLink="/photographers" (click)="setSelectedNavMenu(PHOTOGRAPHERS)">
                 <i class="fa fa-user"></i>
                 <span class="block">Photographers</span>
             </a>
-        </div>
-        <div class="col-md-2 col-xs-3 clean-black relative" [ngClass]="{'active-link' : selectedNavMenu === HONEYMOON_PHOTOGRAPGER}">
-            <a class="center-absolute text-center" routerLink="/honeymoonPhotographer" (click)="setSelectedNavMenu(HONEYMOON_PHOTOGRAPGER)">
+    </div>
+    <div class="col-md-2 col-xs-3 clean-black relative" [ngClass]="{'active-link' : selectedNavMenu === HONEYMOON_PHOTOGRAPGER}">
+      <a class="center-absolute text-center" routerLink="/honeymoonPhotographer" (click)="setSelectedNavMenu(HONEYMOON_PHOTOGRAPGER)">
                   <i class="fa fa-align-left"></i>
                 <span class="block">Honeymoon Photography</span>
             </a>
-        </div>
-        <div class="col-md-2 col-xs-3 dark-black relative" [ngClass]="{'active-link' : selectedNavMenu === IMAGES}">
-            <a class="center-absolute text-center" routerLink="/images" (click)="setSelectedNavMenu(IMAGES)">
+    </div>
+    <div class="col-md-2 col-xs-3 dark-black relative" [ngClass]="{'active-link' : selectedNavMenu === IMAGES}">
+      <a class="center-absolute text-center" routerLink="/images" (click)="setSelectedNavMenu(IMAGES)">
                 <i class="fa fa-crosshairs"></i>
                 <span class="block">Images</span>
             </a>
-        </div>
-        <div class="col-md-2 col-xs-3 clean-black relative" [ngClass]="{'active-link' : selectedNavMenu === EXPLORE}">
-            <a class="center-absolute text-center" routerLink="/explore" (click)="setSelectedNavMenu(EXPLORE)">
+    </div>
+    <div class="col-md-2 col-xs-3 clean-black relative" [ngClass]="{'active-link' : selectedNavMenu === EXPLORE}">
+      <a class="center-absolute text-center" routerLink="/explore" (click)="setSelectedNavMenu(EXPLORE)">
                   <i class="fa fa-align-left"></i>
                 <span class="block">Explore</span>
             </a>
-        </div>
-        <div class="col-md-2 col-xs-3 dark-black relative" [ngClass]="{'active-link' : selectedNavMenu === CONTACT}">
-            <a class="center-absolute text-center" routerLink="/contact" (click)="setSelectedNavMenu(CONTACT)">
+    </div>
+    <div class="col-md-2 col-xs-3 dark-black relative" [ngClass]="{'active-link' : selectedNavMenu === CONTACT}">
+      <a class="center-absolute text-center" routerLink="/contact" (click)="setSelectedNavMenu(CONTACT)">
                 <i class="fa fa-crosshairs"></i>
                 <span class="block">Contact</span>
             </a>
-        </div>
     </div>
+  </div>
 </div>

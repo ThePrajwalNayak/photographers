@@ -48,6 +48,7 @@
       .logo-wrapper {
         .logo {
           margin-left: 2.3rem;
+          font-size: 20px;
         }
       }
       .display-none-mobile {
@@ -74,33 +75,41 @@
         float: left;
         position: relative;
         left: -22%;
-        .dropdown-menu {
-          top: 7px !important;
-          position: absolute;
-          left: 0;
+        .dropdown {
+          button {
+            padding: 10px 5px;
+          }
+          .dropdown-menu {
+            top: 7px !important;
+            position: absolute;
+            left: 0;
+          }
         }
       }
       .right {
         width: 50%;
         position: relative;
         left: 14%;
-        .dropdown-menu {
-          top: 7px !important;
-          position: absolute;
-          left: -26% !important;
+        .dropdown {
+          .dropdown-menu {
+            top: 7px !important;
+            position: absolute;
+            left: -26% !important;
+          }
+          button {
+            padding: 10px 5px;
+          }
         }
       }
       .mobile-sub-navigation {
         font-size: 19px;
-        nav {
-          background-color: $app-background-color !important;
-          ul {
-            margin-top: 20px;
-            li {
-              a {
-                color: $app-color-primary;
-              }
-            }
+        margin-top: 80px;
+        .mobile-nav-wrapper {
+          width: 80%;
+          margin: 0 auto;
+          .mobile-nav {
+            width: 33%;
+            float: left;
           }
         }
       }
