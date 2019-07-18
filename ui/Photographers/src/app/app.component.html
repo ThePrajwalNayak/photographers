@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header *ngIf="!isAdminUrl"></app-header>
 <div>
     <router-outlet></router-outlet>
     <a class="app-btn app-btn-primary margin-top-half button-back-top" (click)="backToTop()">Back to top</a>

@@ -18,8 +18,11 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path : 'signup', component : SingupComponent},
   { path : 'honeymoonPhotographer', component : HoneymoonPhotographerComponent},
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: HomeComponent }
+  {
+	   path: 'admin',
+     loadChildren: './admin-dashboard/admin-dashboard.module#AdminDashboardModule'
+	}
+  // { path: '**', component: HomeComponent }
 ];
 
 @NgModule({

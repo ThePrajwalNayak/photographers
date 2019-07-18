@@ -35,7 +35,6 @@ export class HeaderComponent implements OnInit {
          }else if(this.currentUrl === '/contact'){
            this.selectedNavMenu = this.CONTACT;
          }
-         console.log(this.currentUrl);
     });
    }
 
