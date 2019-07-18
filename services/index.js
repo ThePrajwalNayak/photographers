@@ -91,6 +91,16 @@ app.get('/api/photographers/:photographers_id', function (req, res) {
     });
 });
 
+app.get('/api/admin/newPhotographers', function (req, res) {
+    console.log('GET NEW PHOTOGRAPHER REQUEST');
+    Photographers.find({ 'isActive': false }).then(function (err, photographers) {
+        if (err) {
+            res.send(err);
+        }
+        res.send(photographers);
+    });
+});
+
 app.put('/api/photographers/:photographers_id', function (req, res) {
     console.log('UPDATE PHOTOGRAPHERS');
     req.body.updateDt = new Date();
