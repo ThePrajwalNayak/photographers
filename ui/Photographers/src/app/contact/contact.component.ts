@@ -55,7 +55,7 @@ export class ContactComponent implements OnInit {
       var form = contactForm;
       var reqObj = {
         contactCategory: form.get('contactCategory').value,
-        fullname: form.get('fullName').value,
+        fullName: form.get('fullName').value,
         email: form.get('email').value,
         mobile: form.get('mobile').value,
         message: form.get('message').value
