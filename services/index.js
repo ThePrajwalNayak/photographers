@@ -122,8 +122,9 @@ app.post('/api/login', function (req, res) {
 //START CONTACTS
 
 app.post('/api/contacts', function (req, res) {
-    console.log('SAVE CONTATCS');
+    console.log('SAVE CONTATCS' + req.body.contactCategory);
     Contacts.create({
+        contactCategory : req.body.contactCategory,
         fullName: req.body.fullName,
         email: req.body.email,
         mobile:  req.body.mobile,
