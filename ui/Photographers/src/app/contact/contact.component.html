@@ -35,6 +35,12 @@
       <div class="col-md-6 contact-card-right">
         <form [formGroup]='contactForm' (ngSubmit)="createContact(contactForm)">
           <div class="margin-bottom-one">
+            <label class="label" for="email">Category *</label>
+            <select formControlName="contactCategory" id="contactCategory" class="form-control item" name="contactCategory">
+              <option *ngFor="let category of contactCategory">{{ category}}</option>
+            </select>
+          </div>
+          <div class="margin-bottom-one">
             <label class="label" for="fullName">Full Name *</label>
             <input formControlName="fullName" id="fullName" class="form-control item" type="text" name="fullName" placeholder="Aayush Varma">
             <div class="error-message-wrapper" *ngIf="contactForm.controls['fullName'].touched && !contactForm.controls['fullName'].valid">

@@ -12,6 +12,9 @@ export class ContactComponent implements OnInit {
 
   contactForm: FormGroup;
 
+  contactCategory = ["Request", "Complain"];
+  defaultContactCategory = this.contactCategory[0];
+
   errorMessage: any = {
     required: 'Required',
     minlength: 'Min length is',
@@ -39,6 +42,7 @@ export class ContactComponent implements OnInit {
 
   initContactForm() {
     this.contactForm = this.formBuilder.group({
+      contactCategory: [ this.defaultContactCategory, Validators.compose([Validators.required])],
       fullName: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.nameMaxLength), Validators.minLength(this.validation.nameMinLength)])],
       email: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.emailMaxLength), Validators.minLength(this.validation.emailMinLength)])],
       mobile: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.mobileMaxLength), Validators.minLength(this.validation.mobileMinLength)])],
@@ -50,6 +54,7 @@ export class ContactComponent implements OnInit {
     if (contactForm.status === 'VALID') {
       var form = contactForm;
       var reqObj = {
+        contactCategory: form.get('contactCategory').value,
         fullname: form.get('fullName').value,
         email: form.get('email').value,
         mobile: form.get('mobile').value,
