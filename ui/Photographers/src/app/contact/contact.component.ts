@@ -58,7 +58,8 @@ export class ContactComponent implements OnInit {
         fullName: form.get('fullName').value,
         email: form.get('email').value,
         mobile: form.get('mobile').value,
-        message: form.get('message').value
+        message: form.get('message').value,
+        isRead : 'N'
       };
       this.contactService.createContact(reqObj)
         .subscribe(data => {

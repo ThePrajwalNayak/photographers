@@ -13,6 +13,6 @@ export class ContactService {
   constructor(private http: HttpClient) { }
 
   createContact(req) {
-    return this.http.post(this.BASE_URL + "/contacts", req);
+    return this.http.post(this.BASE_URL + "/contactRequest", req);
   }
 }
