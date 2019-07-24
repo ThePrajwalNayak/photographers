@@ -58,10 +58,9 @@
                 </div>
                 <div class="col-md-4">
                     <label class="label" for="sex">Sex</label>
-                    <select id="sex" class="form-control item">
-                            <option>Male</option>
-                             <option>Female</option>
-                     </select>
+                    <select formControlName="sex" id="sex" class="form-control item" name="sex">
+                        <option *ngFor="let s of sex">{{ s}}</option>
+                      </select>
                 </div>
             </div>
             <div class="row margin-bottom-one">

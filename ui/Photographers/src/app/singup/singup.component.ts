@@ -13,6 +13,8 @@ import { PasswordValidation } from './passwordValidation';
 })
 export class SingupComponent implements OnInit {
 
+  sex  = ['Male', 'Female'];
+
   errorMessage: any = {
     required: 'Required',
     minlength: 'Min length is',
@@ -29,7 +31,7 @@ export class SingupComponent implements OnInit {
     lastNameMaxLength: 20,
     emailMinLength: 5,
     emailMaxLength: 40,
-    phoneNumberMinLength: 3,
+    phoneNumberMinLength: 8,
     phoneNumberMaxLength: 20,
     locationMinLength: 3,
     locationMaxLength: 20,
@@ -67,7 +69,7 @@ export class SingupComponent implements OnInit {
       phoneNumber: ['', Validators.compose([Validators.maxLength(this.validation.phoneNumberMaxLength), Validators.minLength(this.validation.phoneNumberMinLength)])],
       location: ['', Validators.compose([Validators.maxLength(this.validation.locationMaxLength), Validators.minLength(this.validation.locationMinLength)])],
       dob: ['', Validators.compose([Validators.maxLength(this.validation.dobMaxLength), Validators.minLength(this.validation.dobMinLength)])],
-      sex: [''],
+      sex: [this.sex[0]],
       about: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.aboutMaxLength), Validators.minLength(this.validation.aboutMinLength)])],
       linkFacebook: ['', Validators.compose([Validators.maxLength(this.validation.socailLinkMaxLength), Validators.minLength(this.validation.socailLinkMinLength)])],
       linkInstagram: ['', Validators.compose([Validators.maxLength(this.validation.socailLinkMaxLength), Validators.minLength(this.validation.socailLinkMinLength)])],
@@ -107,7 +109,7 @@ export class SingupComponent implements OnInit {
         picture = picture[1];
       }
       var reqObj = {
-        username: form.get('username').value,
+        userName: form.get('username').value,
         profilePicture: picture ? picture : null,
         password: form.get('password').value,
         firstName: form.get('firstName').value,
@@ -119,12 +121,16 @@ export class SingupComponent implements OnInit {
         sex: form.get('sex').value ? (form.get('sex').value == 'Male' ? 'M' : 'F') : null,
         about: form.get('about').value,
         linkFacebook: form.get('linkFacebook').value ? form.get('linkFacebook').value : null,
-        linkLinkedIn: form.get('linkLinkedIn').value ? form.get('linkLinkedIn').value : null,
+        linkLinkedin: form.get('linkLinkedIn').value ? form.get('linkLinkedIn').value : null,
         linkTwitter: form.get('linkTwitter').value ? form.get('linkTwitter').value : null,
         linkInstagram: form.get('linkInstagram').value ? form.get('linkInstagram').value : null,
         photoLink: form.get('photoLink').value ? form.get('photoLink').value : null,
-        videoLink: form.get('videoLink').value ? form.get('videoLink').value : null
+        videoLink: form.get('videoLink').value ? form.get('videoLink').value : null,
+        isActive : 'N',
+        saveStatus : 'Y'
       };
+      console.log(reqObj);
+      
       this.signUpService.createAccount(reqObj)
         .subscribe(data => {
           this.signupResponse = data;

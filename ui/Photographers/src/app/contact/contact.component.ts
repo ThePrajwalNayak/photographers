@@ -64,7 +64,7 @@ export class ContactComponent implements OnInit {
       this.contactService.createContact(reqObj)
         .subscribe(data => {
           this.response = data;
-          if (this.response._id) {
+          if (this.response.contactRequestId != 0) {
             this.initContactForm();
             $("#contactModal").modal('show');
           }
