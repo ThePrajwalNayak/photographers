@@ -14,4 +14,6 @@ public interface PhotographersService {
 
 	public Photographers deletePhotographers(Photographers photographers);
 
+	public Photographers getPhotographersById(Long photographersId);
+
 }

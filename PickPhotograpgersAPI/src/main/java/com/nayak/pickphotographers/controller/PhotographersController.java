@@ -2,11 +2,14 @@ package com.nayak.pickphotographers.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,9 +29,15 @@ public class PhotographersController {
 		List<Photographers> photographers = photographersService.getAllPhotographers();
 		return new ResponseEntity<List<Photographers>>(photographers, HttpStatus.OK);
 	}
+	
+	@GetMapping("/photographers/{photographersId}")
+	public ResponseEntity<Photographers> getPhotographersById(@PathVariable("photographersId") Long photographersId) {
+		Photographers photographers = photographersService.getPhotographersById(photographersId);
+		return new ResponseEntity<Photographers>(photographers, HttpStatus.OK);
+	}
 
 	@PostMapping("/photographers")
-	public ResponseEntity<Photographers> savePhotographers(@RequestBody Photographers photographers) {
+	public ResponseEntity<Photographers> savePhotographers(@Valid @RequestBody Photographers photographers) {
 		Photographers savedPhotographers = photographersService.savePhotgraphers(photographers);
 		return new ResponseEntity<Photographers>(savedPhotographers, HttpStatus.CREATED);
 	}

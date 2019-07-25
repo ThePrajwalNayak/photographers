@@ -3,13 +3,16 @@ package com.nayak.pickphotographers.service;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.nayak.pickphotographers.constant.PhotographersConstant;
 import com.nayak.pickphotographers.entity.Photographers;
+import com.nayak.pickphotographers.exception.RecordNotFoundException;
 import com.nayak.pickphotographers.repository.PhotographersRepository;
 
 @Service
@@ -22,9 +25,21 @@ public class PhotographersServiceImpl implements PhotographersService {
 	public List<Photographers> getAllPhotographers() {
 		return photographersRepository.findAll();
 	}
+	
+
+	@Override
+	public Photographers getPhotographersById(Long photographersId) {
+		Optional<Photographers> photographers = photographersRepository.findById(photographersId);
+		if(!photographers.isPresent()) {
+			throw new RecordNotFoundException("Photographer not found with "+photographersId + " Id");
+		}
+		return photographers.get();
+	}
 
 	@Override
 	public Photographers savePhotgraphers(Photographers photographers) {
+		photographers.setIsActive(PhotographersConstant.N);
+		photographers.setSaveStatus(PhotographersConstant.Y);
 		photographers.setEntDt(new Date());
 		photographers.setModDt(new Date());
 		return photographersRepository.save(photographers);
@@ -42,8 +57,9 @@ public class PhotographersServiceImpl implements PhotographersService {
 
 	@Override
 	public Photographers deletePhotographers(Photographers photographers) {
-		photographers.setIsActive('Y');
+		photographers.setIsActive(PhotographersConstant.N);
 		return photographersRepository.save(photographers);
 	}
+
 
 }

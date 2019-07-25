@@ -125,9 +125,7 @@ export class SingupComponent implements OnInit {
         linkTwitter: form.get('linkTwitter').value ? form.get('linkTwitter').value : null,
         linkInstagram: form.get('linkInstagram').value ? form.get('linkInstagram').value : null,
         photoLink: form.get('photoLink').value ? form.get('photoLink').value : null,
-        videoLink: form.get('videoLink').value ? form.get('videoLink').value : null,
-        isActive : 'N',
-        saveStatus : 'Y'
+        videoLink: form.get('videoLink').value ? form.get('videoLink').value : null
       };
       console.log(reqObj);
       

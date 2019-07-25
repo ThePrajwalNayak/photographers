@@ -1,5 +1,7 @@
 package com.nayak.pickphotographers.repository;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -10,5 +12,7 @@ public interface PhotographersRepository extends JpaRepository<Photographers, Lo
 
 
 	Photographers findAllByPhotographersId(Long photographersId);
+
+	Optional<Photographers> findByUserNameAndPassword(String username, String password);
 
 }

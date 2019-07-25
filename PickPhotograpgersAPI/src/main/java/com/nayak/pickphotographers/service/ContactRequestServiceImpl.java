@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.nayak.pickphotographers.constant.PhotographersConstant;
 import com.nayak.pickphotographers.entity.ContactRequest;
 import com.nayak.pickphotographers.repository.ContactRequestRepository;
 
@@ -27,8 +28,14 @@ public class ContactRequestServiceImpl implements ContactRequestService {
 	}
 
 	@Override
-	public List<ContactRequest> getOpenContactRequest() {
-		return contactRequestRepository.findByIsRead('N');
+	public List<ContactRequest> getAllContactRequestBYStatus(Character status) {
+		return contactRequestRepository.findByIsRead(status);
+	}
+
+	@Override
+	public ContactRequest deleteContactRequest(ContactRequest contactRequest) {
+		contactRequest.setIsRead(PhotographersConstant.N);
+		return contactRequestRepository.save(contactRequest);
 	}
 
 }

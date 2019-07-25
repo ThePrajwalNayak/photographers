@@ -10,6 +10,8 @@ public interface ContactRequestService {
 
 	public ContactRequest saveContactRequest(ContactRequest contactRequest);
 
-	public List<ContactRequest> getOpenContactRequest();
+	public List<ContactRequest> getAllContactRequestBYStatus(Character status);
+
+	public ContactRequest deleteContactRequest(ContactRequest contactRequest);
 
 }
