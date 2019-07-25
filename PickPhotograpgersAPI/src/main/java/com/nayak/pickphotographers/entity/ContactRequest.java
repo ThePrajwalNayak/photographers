@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -19,14 +20,23 @@ public class ContactRequest implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long contactRequestId;
 
+	@NotBlank(message = "{contactrequest.contactcategory.empty}")
 	private String contactCategory;
-
+	
+	@Size(max = 30, min = 5, message = "{contactrequest.fullname.size}")
+	@NotBlank(message = "{contactrequest.fullname.empty}")
 	private String fullName;
 
+	@Size(max = 30, min = 5, message = "{contactrequest.email.size}")
+	@NotBlank(message = "{contactrequest.email.empty}")
 	private String email;
 
+	@Size(max = 100, min = 5, message = "{contactrequest.mobile.size}")
+	@NotBlank(message = "{contactrequest.mobile.empty}")
 	private String mobile;
 
+	@Size(max = 500, min = 5, message = "{contactrequest.message.size}")
+	@NotBlank(message = "{contactrequest.message.empty}")
 	private String message;
 
 	private char isRead;

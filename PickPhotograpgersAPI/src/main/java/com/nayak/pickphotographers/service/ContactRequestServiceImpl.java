@@ -23,6 +23,7 @@ public class ContactRequestServiceImpl implements ContactRequestService {
 
 	@Override
 	public ContactRequest saveContactRequest(ContactRequest contactRequest) {
+		contactRequest.setIsRead(PhotographersConstant.Y);
 		contactRequest.setEntDt(new Date());
 		return contactRequestRepository.save(contactRequest);
 	}
