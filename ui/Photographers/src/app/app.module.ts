@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -22,6 +22,7 @@ import { SingupService } from './singup/singup.service';
 import { ContactService } from './contact/contact.service';
 import { HoneymoonPhotographerService } from './honeymoon-photographer/honeymoon-photographer.service';
 import { HoneymoonPhotographerComponent } from './honeymoon-photographer/honeymoon-photographer.component';
+import {Interceptor} from './interceptor';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { HoneymoonPhotographerComponent } from './honeymoon-photographer/honeymo
     ReactiveFormsModule,
     Ng4LoadingSpinnerModule.forRoot()
   ],
-  providers: [PhotographersService, {provide: LocationStrategy, useClass: HashLocationStrategy}, SingupService, ContactService, HoneymoonPhotographerService],
+  providers: [PhotographersService, {provide: LocationStrategy, useClass: HashLocationStrategy}, SingupService, ContactService, HoneymoonPhotographerService,
+    { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
