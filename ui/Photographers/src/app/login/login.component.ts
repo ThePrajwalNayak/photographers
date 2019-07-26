@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 import { LoginService } from './login.service';
 import { ToastrService } from 'ngx-toastr';
+import { Data } from '../data';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  photographers : any;
 
   errorMessage: any = {
     required: 'Required',
@@ -28,7 +30,7 @@ export class LoginComponent implements OnInit {
   }
 
   constructor(private loginService: LoginService, private formBuilder: FormBuilder, private router: Router,
-    private toastrService: ToastrService) { }
+    private toastrService: ToastrService, private data : Data) { }
 
   ngOnInit() {
     this.initLoginForm();
@@ -51,9 +53,9 @@ export class LoginComponent implements OnInit {
         .subscribe((data: any) => {
           if (data.photographersId) {
             this.initLoginForm();
-            this.toastrService.success('Hurray', 'Loged in successfully', {
-              disableTimeOut: true
-            });
+            this.photographers = data;
+            this.data.storage = this.photographers;
+            this.router.navigate(['/signup'])
           } else {
             this.toastrService.error('Better luck next time', 'Wrong username or password.', {
               disableTimeOut: true
@@ -74,5 +76,6 @@ export class LoginComponent implements OnInit {
   revert() {
     this.loginForm.reset();
   }
+
 
 }

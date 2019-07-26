@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
+import { Data } from './../data';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -17,9 +19,10 @@ export class HeaderComponent implements OnInit {
   EXPLORE : string = 'Explore';
   CONTACT : string = 'Contact';
   selectedNavMenu : string = this.HOME;
+  // selectedNavMenu : string;
   currentUrl : string;
 
-  constructor(location: Location, router: Router) {
+  constructor(location: Location, private router: Router, private data : Data) {
        router.events.subscribe((val) => {
          this.currentUrl = location.path();
          if(this.currentUrl === '/home'){
@@ -45,6 +48,9 @@ export class HeaderComponent implements OnInit {
     this.selectedNavMenu = path;
   }
 
-
+  goToSignup(){
+    this.data.storage = null;
+    this.router.navigateByUrl('/signup');
+  }
 
 }

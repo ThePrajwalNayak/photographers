@@ -8,15 +8,15 @@
     </div>
     <div class="col-md-2 display-none-mobile"></div>
     <div class="col-md-3 display-none-mobile">
-        <a class="app-btn app-btn-primary" routerLink="/signup">Signup</a>
+        <a class="app-btn app-btn-primary" (click)="goToSignup()">Signup</a>
     </div>
     <div class="col-md-3 display-none-mobile">
         <a class="app-btn app-btn-primary" routerLink="/login">Login</a>
     </div>
   </div>
   <div class="display-none-web">
-        <a class="app-btn app-btn-primary" routerLink="/signup">Signup</a>
-        <a class="app-btn app-btn-primary" routerLink="/login">Login</a>
+        <a class="app-btn app-btn-primary" (click)="goToSignup()">Signup</a>
+        <a class="app-btn app-btn-primary" routerLink="/signup">Login</a>
     <div class="mobile-sub-navigation">
       <div class="mobile-nav-wrapper">
         <span class="mobile-nav">Blog</span>
@@ -25,7 +25,7 @@
       </div>
     </div>
   </div>
-  <div class="row row-nav" *ngIf="currentUrl !== '/signup'">
+  <div class="row row-nav">
     <div class="col-md-2 col-xs-3 clean-black relative" [ngClass]="{'active-link' : selectedNavMenu === HOME}">
       <a class="center-absolute text-center" routerLink="/home" (click)="setSelectedNavMenu(HOME)">
                 <i class="fa fa-home "></i>

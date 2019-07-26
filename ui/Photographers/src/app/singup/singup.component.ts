@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { SingupService } from './singup.service';
 import { PasswordValidation } from './passwordValidation';
 import { ToastrService } from 'ngx-toastr';
+import {Data} from './../data';
 
 @Component({
   selector: 'app-singup',
@@ -13,6 +14,10 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./singup.component.scss']
 })
 export class SingupComponent implements OnInit {
+
+  CREATE = 'CREATE';
+  UPDATE = 'UPDATE';
+  MODE = '';
 
   sex  = ['Male', 'Female'];
 
@@ -55,15 +60,48 @@ export class SingupComponent implements OnInit {
   signupForm: FormGroup;
   signupResponse: any;
   constructor(private formBuilder: FormBuilder, private signUpService: SingupService, private router: Router,
-    private toastrService : ToastrService) { }
+    private toastrService : ToastrService, private data : Data) { 
+      this.photographer = this.data.storage;
+      console.log(this.photographer);
+      if(this.photographer){
+        this.MODE = this.UPDATE;
+      }else{
+        this.MODE = this.CREATE;
+      }
+    }
 
   ngOnInit() {
+    if(this.MODE == this.CREATE){
     this.initSignupForm();
+    }else {
+      this.updateSignupForm();
+    }
   }
 
   initSignupForm() {
     this.signupForm = this.formBuilder.group({
       username: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.usernameMaxLength), Validators.minLength(this.validation.usernameMinLength)])],
+      password: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.passwordMaxLength), Validators.minLength(this.validation.passwordMinLength)])],
+      firstName: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.firstNameMaxLength), Validators.minLength(this.validation.firstNameMinLength)])],
+      lastName: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.lastNameMaxLength), Validators.minLength(this.validation.lastNameMinLength)])],
+      email: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.emailMaxLength), Validators.minLength(this.validation.emailMinLength)])],
+      phoneNumber: ['', Validators.compose([Validators.maxLength(this.validation.phoneNumberMaxLength), Validators.minLength(this.validation.phoneNumberMinLength)])],
+      location: ['', Validators.compose([Validators.maxLength(this.validation.locationMaxLength), Validators.minLength(this.validation.locationMinLength)])],
+      dob: ['', Validators.compose([Validators.maxLength(this.validation.dobMaxLength), Validators.minLength(this.validation.dobMinLength)])],
+      sex: [this.sex[0]],
+      about: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.aboutMaxLength), Validators.minLength(this.validation.aboutMinLength)])],
+      linkFacebook: ['', Validators.compose([Validators.maxLength(this.validation.socailLinkMaxLength), Validators.minLength(this.validation.socailLinkMinLength)])],
+      linkInstagram: ['', Validators.compose([Validators.maxLength(this.validation.socailLinkMaxLength), Validators.minLength(this.validation.socailLinkMinLength)])],
+      linkTwitter: ['', Validators.compose([Validators.maxLength(this.validation.socailLinkMaxLength), Validators.minLength(this.validation.socailLinkMinLength)])],
+      linkLinkedIn: ['', Validators.compose([Validators.maxLength(this.validation.socailLinkMaxLength), Validators.minLength(this.validation.socailLinkMinLength)])],
+      photoLink: ['', Validators.compose([Validators.maxLength(this.validation.photoLinkMaxLength), Validators.minLength(this.validation.photoLinkMinLength)])],
+      videoLink: ['', Validators.compose([Validators.maxLength(this.validation.videoLinkMaxLength), Validators.minLength(this.validation.videoLinkMinLength)])],
+    });
+  }
+
+  updateSignupForm(){
+    this.signupForm = this.formBuilder.group({
+      username: ['raj', Validators.compose([Validators.required, Validators.maxLength(this.validation.usernameMaxLength), Validators.minLength(this.validation.usernameMinLength)])],
       password: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.passwordMaxLength), Validators.minLength(this.validation.passwordMinLength)])],
       firstName: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.firstNameMaxLength), Validators.minLength(this.validation.firstNameMinLength)])],
       lastName: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.lastNameMaxLength), Validators.minLength(this.validation.lastNameMinLength)])],
