@@ -9,12 +9,13 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'app';
-  isAdminUrl : boolean = true;
+  hide : boolean = true;
   // template: string =`<img src="http://pa1.narvii.com/5722/2c617cd9674417d272084884b61e4bb7dd5f0b15_hq.gif" />`;
 
   constructor(location: Location, router: Router){
       router.events.subscribe((val) => {
-         this.isAdminUrl = location.path().includes('/admin') ? true : false;
+        var path = location.path();
+         this.hide = path.includes('/admin') || path.includes('/login') || path.includes('/signup');
       });
   }
 

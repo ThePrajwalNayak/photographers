@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   IMAGES : string = 'Images';
   EXPLORE : string = 'Explore';
   CONTACT : string = 'Contact';
-  selectedNavMenu : string = this.HONEYMOON_PHOTOGRAPGER;
+  selectedNavMenu : string = this.HOME;
   currentUrl : string;
 
   constructor(location: Location, router: Router) {

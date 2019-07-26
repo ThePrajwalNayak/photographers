@@ -27,6 +27,8 @@ import { ContactService } from './contact/contact.service';
 import { HoneymoonPhotographerService } from './honeymoon-photographer/honeymoon-photographer.service';
 import { HoneymoonPhotographerComponent } from './honeymoon-photographer/honeymoon-photographer.component';
 import {Interceptor} from './interceptor';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './login/login.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import {Interceptor} from './interceptor';
     VideosComponent,
     ContactComponent,
     SingupComponent,
-    HoneymoonPhotographerComponent
+    HoneymoonPhotographerComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,7 @@ import {Interceptor} from './interceptor';
     ToastrModule.forRoot() 
   ],
   providers: [PhotographersService, {provide: LocationStrategy, useClass: HashLocationStrategy}, SingupService, ContactService, HoneymoonPhotographerService,
-    { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true }],
+    { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true }, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
