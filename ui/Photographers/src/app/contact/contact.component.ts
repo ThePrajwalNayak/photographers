@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 declare var $: any;
 import { ContactService } from './contact.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contact',
@@ -34,13 +35,16 @@ export class ContactComponent implements OnInit {
 
   response: any;
 
-  constructor(private formBuilder: FormBuilder, private contactService: ContactService) { }
+  constructor(private formBuilder: FormBuilder, private contactService: ContactService, private toastrService: ToastrService) { 
+    
+  }
 
   ngOnInit() {
     this.initContactForm();
   }
 
   initContactForm() {
+
     this.contactForm = this.formBuilder.group({
       contactCategory: [ this.defaultContactCategory, Validators.compose([Validators.required])],
       fullName: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.nameMaxLength), Validators.minLength(this.validation.nameMinLength)])],
@@ -58,8 +62,7 @@ export class ContactComponent implements OnInit {
         fullName: form.get('fullName').value,
         email: form.get('email').value,
         mobile: form.get('mobile').value,
-        message: '',
-        // message: form.get('message').value,
+        message: form.get('message').value,
         isRead : 'N'
       };
       this.contactService.createContact(reqObj)
@@ -67,7 +70,9 @@ export class ContactComponent implements OnInit {
           this.response = data;
           if (this.response.contactRequestId != 0) {
             this.initContactForm();
-            $("#contactModal").modal('show');
+            this.toastrService.success('Thank you!', 'Your message has been successfully sent. We will contact you very soon!',{
+              disableTimeOut:true
+            });
           }
         }, err => {
           console.log(err);

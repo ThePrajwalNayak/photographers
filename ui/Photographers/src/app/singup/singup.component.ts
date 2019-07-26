@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 import { SingupService } from './singup.service';
 import { PasswordValidation } from './passwordValidation';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-singup',
@@ -53,7 +54,8 @@ export class SingupComponent implements OnInit {
   base64textString = [];
   signupForm: FormGroup;
   signupResponse: any;
-  constructor(private formBuilder: FormBuilder, private signUpService: SingupService, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private signUpService: SingupService, private router: Router,
+    private toastrService : ToastrService) { }
 
   ngOnInit() {
     this.initSignupForm();
@@ -134,7 +136,9 @@ export class SingupComponent implements OnInit {
           this.signupResponse = data;
           if (this.signupResponse && this.signupResponse._id) {
             this.initSignupForm();
-            $("#successModal").modal('show');
+            this.toastrService.success('Account successfully created', 'Thank you for your registration! Your account is now ready to use.',{
+              disableTimeOut:true
+            });
           }
         }, err => {
           console.log(err);

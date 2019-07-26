@@ -6,6 +6,10 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+//Toaster start
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+//Toaster End
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,7 +48,9 @@ import {Interceptor} from './interceptor';
     AngularFontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng4LoadingSpinnerModule.forRoot()
+    Ng4LoadingSpinnerModule.forRoot(),
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot() 
   ],
   providers: [PhotographersService, {provide: LocationStrategy, useClass: HashLocationStrategy}, SingupService, ContactService, HoneymoonPhotographerService,
     { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true }],
