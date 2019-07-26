@@ -11,6 +11,9 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 public class Photographers implements Serializable {
 
@@ -74,9 +77,9 @@ public class Photographers implements Serializable {
 
 	private String activationLink;
 	private Character isActive;
+	private Character isApproved;
 	private Date entDt;
 	private Date modDt;
-	private Character saveStatus;
 
 	public Long getPhotographersId() {
 		return photographersId;
@@ -238,6 +241,14 @@ public class Photographers implements Serializable {
 		this.isActive = isActive;
 	}
 
+	public Character getIsApproved() {
+		return isApproved;
+	}
+
+	public void setIsApproved(Character isApproved) {
+		this.isApproved = isApproved;
+	}
+
 	public Date getEntDt() {
 		return entDt;
 	}
@@ -252,14 +263,6 @@ public class Photographers implements Serializable {
 
 	public void setModDt(Date modDt) {
 		this.modDt = modDt;
-	}
-
-	public Character getSaveStatus() {
-		return saveStatus;
-	}
-
-	public void setSaveStatus(Character saveStatus) {
-		this.saveStatus = saveStatus;
 	}
 
 }

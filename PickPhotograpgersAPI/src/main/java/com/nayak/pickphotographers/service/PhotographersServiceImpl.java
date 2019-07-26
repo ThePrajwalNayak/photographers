@@ -23,9 +23,8 @@ public class PhotographersServiceImpl implements PhotographersService {
 
 	@Override
 	public List<Photographers> getAllPhotographers() {
-		return photographersRepository.findAll();
+		return photographersRepository.findByIsActiveAndIsApproved(PhotographersConstant.Y, PhotographersConstant.Y);
 	}
-	
 
 	@Override
 	public Photographers getPhotographersById(Long photographersId) {
@@ -38,8 +37,7 @@ public class PhotographersServiceImpl implements PhotographersService {
 
 	@Override
 	public Photographers savePhotgraphers(Photographers photographers) {
-		photographers.setIsActive(PhotographersConstant.N);
-		photographers.setSaveStatus(PhotographersConstant.Y);
+		photographers.setIsActive(PhotographersConstant.Y);
 		photographers.setEntDt(new Date());
 		photographers.setModDt(new Date());
 		return photographersRepository.save(photographers);
@@ -56,9 +54,8 @@ public class PhotographersServiceImpl implements PhotographersService {
 	}
 
 	@Override
-	public Photographers deletePhotographers(Photographers photographers) {
-		photographers.setIsActive(PhotographersConstant.N);
-		return photographersRepository.save(photographers);
+	public List<Photographers> getTopPhotographers() {
+		return photographersRepository.findByIsActiveAndIsApproved(PhotographersConstant.Y, PhotographersConstant.Y);
 	}
 
 

@@ -35,6 +35,12 @@ public class PhotographersController {
 		Photographers photographers = photographersService.getPhotographersById(photographersId);
 		return new ResponseEntity<Photographers>(photographers, HttpStatus.OK);
 	}
+	
+	@GetMapping("/topPhotographers")
+	public ResponseEntity<List<Photographers>> getTopPhotographers() {
+		List<Photographers> photographers = photographersService.getTopPhotographers();
+		return new ResponseEntity<List<Photographers>>(photographers, HttpStatus.OK);
+	}
 
 	@PostMapping("/photographers")
 	public ResponseEntity<Photographers> savePhotographers(@Valid @RequestBody Photographers photographers) {
@@ -43,15 +49,9 @@ public class PhotographersController {
 	}
 
 	@PutMapping("/photographers")
-	public ResponseEntity<Photographers> updatePhotographers(@RequestBody Photographers photographers) {
+	public ResponseEntity<Photographers> updatePhotographers(@Valid @RequestBody Photographers photographers) {
 		Photographers updatedPhotographers = photographersService.updatePhotographers(photographers);
 		return new ResponseEntity<Photographers>(updatedPhotographers, HttpStatus.OK);
-	}
-
-	@DeleteMapping("/photographers")
-	public ResponseEntity<Photographers> deletePhotographers(@RequestBody Photographers photographers) {
-		Photographers deletedPhotographers = photographersService.deletePhotographers(photographers);
-		return new ResponseEntity<Photographers>(deletedPhotographers, HttpStatus.OK);
 	}
 
 }

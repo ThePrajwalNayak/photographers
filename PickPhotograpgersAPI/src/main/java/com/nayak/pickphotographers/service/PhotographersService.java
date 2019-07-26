@@ -12,8 +12,8 @@ public interface PhotographersService {
 
 	public Photographers updatePhotographers(Photographers photographers);
 
-	public Photographers deletePhotographers(Photographers photographers);
-
 	public Photographers getPhotographersById(Long photographersId);
+
+	public List<Photographers> getTopPhotographers();
 
 }

@@ -1,5 +1,6 @@
 package com.nayak.pickphotographers.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,5 +15,7 @@ public interface PhotographersRepository extends JpaRepository<Photographers, Lo
 	Photographers findAllByPhotographersId(Long photographersId);
 
 	Optional<Photographers> findByUserNameAndPassword(String username, String password);
+
+	List<Photographers> findByIsActiveAndIsApproved(Character isActive, Character isApproved);
 
 }

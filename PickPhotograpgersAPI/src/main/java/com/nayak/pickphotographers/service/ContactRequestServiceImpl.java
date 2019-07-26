@@ -33,10 +33,4 @@ public class ContactRequestServiceImpl implements ContactRequestService {
 		return contactRequestRepository.findByIsRead(status);
 	}
 
-	@Override
-	public ContactRequest deleteContactRequest(ContactRequest contactRequest) {
-		contactRequest.setIsRead(PhotographersConstant.N);
-		return contactRequestRepository.save(contactRequest);
-	}
-
 }

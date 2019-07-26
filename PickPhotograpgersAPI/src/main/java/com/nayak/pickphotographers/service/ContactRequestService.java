@@ -12,6 +12,5 @@ public interface ContactRequestService {
 
 	public List<ContactRequest> getAllContactRequestBYStatus(Character status);
 
-	public ContactRequest deleteContactRequest(ContactRequest contactRequest);
 
 }
