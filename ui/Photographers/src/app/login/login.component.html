@@ -1,3 +1,36 @@
+<a class="app-btn app-btn-primary" routerLink="/">Home</a>
 <div id="login">
-  <a class="app-btn app-btn-primary" routerLink="/">Home</a>
+    <div class="card-singup padding-one">
+        <h2 class="login-header">Login</h2>
+        <form [formGroup]='loginForm' (ngSubmit)="validatePhotographers(loginForm)">
+          <div class="row margin-bottom-one">
+                <div class="col-md-6">
+                    <label class="label" for="username">Username Name *</label>
+                    <input formControlName="username" id="username" class="form-control item" type="text" name="username" placeholder="Username">
+                    <div class="error-message-wrapper" *ngIf="loginForm.controls['username'].touched && !loginForm.controls['username'].valid">
+                        <span class="error-message" *ngIf="loginForm.controls['username'].hasError('required')"> {{errorMessage.required}}</span>
+                        <span class="error-message" *ngIf="loginForm.controls['username'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.usernameMinLength}}</span>
+                        <span class="error-message" *ngIf="loginForm.controls['username'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.usernameMaxLength}}</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label class="label" for="password">Password *</label>
+                    <input formControlName="password" id="password" class="form-control item" type="password" name="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+                    <div class="error-message-wrapper" *ngIf="loginForm.controls['password'].touched && !loginForm.controls['password'].valid">
+                        <span class="error-message" *ngIf="loginForm.controls['password'].hasError('required')"> {{errorMessage.required}}</span>
+                        <span class="error-message" *ngIf="loginForm.controls['password'].hasError('minlength')"> {{errorMessage.minlength}} {{validation.passwordMinLength}}</span>
+                        <span class="error-message" *ngIf="loginForm.controls['password'].hasError('maxlength')">{{errorMessage.maxLength}} {{validation.passwordMaxLength}}</span>
+                    </div>
+                </div>
+          </div>
+            <div class="row margin-bottom-one mobile-responsive-button">
+                <div class="col-md-6 col-xs-6">
+                    <button (click)="revert()" class="btn app-btn app-btn-secondary">Reset</button>
+                </div>
+                <div class="col-md-6 col-xs-6">
+                    <button [disabled]="!loginForm.valid" [ngClass]="{'pointer-not-allowed' : !loginForm.valid}" type="submit" class="btn app-btn app-btn-primary right">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

@@ -1,3 +1,81 @@
-#login{
-    
+@import "../../_variables";
+#login {
+  background-image: linear-gradient(to right top, rgb(252, 44, 119) 0%, rgb(108, 64, 121) 100%);
+  padding: 5% 0;
+  .card-singup {
+    background-color: $card-color-background;
+    border-radius: $app-card-border-radius;
+    border: 1px soild $card-color-border;
+    width: 55%;
+    height: 70vh;
+    padding: 5% 10%;
+    margin: 0 auto;
+    .login-header {
+      margin-left: 32%;
+      margin-bottom: 5%;
+    }
+    form {
+      .label {
+        font-size: 16px;
+        color: $input-label-color;
+        text-transform: capitalize;
+        display: block;
+        margin-bottom: 5px;
+        font-family: MontserratRegular;
+      }
+      .item {
+        background: #fafafa;
+        border-radius: 5px;
+        padding: 0 20px;
+        font-size: 16px;
+        color: $input-item-color;
+        transition: all 0.4s ease;
+        box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+        outline: none;
+        border: none;
+        line-height: 50px;
+      }
+      .error-message-wrapper {
+        color: $error-message-color;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+      .aboutme {
+        height: 150px;
+        resize: none;
+      }
+    }
+  }
 }
+
+//Media query for mobile
+@media (min-width: 320px) and (max-width: 480px) {
+  #login {
+    padding: 5% 0;
+    .card-singup {
+      width: 90%;
+      padding: 5%;
+      .login-header {
+        margin-left: 29%;
+      }
+      form {
+        .mobile-responsive-button {
+          margin-top: 20px;
+          div {
+            width: 50%;
+          }
+        }
+        .row {
+          margin-bottom: 0;
+        }
+        .label {
+          margin-top: 2rem;
+        }
+        .item {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
