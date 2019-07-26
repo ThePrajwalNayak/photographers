@@ -111,11 +111,9 @@ export class SingupComponent implements OnInit {
         picture = picture[1];
       }
       var reqObj = {
-        userName: '1',
-        // userName: form.get('username').value,
+        userName: form.get('username').value,
         profilePicture: picture ? picture : null,
-        password: null,
-        // password: form.get('password').value,
+        password: form.get('password').value,
         firstName: form.get('firstName').value,
         lastName: form.get('lastName').value,
         email: form.get('email').value,
