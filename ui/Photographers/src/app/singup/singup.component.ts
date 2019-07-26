@@ -111,9 +111,11 @@ export class SingupComponent implements OnInit {
         picture = picture[1];
       }
       var reqObj = {
-        userName: form.get('username').value,
+        userName: '1',
+        // userName: form.get('username').value,
         profilePicture: picture ? picture : null,
-        password: form.get('password').value,
+        password: null,
+        // password: form.get('password').value,
         firstName: form.get('firstName').value,
         lastName: form.get('lastName').value,
         email: form.get('email').value,
@@ -134,13 +136,16 @@ export class SingupComponent implements OnInit {
       this.signUpService.createAccount(reqObj)
         .subscribe(data => {
           this.signupResponse = data;
-          if (this.signupResponse && this.signupResponse._id) {
+          if (this.signupResponse && this.signupResponse.photographersId != 0) {
             this.initSignupForm();
             this.toastrService.success('Account successfully created', 'Thank you for your registration! Your account is now ready to use.',{
               disableTimeOut:true
             });
           }
         }, err => {
+          this.toastrService.error(err.error.message, err.error.details.toString(),{
+            disableTimeOut:true
+          });
           console.log(err);
         });
     }

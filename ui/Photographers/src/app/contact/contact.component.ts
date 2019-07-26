@@ -75,6 +75,9 @@ export class ContactComponent implements OnInit {
             });
           }
         }, err => {
+          this.toastrService.error(err.error.message, err.error.details.toString(),{
+            disableTimeOut:true
+          });
           console.log(err);
         });
     }

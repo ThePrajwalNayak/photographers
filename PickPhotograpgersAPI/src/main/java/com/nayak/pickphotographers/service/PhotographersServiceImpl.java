@@ -38,6 +38,7 @@ public class PhotographersServiceImpl implements PhotographersService {
 	@Override
 	public Photographers savePhotgraphers(Photographers photographers) {
 		photographers.setIsActive(PhotographersConstant.Y);
+		photographers.setIsApproved(PhotographersConstant.N);
 		photographers.setEntDt(new Date());
 		photographers.setModDt(new Date());
 		return photographersRepository.save(photographers);
