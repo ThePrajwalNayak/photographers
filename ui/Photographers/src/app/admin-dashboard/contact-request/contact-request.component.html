@@ -1,3 +1,30 @@
-<p>
-  contact-request works!
-</p>
+<div id="contact-request">
+  <div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Id</th>
+          <th>Category</th>
+          <th>Message</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let newContactRequest of newContactRequests">
+          <th><input type="checkbox" name="id_number" value="id_number"></th>
+          <td>{{newContactRequest.contactRequestId}}</td>
+          <td>{{newContactRequest.contactCategory}}</td>
+          <td>{{newContactRequest.message}}</td>
+          <td>{{newContactRequest.fullName}}</td>
+          <td>{{newContactRequest.email}}</td>
+          <td>{{newContactRequest.mobile}}</td>
+          <td>{{newContactRequest.entDt | date :'short'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -18,4 +18,8 @@ public interface AdminService {
 
 	Photographers approveNewPhotographers(@Valid Photographers photographers);
 
+	List<ContactRequest> getAllContactRequest();
+
+	List<ContactRequest> getAllContactRequestBYStatus(Character status);
+
 }

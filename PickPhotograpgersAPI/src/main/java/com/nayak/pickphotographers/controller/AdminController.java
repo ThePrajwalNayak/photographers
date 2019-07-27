@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nayak.pickphotographers.entity.ContactRequest;
@@ -26,6 +27,19 @@ public class AdminController {
 
 	@Autowired
 	AdminService adminService;
+	
+	@GetMapping("/contactRequest")
+	public ResponseEntity<List<ContactRequest>> getAllContactRequest() {
+		List<ContactRequest> contactRequest = adminService.getAllContactRequest();
+		return new ResponseEntity<List<ContactRequest>>(contactRequest, HttpStatus.OK);
+	}
+
+	//http://localhost:8080/contactRequestByStatus?status=N
+	@GetMapping("/contactRequestByStatus")
+	public ResponseEntity<List<ContactRequest>> getAllContactRequestBYStatus(@RequestParam Character status) {
+		List<ContactRequest> contactRequestOpen = adminService.getAllContactRequestBYStatus(status);
+		return new ResponseEntity<List<ContactRequest>>(contactRequestOpen, HttpStatus.OK);
+	}
 
 	@GetMapping("/newPotogrpahers")
 	public ResponseEntity<List<Photographers>> getNewPhotogrpahers() {

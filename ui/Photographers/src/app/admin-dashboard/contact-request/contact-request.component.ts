@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 import { environment } from '../../../environments/environment';
 
@@ -12,16 +13,21 @@ export class ContactRequestComponent implements OnInit {
 
   BASE_URL = environment.baseUrl;
 
-  constructor(private http: HttpClient) { }
+  newContactRequests : any = [];
+
+  constructor(private http: HttpClient, private toastrService : ToastrService) { }
 
   ngOnInit() {
     this.getContactRequest();
   }
 
   getContactRequest() {
-    this.http.get(this.BASE_URL + "/contacts")
+    this.http.get(this.BASE_URL + "/admin/contactRequestByStatus",{
+      params: {
+        status: 'N'
+      }})
       .subscribe(data => {
-        console.log(data);
+        this.newContactRequests = data;
       }, error => {
         console.log(error);
       })

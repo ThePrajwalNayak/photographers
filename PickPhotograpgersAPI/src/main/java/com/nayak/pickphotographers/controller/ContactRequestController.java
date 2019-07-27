@@ -24,19 +24,6 @@ public class ContactRequestController {
 	@Autowired
 	ContactRequestService contactRequestService;
 
-	@GetMapping("/contactRequest")
-	public ResponseEntity<List<ContactRequest>> getAllContactRequest() {
-		List<ContactRequest> contactRequest = contactRequestService.getAllContactRequest();
-		return new ResponseEntity<List<ContactRequest>>(contactRequest, HttpStatus.OK);
-	}
-
-	//http://localhost:8080/contactRequestByStatus?status=N
-	@GetMapping("/contactRequestByStatus")
-	public ResponseEntity<List<ContactRequest>> getAllContactRequestBYStatus(@RequestParam Character status) {
-		List<ContactRequest> contactRequestOpen = contactRequestService.getAllContactRequestBYStatus(status);
-		return new ResponseEntity<List<ContactRequest>>(contactRequestOpen, HttpStatus.OK);
-	}
-
 	@PostMapping("/contactRequest")
 	public ResponseEntity<ContactRequest> saveContactRequest(@Valid @RequestBody ContactRequest contactRequest) {
 		ContactRequest savedContactRequest = contactRequestService.saveContactRequest(contactRequest);

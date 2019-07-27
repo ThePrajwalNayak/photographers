@@ -51,4 +51,14 @@ public class AdminServiceImpl implements AdminService {
 		return photographersRepository.save(photographers);
 	}
 
+	@Override
+	public List<ContactRequest> getAllContactRequest() {
+		return contactRequestRepository.findAll();
+	}
+
+	@Override
+	public List<ContactRequest> getAllContactRequestBYStatus(Character status) {
+		return contactRequestRepository.findByIsRead(status);
+	}
+
 }
