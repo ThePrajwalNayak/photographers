@@ -4,7 +4,7 @@
         <h2 class="signup-header">Sing up</h2>
         <form [formGroup]='signupForm' (ngSubmit)="createPhotographer(signupForm)">
             <div class="photographer-image relative">
-                    <input #fileUpload type="file" (click)="fileUpload.value = null"(change)="importFile($event)" style="display:none"
+                    <input #fileUpload type="file" (click)="fileUpload.value = null" (change)="importFile($event)" style="display:none"
                     accept="image/*">
                     <img class="img-thumbnail pointer" (click)="fileUpload.click()" *ngIf="profilePicture" [src]="profilePicture"
                     />

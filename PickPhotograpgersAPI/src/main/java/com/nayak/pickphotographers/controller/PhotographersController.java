@@ -7,7 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +19,7 @@ import com.nayak.pickphotographers.entity.Photographers;
 import com.nayak.pickphotographers.service.PhotographersService;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class PhotographersController {
 
 	@Autowired
@@ -48,6 +49,7 @@ public class PhotographersController {
 		return new ResponseEntity<Photographers>(savedPhotographers, HttpStatus.CREATED);
 	}
 
+	
 	@PutMapping("/photographers")
 	public ResponseEntity<Photographers> updatePhotographers(@Valid @RequestBody Photographers photographers) {
 		Photographers updatedPhotographers = photographersService.updatePhotographers(photographers);

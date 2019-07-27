@@ -15,4 +15,8 @@ export class SingupService {
     return this.http.post(this.BASE_URL + "/photographers", req);
   }
 
+  updateAccont(req){
+    return this.http.put(this.BASE_URL + "/photographers", req);
+  }
+
 }
