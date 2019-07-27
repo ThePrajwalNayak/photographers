@@ -33,4 +33,15 @@ export class ContactRequestComponent implements OnInit {
       })
   }
 
+  approveContactRequest(){
+    this.http.post(this.BASE_URL + "/admin/contactRequest",{})
+      .subscribe(data => {
+        this.toastrService.success('Apporved', '', {
+          disableTimeOut: true
+        });
+      }, error => {
+        console.log(error);
+      })
+  }
+
 }

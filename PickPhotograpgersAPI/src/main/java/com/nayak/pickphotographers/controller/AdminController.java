@@ -40,6 +40,13 @@ public class AdminController {
 		List<ContactRequest> contactRequestOpen = adminService.getAllContactRequestBYStatus(status);
 		return new ResponseEntity<List<ContactRequest>>(contactRequestOpen, HttpStatus.OK);
 	}
+	
+	@PutMapping("/contactRequest")
+	public ResponseEntity<Integer> approveContactRequest(@RequestParam List<ContactRequest> contactRequests){
+		Integer approvedContactRequest = adminService.approveContactRequest(contactRequests);
+		return new ResponseEntity<Integer>(approvedContactRequest, HttpStatus.OK);
+	}
+	
 
 	@GetMapping("/newPotogrpahers")
 	public ResponseEntity<List<Photographers>> getNewPhotogrpahers() {

@@ -22,4 +22,6 @@ public interface AdminService {
 
 	List<ContactRequest> getAllContactRequestBYStatus(Character status);
 
+	Integer approveContactRequest(List<ContactRequest> contactRequests);
+
 }

@@ -61,4 +61,10 @@ public class AdminServiceImpl implements AdminService {
 		return contactRequestRepository.findByIsRead(status);
 	}
 
+	@Override
+	public Integer approveContactRequest(List<ContactRequest> contactRequests) {
+		List<ContactRequest> approvedContactRequest = contactRequestRepository.saveAll(contactRequests);
+		return approvedContactRequest.size();
+	}
+
 }
