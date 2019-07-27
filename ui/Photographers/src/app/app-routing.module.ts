@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'images', component: ImagesComponent },
   { path: 'explore', component: ExploreComponent },
   { path: 'contact', component: ContactComponent },
-  { path : 'signup', component : SingupComponent},
+  { path : 'account', component : SingupComponent},
   { path : 'login', component : LoginComponent},
   { path : 'honeymoonPhotographer', component : HoneymoonPhotographerComponent},
   {

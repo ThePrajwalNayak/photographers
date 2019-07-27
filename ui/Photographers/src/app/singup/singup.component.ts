@@ -19,6 +19,7 @@ export class SingupComponent implements OnInit {
   CREATE = 'CREATE';
   UPDATE = 'UPDATE';
   MODE = '';
+  accountHeader  = 'Sign Up';
 
   sex = ['Male', 'Female'];
 
@@ -75,6 +76,7 @@ export class SingupComponent implements OnInit {
   ngOnInit() {
     this.initSignupForm();
     if (this.MODE == this.UPDATE) {
+      this.accountHeader = 'Update Account';
       this.updateSignupForm();
     }
   }
@@ -101,8 +103,7 @@ export class SingupComponent implements OnInit {
   }
 
   updateSignupForm() {
-    this.profilePicture = this.photographer.profilePicture == null ? null : this._sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,'
-      + this.photographer.profilePicture);
+    this.profilePicture = this.photographer.profilePicture == null ? null : this._sanitizer.bypassSecurityTrustUrl ('data:image/jpg;base64,'+ this.photographer.profilePicture);
     this.signupForm.setValue({
       username: this.photographer.userName, 
       password: this.photographer.password,
@@ -112,7 +113,7 @@ export class SingupComponent implements OnInit {
       phoneNumber: this.photographer.phoneNumber,
       location: this.photographer.location, 
       dob: this.photographer.dob,
-      sex: this.sex[0],
+      sex: this.photographer.sex ? (this.photographer.sex == 'M' ? 'M' : 'F') : null,
       about: this.photographer.about,
       linkFacebook: this.photographer.linkFacebook,
       linkInstagram: this.photographer.linkInstagram,
@@ -147,14 +148,14 @@ export class SingupComponent implements OnInit {
     if (this.MODE == this.CREATE) {
       if (signupForm.status === 'VALID') {
         var form = this.signupForm;
-        var picture;
+        var picture = null;
         if (this.profilePicture) {
           picture = this.profilePicture[0].split(',');
           picture = picture[1];
         }
         var reqObj = {
           userName: form.get('username').value,
-          profilePicture: picture ? picture : null,
+          profilePicture: picture,
           password: form.get('password').value,
           firstName: form.get('firstName').value,
           lastName: form.get('lastName').value,
@@ -177,6 +178,7 @@ export class SingupComponent implements OnInit {
           .subscribe(data => {
             this.signupResponse = data;
             if (this.signupResponse && this.signupResponse.photographersId != 0) {
+              this.profilePicture = null;
               this.initSignupForm();
               this.toastrService.success('Account successfully created', 'Thank you for your registration! Your account is now ready to use.', {
                 disableTimeOut: true
@@ -197,15 +199,18 @@ export class SingupComponent implements OnInit {
   updatePhotographer(signupForm) {
     if (signupForm.status === 'VALID') {
       var form = this.signupForm;
-      var picture;
-      // if (this.profilePicture) {
-      //   picture = this.profilePicture[0].split(',');
-      //   picture = picture[1];
-      // }
+      var picture = null;
+      if (Array.isArray(this.profilePicture)) {
+        picture = this.profilePicture[0].split(',');
+        picture = picture[1];
+      } else{
+        picture = this.profilePicture.changingThisBreaksApplicationSecurity.split(',');
+        picture = picture[1];
+      }
       var reqObj = {
         photographersId: this.photographer.photographersId,
         userName: form.get('username').value,
-        profilePicture: picture ? picture : null,
+        profilePicture: picture,
         password: form.get('password').value,
         firstName: form.get('firstName').value,
         lastName: form.get('lastName').value,
@@ -232,7 +237,6 @@ export class SingupComponent implements OnInit {
         .subscribe(data => {
           this.signupResponse = data;
           if (this.signupResponse && this.signupResponse.photographersId != 0) {
-            this.initSignupForm();
             this.toastrService.success('Account successfully updated', 'Hurray', {
               disableTimeOut: true
             });

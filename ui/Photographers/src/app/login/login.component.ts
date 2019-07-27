@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
             this.initLoginForm();
             this.photographers = data;
             this.data.storage = this.photographers;
-            this.router.navigate(['/signup'])
+            this.router.navigate(['/account'])
           } else {
             this.toastrService.error('Better luck next time', 'Wrong username or password.', {
               disableTimeOut: true

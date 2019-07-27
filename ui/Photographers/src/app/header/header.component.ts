@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit {
 
   goToSignup(){
     this.data.storage = null;
-    this.router.navigateByUrl('/signup');
+    this.router.navigateByUrl('/account');
   }
 
 }

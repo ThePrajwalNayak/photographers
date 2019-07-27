@@ -1,7 +1,7 @@
 <div id="singup">
     <a class="app-btn app-btn-primary" routerLink="/">Home</a>
     <div class="card-singup padding-one">
-        <h2 class="signup-header">Sing up</h2>
+        <h2 class="signup-header">{{accountHeader}}</h2>
         <form [formGroup]='signupForm' (ngSubmit)="createPhotographer(signupForm)">
             <div class="photographer-image relative">
                     <input #fileUpload type="file" (click)="fileUpload.value = null" (change)="importFile($event)" style="display:none"

@@ -15,7 +15,7 @@ export class AppComponent {
   constructor(location: Location, router: Router){
       router.events.subscribe((val) => {
         var path = location.path();
-         this.hide = path.includes('/admin') || path.includes('/login') || path.includes('/signup');
+         this.hide = path.includes('/admin') || path.includes('/login') || path.includes('/account');
       });
   }
 
