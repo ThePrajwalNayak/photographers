@@ -13,7 +13,7 @@ export class ContactComponent implements OnInit {
 
   contactForm: FormGroup;
 
-  contactCategory = [ "Review", "Request", "Honeymoon Photography", "Book Tickets", "Complain",];
+  contactCategory = [ "Select", "Review", "Request", "Honeymoon Photography", "Book Tickets", "Complain"];
 
   errorMessage: any = {
     required: 'Required',
@@ -59,7 +59,7 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  //Move contact request type to 0 index
+  //Move contact request type to 0
   insertAndShift(arr, from, to) {
     let cutOut = arr.splice(from, 1) [0]; // cut the element at index 'from'
     arr.splice(to, 0, cutOut);            // insert it at index 'to'

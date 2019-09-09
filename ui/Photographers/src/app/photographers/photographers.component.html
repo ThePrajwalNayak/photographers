@@ -1,7 +1,7 @@
 <div id="photographers" class="app-conatiner">
     <div class="row">
         <div class="col-md-3 card-left">
-            <div class="photographers-card clearfix padding-one pointer" [ngClass]="{'selected-photographer' : photographer._id== selectedPhotographer._id}"
+            <div class="photographers-card clearfix padding-one pointer" [ngClass]="{'selected-photographer' : photographer.photographersId == selectedPhotographer.photographersId}"
                 (click)="setPhotographer(photographer)" *ngFor="let photographer of photographers">
                 <img class="img-thumbnail left margin-right-one photographers-photo-size" *ngIf="photographer.profilePicture" [src]="'data:image/jpg;base64,'+photographer.profilePicture"
                 />
