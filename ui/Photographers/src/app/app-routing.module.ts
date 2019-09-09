@@ -23,8 +23,8 @@ const routes: Routes = [
   {
 	   path: 'admin',
      loadChildren: './admin-dashboard/admin-dashboard.module#AdminDashboardModule'
-	}
-  // { path: '**', component: HomeComponent }
+	},
+  { path: '**', component: HomeComponent }
 ];
 
 @NgModule({
