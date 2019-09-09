@@ -13,7 +13,7 @@ export class ContactComponent implements OnInit {
 
   contactForm: FormGroup;
 
-  contactCategory = [ "Request", "Honeymoon Photography", "Book Tickets", "Complain",];
+  contactCategory = [ "Review", "Request", "Honeymoon Photography", "Book Tickets", "Complain",];
 
   errorMessage: any = {
     required: 'Required',
