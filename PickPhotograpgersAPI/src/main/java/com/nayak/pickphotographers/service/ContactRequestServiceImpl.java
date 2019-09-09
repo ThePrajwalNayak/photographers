@@ -19,6 +19,7 @@ public class ContactRequestServiceImpl implements ContactRequestService {
 	public ContactRequest saveContactRequest(ContactRequest contactRequest) {
 		contactRequest.setIsRead(PhotographersConstant.Y);
 		contactRequest.setEntDt(new Date());
+		System.out.println("service : ");
 		return contactRequestRepository.save(contactRequest);
 	}
 

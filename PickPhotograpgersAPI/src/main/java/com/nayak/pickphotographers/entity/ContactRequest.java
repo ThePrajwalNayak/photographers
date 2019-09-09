@@ -7,11 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
+@Table(name="contact_request")
 public class ContactRequest implements Serializable {
 
 	private static final long serialVersionUID = -7368892080214437870L;
@@ -110,5 +112,14 @@ public class ContactRequest implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+	@Override
+	public String toString() {
+		return "ContactRequest [contactRequestId=" + contactRequestId + ", contactCategory=" + contactCategory
+				+ ", fullName=" + fullName + ", email=" + email + ", mobile=" + mobile + ", message=" + message
+				+ ", isRead=" + isRead + ", entDt=" + entDt + "]";
+	}
+	
+	
 
 }

@@ -26,6 +26,7 @@ public class ContactRequestController {
 
 	@PostMapping("/contactRequest")
 	public ResponseEntity<ContactRequest> saveContactRequest(@Valid @RequestBody ContactRequest contactRequest) {
+		System.out.println("COntroller : "+contactRequest);
 		ContactRequest savedContactRequest = contactRequestService.saveContactRequest(contactRequest);
 		return new ResponseEntity<ContactRequest>(savedContactRequest, HttpStatus.CREATED);
 	}

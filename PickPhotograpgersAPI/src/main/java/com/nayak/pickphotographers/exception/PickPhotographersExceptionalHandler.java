@@ -24,6 +24,7 @@ public class PickPhotographersExceptionalHandler extends ResponseEntityException
 
 	@ExceptionHandler(Exception.class)
 	public final ResponseEntity<Object> handleAllExceptions(Exception ex, WebRequest request) {
+		System.out.println("Exception : "+ex.getStackTrace());
 		List<String> details = new ArrayList<>();
 		details.add(ex.getLocalizedMessage());
 		ErrorResponse error = new ErrorResponse("Server Error", details);
