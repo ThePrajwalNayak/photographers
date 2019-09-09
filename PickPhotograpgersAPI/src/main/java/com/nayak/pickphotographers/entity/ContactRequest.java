@@ -13,7 +13,6 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-@Table(name="contact_request")
 public class ContactRequest implements Serializable {
 
 	private static final long serialVersionUID = -7368892080214437870L;

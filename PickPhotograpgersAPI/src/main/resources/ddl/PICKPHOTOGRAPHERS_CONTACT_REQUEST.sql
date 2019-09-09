@@ -21,10 +21,10 @@ USE `PICKPHOTOGRAPHERS`;
 -- Table structure for table `CONTACT_REQUEST`
 --
 
-DROP TABLE IF EXISTS `CONTACT_REQUEST`;
+DROP TABLE IF EXISTS `contact_request`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CONTACT_REQUEST` (
+CREATE TABLE `contact_request` (
   `CONTACT_REQUEST_ID` int(11) NOT NULL AUTO_INCREMENT,
   `FULL_NAME` varchar(30) NOT NULL,
   `EMAIL` varchar(30) NOT NULL,

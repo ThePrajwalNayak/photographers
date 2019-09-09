@@ -41,20 +41,9 @@ public class PhotographersController {
 	
 	@GetMapping("/topPhotographers")
 	public ResponseEntity<List<Photographers>> getTopPhotographers() {
-//		List<Photographers> photographers = photographersService.getTopPhotographers();
-		System.out.println("topPhotographers");
-		List<Photographers> photographers = new ArrayList<Photographers>();
-		Photographers p = new Photographers();
-		p.setUserName("iamRaj");
-		p.setAbout("hahahahahha");
-		photographers.add(p);
+		List<Photographers> photographers = photographersService.getTopPhotographers();
 		return new ResponseEntity<List<Photographers>>(photographers, HttpStatus.OK);
 	}
-	
-    @RequestMapping("/")
-    String index() {
-        return "Hello world";
-    }
 
 	@PostMapping("/photographers")
 	public ResponseEntity<Photographers> savePhotographers(@Valid @RequestBody Photographers photographers) {
