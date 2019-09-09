@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { ExploreService } from './explore.service';
+import { ContactService } from './../contact/contact.service';
 
 @Component({
   selector: 'app-explore',
@@ -11,7 +13,7 @@ export class ExploreComponent implements OnInit {
 
   eventCards: any;
 
-  constructor(private eventService: ExploreService) { }
+  constructor(private eventService: ExploreService, private router : Router, private contactService : ContactService) { }
 
   ngOnInit() {
     this.initEventCard();
@@ -25,4 +27,10 @@ export class ExploreComponent implements OnInit {
         console.log(err);
       });
   }
+
+  goToContact(){
+    this.contactService.setRequestType("Book Tickets");
+    this.router.navigateByUrl('/contact');
+  }
+
 }

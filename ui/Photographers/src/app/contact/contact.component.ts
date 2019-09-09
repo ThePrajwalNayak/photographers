@@ -13,8 +13,7 @@ export class ContactComponent implements OnInit {
 
   contactForm: FormGroup;
 
-  contactCategory = ["Request", "Complain"];
-  defaultContactCategory = this.contactCategory[0];
+  contactCategory = [ "Request", "Honeymoon Photography", "Book Tickets", "Complain",];
 
   errorMessage: any = {
     required: 'Required',
@@ -44,14 +43,26 @@ export class ContactComponent implements OnInit {
   }
 
   initContactForm() {
+    var requestType = this.contactService.getRequestType();
+    this.contactService.setRequestType(null);
 
+    if(requestType){
+      this.insertAndShift(this.contactCategory, this.contactCategory.indexOf(requestType), 0);
+    }
+ 
     this.contactForm = this.formBuilder.group({
-      contactCategory: [ this.defaultContactCategory, Validators.compose([Validators.required])],
+      contactCategory: [ '', Validators.compose([Validators.required])],
       fullName: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.nameMaxLength), Validators.minLength(this.validation.nameMinLength)])],
       email: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.emailMaxLength), Validators.minLength(this.validation.emailMinLength)])],
       mobile: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.mobileMaxLength), Validators.minLength(this.validation.mobileMinLength)])],
       message: ['', Validators.compose([Validators.required, Validators.maxLength(this.validation.messageMaxLength), Validators.minLength(this.validation.messageMinLength)])],
     });
+  }
+
+  //Move contact request type to 0 index
+  insertAndShift(arr, from, to) {
+    let cutOut = arr.splice(from, 1) [0]; // cut the element at index 'from'
+    arr.splice(to, 0, cutOut);            // insert it at index 'to'
   }
 
   createContact(contactForm) {
