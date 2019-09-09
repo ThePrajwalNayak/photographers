@@ -2,18 +2,11 @@
 2) Deploy Spring + MySQL on digital ocean - https://www.rimon.xyz/2017/09/deploy-spring-boot-app-in-digitalocean-html/
 3) Create Mysql User - https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
 4) Install MySql on digital ocean - https://www.digitalocean.com/community/tutorials/a-basic-mysql-tutorial
-5)8080 failed to start - sudo lsof -i tcp:8080, kill -15 PID
+
+5) 8080 failed to start - sudo lsof -i tcp:8080, kill -15 PID
 6)Maven install skip test - mvn install -Dmaven.test.skip=true
-7) Linux kill screen 
 
-List screens:
+7) nohup java -jar pickphotographers-0.0.1-SNAPSHOT.jar &
+   fuser 8080/tcp and kill -9 <port>
 
-screen -list
-Output:
-
-There is a screen on:
-23536.pts-0.wdzee       (10/04/2012 08:40:45 AM)        (Detached)
-1 Socket in /var/run/screen/S-root.
-Kill screen session:
-
-screen -S 23536 -X quit
+   8) Mysql login - mysql -u [username] -p
