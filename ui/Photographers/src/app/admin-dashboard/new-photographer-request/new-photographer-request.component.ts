@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 import { NewPhotographerRequestService } from './new-photographer-request.service';
 
@@ -12,7 +13,7 @@ export class NewPhotographerRequestComponent implements OnInit {
   photographers: any = [];
   selectedPhotographer: any;
 
-  constructor(private newPhotographerRequestService: NewPhotographerRequestService) { }
+  constructor(private newPhotographerRequestService: NewPhotographerRequestService, private toastrService : ToastrService) { }
 
   ngOnInit() {
     this.getNewPhotographerRequest();
@@ -38,6 +39,9 @@ export class NewPhotographerRequestComponent implements OnInit {
     .subscribe((data : any) => {
       var approveResponse = data;
       if(data.isApproved == 'Y'){
+        this.toastrService.success(newPhotographer.userName +' Apporved', '', {
+          disableTimeOut: true
+        });
         this.refreshApprovedContactRequest(newPhotographer);
       }
     }, error => {
