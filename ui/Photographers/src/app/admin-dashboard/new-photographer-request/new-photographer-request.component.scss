@@ -34,7 +34,6 @@
             width: 200px !important;
             height: 200px !important;
             left: 50%;
-            // top: -110px;
             transform: translateX(-50%);
           }
         .card {
@@ -42,12 +41,12 @@
         }
 
         .card-info {
-          margin-top: 30px;
 
           .name {
             color: $card-color-author;
             font-size: 2rem;
             font-family: MontserratSemiBold;
+            margin-bottom: -5px;
           }
 
           .username {

@@ -13,13 +13,13 @@
     </div>
     <div class="col-md-9 card-right">
       <div class="selected-photographer" *ngIf="selectedPhotographer">
-        <img class="img-thumbnail" *ngIf="selectedPhotographer.profilePicture"
+        <div class="card card-info padding-two">
+          <img class="img-thumbnail" *ngIf="selectedPhotographer.profilePicture"
           [src]="'data:image/jpg;base64,'+selectedPhotographer.profilePicture" />
         <img class="img-thumbnail" *ngIf="!selectedPhotographer.profilePicture"
           src="../../assets/images/placeholder_person.png" />
-        <div class="card card-info padding-two">
-          <p class="name">{{selectedPhotographer.firstName}} {{selectedPhotographer.lastName}}</p>
-          <p class="username">@{{selectedPhotographer.userName}}</p>
+          <p class="name text-center margin-top-one">{{selectedPhotographer.firstName}} {{selectedPhotographer.lastName}}</p>
+          <p class="username text-center margin-bottom-one">@{{selectedPhotographer.userName}}</p>
           <div class="row details">
             <span class="col-md-6" *ngIf="selectedPhotographer.location"><i
                 class="fa fa-map-marker margin-right-half"></i>{{selectedPhotographer.location}}</span>
@@ -30,24 +30,25 @@
             <span class="col-md-6" *ngIf="!selectedPhotographer.dob"><i
                 class="fa fa-birthday-cake margin-right-half"></i>Not Mentioned</span>
           </div>
-          <div class="row details">
+          <div class="row details margin-bottom-one">
             <span class="col-md-6" *ngIf="selectedPhotographer.email"><i
                 class="fa fa-envelope margin-right-half"></i>{{selectedPhotographer.email}}</span>
             <span class="col-md-6" *ngIf="!selectedPhotographer.email"><i
                 class="fa fa-envelope margin-right-half"></i>Not Mentioned</span>
             <span class="col-md-6" *ngIf="selectedPhotographer.phone"><i
                 class="fa fa-mobile margin-right-half"></i>{{selectedPhotographer.phone}}</span>
-            <span class="col-md-6" *ngIf="!selectedPhotographer.phone"><i class="fa fa-mobile margin-right-half"></i>Not
-              Mentioned</span>
+            <span class="col-md-6" *ngIf="!selectedPhotographer.phone"><i class="fa fa-mobile margin-right-half"></i>Not Mentioned</span>
+          </div>
+          <div class="row details">
+            <span class="col-md-12" *ngIf="selectedPhotographer.photoLink"><i
+                class="fa fa-link margin-right-half"></i>{{selectedPhotographer.photoLink}}</span>
+            <span class="col-md-12" *ngIf="!selectedPhotographer.photoLink"><i
+                class="fa fa-link margin-right-half"></i>Not Mentioned</span>
           </div>
           <div class="row details margin-bottom-one">
-            <span class="col-md-6" *ngIf="selectedPhotographer.photoLink"><i
-                class="fa fa-link margin-right-half"></i>{{selectedPhotographer.photoLink}}</span>
-            <span class="col-md-6" *ngIf="!selectedPhotographer.photoLink"><i
-                class="fa fa-link margin-right-half"></i>Not Mentioned</span>
-            <span class="col-md-6" *ngIf="selectedPhotographer.videoLink"><i
+            <span class="col-md-12" *ngIf="selectedPhotographer.videoLink"><i
                 class="fa fa-link margin-right-half"></i>{{selectedPhotographer.videoLink}}</span>
-            <span class="col-md-6" *ngIf="!selectedPhotographer.videoLink"><i
+            <span class="col-md-12" *ngIf="!selectedPhotographer.videoLink"><i
                 class="fa fa-link margin-right-half"></i>Not Mentioned</span>
           </div>
         </div>
@@ -56,18 +57,26 @@
         </div>
         <div class="card card-contact margin-top-one padding-one">
           <div class="text-center">
-            <a class="margin-right-one pointer"
-              [ngClass]="{'pointer-not-allowed' : selectedPhotographer.linkFacebook === null}" title="Facebook Page"
-              (click)="openLink(selectedPhotographer.linkFacebook)" target="_blank"><i class="fa fa-facebook"></i></a>
-            <a class="margin-right-one pointer"
-              [ngClass]="{'pointer-not-allowed' : selectedPhotographer.linkTwitter === null}" title="Twitter Page"
-              (click)="openLink(selectedPhotographer.linkTwitter)" target="_blank"><i class="fa fa-twitter"></i></a>
-            <a class="margin-right-one pointer"
-              [ngClass]="{'pointer-not-allowed' : selectedPhotographer.linkInstagram === null}" title="Instagram Page"
-              (click)="openLink(selectedPhotographer.linkInstagram)" target="_blank"><i class="fa fa-instagram"></i></a>
-            <a class="margin-right-one pointer"
-              [ngClass]="{'pointer-not-allowed' : selectedPhotographer.linkLinkedIn === null}" title="Linked Page"
-              (click)="openLink(selectedPhotographer.linkLinkedIn)" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <div>
+              <span *ngIf="selectedPhotographer.linkFacebook"><i
+                  class="fa fa-facebook margin-right-half"></i>{{selectedPhotographer.linkFacebook}}</span>
+              <span *ngIf="!selectedPhotographer.linkFacebook"><i class="fa fa-facebook margin-right-half"></i>Not Mentioned</span>
+            </div>
+            <div>
+              <span *ngIf="selectedPhotographer.linkTwitter"><i
+                  class="fa fa-twitter margin-right-half"></i>{{selectedPhotographer.linkTwitter}}</span>
+              <span *ngIf="!selectedPhotographer.linkTwitter"><i class="fa fa-twitter margin-right-half"></i>Not Mentioned</span>
+            </div>
+            <div>
+              <span *ngIf="selectedPhotographer.linkInstagram"><i
+                  class="fa fa-instagram margin-right-half"></i>{{selectedPhotographer.linkInstagram}}</span>
+              <span *ngIf="!selectedPhotographer.linkInstagram"><i class="fa fa-instagram margin-right-half"></i>Not Mentioned</span>
+            </div>
+            <div>
+              <span *ngIf="selectedPhotographer.linkLinkedin"><i
+                  class="fa fa-linkedin margin-right-half"></i>{{selectedPhotographer.linkLinkedin}}</span>
+              <span *ngIf="!selectedPhotographer.linkLinkedin"><i class="fa fa-linkedin margin-right-half"></i>Not Mentioned</span>
+            </div>
           </div>
         </div>
       </div>
