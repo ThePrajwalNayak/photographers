@@ -1,5 +1,5 @@
 <div id="contact-request">
-  <div>
+  <div *ngIf="newContactRequests.length > 0"> 
     <table class="table table-hover">
       <thead>
         <tr>
@@ -15,7 +15,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let newContactRequest of newContactRequests">
-          <th><input type="checkbox" name="id_number" value="id_number"></th>
+          <th><input type="checkbox" name="id_number" value="id_number" [(ngModel)]="newContactRequest.checked"></th>
           <td>{{newContactRequest.contactRequestId}}</td>
           <td>{{newContactRequest.contactCategory}}</td>
           <td>{{newContactRequest.message}}</td>
@@ -26,5 +26,9 @@
         </tr>
       </tbody>
     </table>
+    <button *ngIf="newContactRequests.length > 0" (click)="approveContactRequest()">Approve</button>
+  </div>
+  <div *ngIf="newContactRequests.length == 0">
+      No Request
   </div>
 </div>

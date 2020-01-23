@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,8 +42,8 @@ public class AdminController {
 		return new ResponseEntity<List<ContactRequest>>(contactRequestOpen, HttpStatus.OK);
 	}
 	
-	@PutMapping("/contactRequest")
-	public ResponseEntity<Integer> approveContactRequest(@RequestParam List<ContactRequest> contactRequests){
+	@PostMapping("/approveContactRequest")
+	public ResponseEntity<Integer> approveContactRequest(@RequestBody List<ContactRequest> contactRequests){
 		Integer approvedContactRequest = adminService.approveContactRequest(contactRequests);
 		return new ResponseEntity<Integer>(approvedContactRequest, HttpStatus.OK);
 	}

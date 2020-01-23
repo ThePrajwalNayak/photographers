@@ -11,7 +11,8 @@ import { LoginComponent } from './login/login.component';
 @NgModule({
   imports: [
     CommonModule,
-    AdminDashboardRoutingModule
+    AdminDashboardRoutingModule,
+    FormsModule
   ],
   declarations: [AdminDashboardComponent, ContactRequestComponent, NewPhotographerRequestComponent, LoginComponent]
 })

@@ -54,7 +54,7 @@ import { Data } from './data';
     ReactiveFormsModule,
     Ng4LoadingSpinnerModule.forRoot(),
     BrowserAnimationsModule, 
-    ToastrModule.forRoot() 
+    ToastrModule.forRoot()
   ],
   providers: [PhotographersService, {provide: LocationStrategy, useClass: HashLocationStrategy}, SingupService, ContactService, HoneymoonPhotographerService,
     { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true }, LoginService,Data],
