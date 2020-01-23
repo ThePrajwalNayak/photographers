@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { environment } from '../../../environments/environment';
+import { NewPhotographerRequestService } from './new-photographer-request.service';
 
 @Component({
   selector: 'app-new-photographer-request',
@@ -10,21 +9,27 @@ import { environment } from '../../../environments/environment';
 })
 export class NewPhotographerRequestComponent implements OnInit {
 
-  BASE_URL = environment.baseUrl;
+  photographers: any = [];
+  selectedPhotographer: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private newPhotographerRequestService: NewPhotographerRequestService) { }
 
   ngOnInit() {
     this.getNewPhotographerRequest();
   }
 
   getNewPhotographerRequest() {
-    this.http.get(this.BASE_URL + "/admin/newPhotographers")
+    this.newPhotographerRequestService.getUnApprovedPhotographersRequest()
       .subscribe(data => {
-        console.log(data);
+        this.photographers = data;
+        this.selectedPhotographer = this.photographers[0];
       }, error => {
         console.log(error);
       })
+  }
+
+  setPhotographer(photographer) {
+    this.selectedPhotographer = photographer;
   }
 
 }

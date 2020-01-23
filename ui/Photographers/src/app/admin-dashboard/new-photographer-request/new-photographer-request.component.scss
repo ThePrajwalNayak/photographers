@@ -1,0 +1,112 @@
+@import "../../../_variables";
+
+#new-photographer-request {
+    padding: 20px 0;
+  .row {
+    .card-left {
+      height: 600px;
+      overflow-y: scroll;
+
+      .photographers-card {
+        background-color: $card-color-background;
+
+        .photographers-photo-size {
+          width: 50px;
+          height: 50px;
+        }
+
+        .author {
+          color: $card-color-author;
+          font-size: 1rem;
+          font-family: MontserratSemiBold;
+        }
+      }
+
+      .selected-photographer {
+        background: $app-color-secondary;
+      }
+    }
+
+    .card-right {
+      .selected-photographer {
+          .img-thumbnail {
+            position: relative;
+            width: 200px !important;
+            height: 200px !important;
+            left: 50%;
+            // top: -110px;
+            transform: translateX(-50%);
+          }
+        .card {
+          background-color: $card-color-background;
+        }
+
+        .card-info {
+          margin-top: 30px;
+
+          .name {
+            color: $card-color-author;
+            font-size: 2rem;
+            font-family: MontserratSemiBold;
+          }
+
+          .username {
+            color: $card-color-author-secondary;
+            font-size: 1.4rem;
+            font-family: MontserratSemiBold;
+          }
+
+          .details {
+            font-size: 20px;
+          }
+        }
+
+        .card-about {
+          p {
+            text-indent: 2rem;
+            text-align: justify;
+          }
+        }
+
+        .card-contact {}
+      }
+    }
+  }
+}
+
+//Mobile media query
+@media (min-width: 320px) and (max-width: 480px) {
+  #photographers {
+    .row {
+      .card-left {
+        margin-bottom: -15%;
+      }
+
+      .card-right {
+        .selected-photographer {
+          .card {
+            .username {
+              margin-bottom: 2rem;
+            }
+
+            .details {
+              span {
+                margin-bottom: 5px;
+              }
+            }
+
+            p {
+              margin-bottom: -2px;
+
+              a {
+                i {
+                  font-size: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
