@@ -80,9 +80,13 @@
           </div>
         </div>
       </div>
-      <button class="app-btn app-btn-primary center" (click)="approvePhotographersRequest(selectedPhotographer)">Approve</button>
-      <br>
-      <button class="app-btn app-btn-secondary center margin-top-one" (click)="deletePhotographersRequest(selectedPhotographer)">Delete</button>
+      <div *ngIf="photographers.length > 0">
+        <button class="app-btn app-btn-primary center"
+          (click)="approvePhotographersRequest(selectedPhotographer)">Approve</button>
+        <br>
+        <button class="app-btn app-btn-secondary center margin-top-one"
+          (click)="deletePhotographersRequest(selectedPhotographer)">Delete</button>
+      </div>
     </div>
   </div>
 </div>
