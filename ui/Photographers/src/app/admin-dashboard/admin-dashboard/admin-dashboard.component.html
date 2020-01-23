@@ -1,12 +1,31 @@
 <div id="admin">
-  <div class="row">
-      <div id="admin-left" class="col-md-3">
-        <a class="app-btn app-btn-primary" [routerLink]="['/admin/contactRequest']">Contact Request</a>
-        <a class="app-btn app-btn-primary" [routerLink]="['/admin/newPhotographerRequest']">New Photographer Request</a>
-        <a class="app-btn app-btn-primary" [routerLink]="['/admin/newPhotographerRequest']">Photographers</a>
-      </div>
-      <div id="admin-right" class="col-md-9">
-        <router-outlet></router-outlet>
-      </div>
+  <div id="admin-header">
+    <nav id="admin-navigation" class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <!-- Brand -->
+      <a class="navbar-brand" [routerLink]="['/admin']">Admin</a>
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/admin/contactRequest']">Contact Request</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/admin/newPhotographerRequest']">Photographer Request</a>
+        </li>
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Other
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" [routerLink]="['/admin']">Link 1</a>
+            <a class="dropdown-item" [routerLink]="['/admin']">Link 2</a>
+            <a class="dropdown-item" [routerLink]="['/admin']">Link 3</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div id="admin-body">
+    <router-outlet></router-outlet>
   </div>
 </div>

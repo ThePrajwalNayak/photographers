@@ -1,7 +1,7 @@
 <div id="contact-request">
   <div *ngIf="newContactRequests.length > 0"> 
-    <table class="table table-hover">
-      <thead>
+    <table class="table table-striped margin-top-two">
+      <thead class="thead-dark">
         <tr>
           <th></th>
           <th>Id</th>
@@ -26,9 +26,9 @@
         </tr>
       </tbody>
     </table>
-    <button *ngIf="newContactRequests.length > 0" (click)="approveContactRequest()">Approve</button>
+    <button class="app-btn app-btn-primary margin-top-two" *ngIf="newContactRequests.length > 0" (click)="approveContactRequest()">Approve</button>
   </div>
   <div *ngIf="newContactRequests.length == 0">
-      No Request
+      No Contact Request
   </div>
 </div>
