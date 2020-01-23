@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -60,9 +61,9 @@ public class AdminController {
 		return new ResponseEntity<List<ContactRequest>>(contactRequest, HttpStatus.OK);
 	}
 	
-	@DeleteMapping("/photographers")
-	public ResponseEntity<String> deletePhotographers(@Valid @RequestBody Photographers photographers){
-		adminService.deletePhotographers(photographers);
+	@DeleteMapping("/photographers/{photographerId}")
+	public ResponseEntity<String> deletePhotographers(@PathVariable("photographerId") Long photographerId){
+		adminService.deletePhotographers(photographerId);
 		return new ResponseEntity<String>("Deleted", HttpStatus.OK);
 	}
 	

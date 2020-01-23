@@ -35,11 +35,29 @@ export class NewPhotographerRequestComponent implements OnInit {
   approvePhotographersRequest(newPhotographer){
     newPhotographer.isApproved = 'Y';
     this.newPhotographerRequestService.approvePhotographersRequest(newPhotographer)
-    .subscribe(data => {
-        var approveResponse = data;
+    .subscribe((data : any) => {
+      var approveResponse = data;
+      if(data.isApproved == 'Y'){
+        this.refreshApprovedContactRequest(newPhotographer);
+      }
     }, error => {
       console.log(error);
     });
+  }
+
+  deletePhotographersRequest(newPhotographer){
+    this.newPhotographerRequestService.deletePhotographersRequest(newPhotographer.photographersId)
+    .subscribe(data => {
+        var deleteResponse = data;
+        this.refreshApprovedContactRequest(newPhotographer);
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  refreshApprovedContactRequest(newPhotographer) {
+    this.photographers.splice(this.photographers.indexOf(newPhotographer), 1);
+    this.selectedPhotographer = this.photographers[0];
   }
 
 }

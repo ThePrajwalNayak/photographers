@@ -13,16 +13,15 @@ export class NewPhotographerRequestService {
     constructor(private http: HttpClient) { }
 
     getUnApprovedPhotographersRequest() {
-        return this.http.get(this.BASE_URL + "/admin/newPotogrpahers", {
-            params: {
-                status: 'N'
-            }
-        });
+        return this.http.get(this.BASE_URL + "/admin/newPotogrpahers");
     }
 
     approvePhotographersRequest(newPhotographer){
         return this.http.put(this.BASE_URL + "/admin/approvePhotographersRequest", newPhotographer);
     }
 
+    deletePhotographersRequest(newPhotographerId){
+        return this.http.delete(this.BASE_URL + "/admin/photographers/" + newPhotographerId);
+    }
 
 }

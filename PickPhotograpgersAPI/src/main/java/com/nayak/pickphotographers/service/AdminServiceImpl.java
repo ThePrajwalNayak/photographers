@@ -3,6 +3,7 @@ package com.nayak.pickphotographers.service;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
@@ -32,8 +33,12 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public void deletePhotographers(@Valid Photographers photographers) {
-		photographersRepository.delete(photographers);
+	public void deletePhotographers(@Valid Long photographerId) {
+		Optional<Photographers> dbCopy = photographersRepository.findById(photographerId);
+		if(!dbCopy.isPresent()) {
+			throw new EntityNotFoundException("No entity found with given id "+photographerId);
+		}
+		photographersRepository.deleteById(photographerId);
 	}
 
 	@Override
@@ -58,7 +63,7 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public List<ContactRequest> getNewContactRequest() {
-		return contactRequestRepository.findByIsRead(PhotographersConstant.Y);
+		return contactRequestRepository.findByIsRead(PhotographersConstant.N);
 	}
 
 	@Override

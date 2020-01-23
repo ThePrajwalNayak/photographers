@@ -38,24 +38,30 @@ export class ContactRequestComponent implements OnInit {
     var updatedContactRequest = this.newContactRequests.filter( contactRequest => {
       return contactRequest.checked == true;
     });
-    updatedContactRequest.forEach(element => {
-      element.isRead = 'Y';
-    });
-    this.contactRequestService.approveContactRequest(updatedContactRequest)
-      .subscribe((data : number) => {
-        if(data > 0){
-          this.refreshApprovedContactRequest(updatedContactRequest);
-          this.toastrService.success('Apporved', '', {
-            disableTimeOut: true
-          });
-        } else{
-          this.toastrService.success('Try again', '', {
-            disableTimeOut: true
-          });
-        }
-      }, error => {
-        console.log(error);
-      })
+    if(updatedContactRequest.length > 0){
+      updatedContactRequest.forEach(element => {
+        element.isRead = 'Y';
+      });
+      this.contactRequestService.approveContactRequest(updatedContactRequest)
+        .subscribe((data : number) => {
+          if(data > 0){
+            this.refreshApprovedContactRequest(updatedContactRequest);
+            this.toastrService.success('Apporved', '', {
+              disableTimeOut: true
+            });
+          } else {
+            this.toastrService.success('Try again', '', {
+              disableTimeOut: true
+            });
+          }
+        }, error => {
+          console.log(error);
+        });
+    }else{
+      this.toastrService.success('Plase select category request', '', {
+        disableTimeOut: true
+      });
+    }
   }
 
   refreshApprovedContactRequest(updatedContactRequest) {

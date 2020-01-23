@@ -12,7 +12,7 @@ public interface AdminService {
 
 	List<Photographers> getNewPhotogrpahers();
 
-	void deletePhotographers(@Valid Photographers photographers);
+	void deletePhotographers(@Valid Long photographerId);
 
 	void deleteContactRequest(@Valid ContactRequest contactRequest);
 
