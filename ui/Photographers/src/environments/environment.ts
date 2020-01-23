@@ -4,9 +4,9 @@
 
 export const environment = {
   production: true,
-  // baseUrl : 'http://localhost:8080/api'
+  baseUrl : 'http://localhost:8080/api'
   // baseUrl : 'http://pickphotographersapi.tk/api'
-  baseUrl : 'http://139.59.82.120:8080/api'
+  // baseUrl : 'http://139.59.82.120:8080/api'
 };
 
 /*

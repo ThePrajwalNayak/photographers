@@ -30,5 +30,6 @@ public class ContactRequestController {
 		ContactRequest savedContactRequest = contactRequestService.saveContactRequest(contactRequest);
 		return new ResponseEntity<ContactRequest>(savedContactRequest, HttpStatus.CREATED);
 	}
+	
 
 }
