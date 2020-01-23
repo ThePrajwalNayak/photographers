@@ -200,12 +200,14 @@ export class SingupComponent implements OnInit {
     if (signupForm.status === 'VALID') {
       var form = this.signupForm;
       var picture = null;
-      if (Array.isArray(this.profilePicture)) {
-        picture = this.profilePicture[0].split(',');
-        picture = picture[1];
-      } else{
-        picture = this.profilePicture.changingThisBreaksApplicationSecurity.split(',');
-        picture = picture[1];
+      if (this.profilePicture) {
+        if (Array.isArray(this.profilePicture)) {
+          picture = this.profilePicture[0].split(',');
+          picture = picture[1];
+        } else {
+          picture = this.profilePicture.changingThisBreaksApplicationSecurity.split(',');
+          picture = picture[1];
+        }
       }
       var reqObj = {
         photographersId: this.photographer.photographersId,
@@ -237,6 +239,8 @@ export class SingupComponent implements OnInit {
         .subscribe(data => {
           this.signupResponse = data;
           if (this.signupResponse && this.signupResponse.photographersId != 0) {
+            this.profilePicture = null;
+            this.initSignupForm();
             this.toastrService.success('Account successfully updated', 'Hurray', {
               disableTimeOut: true
             });

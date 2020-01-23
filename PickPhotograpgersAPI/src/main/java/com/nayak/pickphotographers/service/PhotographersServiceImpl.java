@@ -23,7 +23,7 @@ public class PhotographersServiceImpl implements PhotographersService {
 
 	@Override
 	public List<Photographers> getAllPhotographers() {
-		return photographersRepository.findByIsActiveAndIsApproved(PhotographersConstant.Y, PhotographersConstant.N);
+		return photographersRepository.findByIsActiveAndIsApproved(PhotographersConstant.Y, PhotographersConstant.Y);
 	}
 
 	@Override
@@ -56,7 +56,7 @@ public class PhotographersServiceImpl implements PhotographersService {
 
 	@Override
 	public List<Photographers> getTopPhotographers() {
-		return photographersRepository.findByIsActiveAndIsApproved(PhotographersConstant.Y, PhotographersConstant.N);
+		return photographersRepository.findByIsActiveAndIsApproved(PhotographersConstant.Y, PhotographersConstant.Y);
 	}
 
 
