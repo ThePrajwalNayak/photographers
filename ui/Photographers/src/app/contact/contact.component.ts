@@ -53,9 +53,10 @@ export class ContactComponent implements OnInit {
     });
 
     this.contactService.getContactCategory()
-      .subscribe(data => {
-        this.contactCategory = data;
-
+      .subscribe((data : any[] )=> {
+        this.contactCategory = data.map(function(cCategory){
+          return cCategory.categoryName;
+        });
         var requestType = this.contactService.getRequestType();
         this.contactService.setRequestType(null);
         if (requestType) {

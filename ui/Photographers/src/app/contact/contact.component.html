@@ -37,8 +37,7 @@
           <div class="margin-bottom-one">
             <label class="label" for="email">Category *</label>
             <select formControlName="contactCategory" id="contactCategory" class="form-control item" name="contactCategory">
-              <option>Select One</option>
-              <option *ngFor="let category of contactCategory">{{ category.categoryName}}</option>
+              <option *ngFor="let category of contactCategory">{{ category}}</option>
             </select>
           </div>
           <div class="margin-bottom-one">
