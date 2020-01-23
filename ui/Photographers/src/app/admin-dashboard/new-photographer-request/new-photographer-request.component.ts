@@ -32,4 +32,14 @@ export class NewPhotographerRequestComponent implements OnInit {
     this.selectedPhotographer = photographer;
   }
 
+  approvePhotographersRequest(newPhotographer){
+    newPhotographer.isApproved = 'Y';
+    this.newPhotographerRequestService.approvePhotographersRequest(newPhotographer)
+    .subscribe(data => {
+        var approveResponse = data;
+    }, error => {
+      console.log(error);
+    });
+  }
+
 }

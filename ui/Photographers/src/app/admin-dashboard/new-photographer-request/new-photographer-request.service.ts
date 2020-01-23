@@ -20,8 +20,8 @@ export class NewPhotographerRequestService {
         });
     }
 
-    approvePhotographersRequest(photographersRequestArray){
-        return this.http.post(this.BASE_URL + "/admin/approvePhotographersRequest", photographersRequestArray);
+    approvePhotographersRequest(newPhotographer){
+        return this.http.put(this.BASE_URL + "/admin/approvePhotographersRequest", newPhotographer);
     }
 
 

@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="col-md-9 card-right">
-      <div class="selected-photographer" *ngIf="selectedPhotographer">
+      <div class="selected-photographer margin-bottom-one" *ngIf="selectedPhotographer">
         <div class="card card-info padding-two">
           <img class="img-thumbnail" *ngIf="selectedPhotographer.profilePicture"
           [src]="'data:image/jpg;base64,'+selectedPhotographer.profilePicture" />
@@ -80,6 +80,7 @@
           </div>
         </div>
       </div>
+      <button class="app-btn app-btn-primary center" (click)="approvePhotographersRequest(selectedPhotographer)">Approve</button>
     </div>
   </div>
 </div>
