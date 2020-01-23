@@ -30,10 +30,9 @@ public class AdminController {
 	AdminService adminService;
 	
 
-	//http://localhost:8080/contactRequestByStatus?status=N
-	@GetMapping("/contactRequestByStatus")
-	public ResponseEntity<List<ContactRequest>> getAllContactRequestBYStatus(@RequestParam Character status) {
-		List<ContactRequest> contactRequestOpen = adminService.getAllContactRequestBYStatus(status);
+	@GetMapping("/newContactRequest")
+	public ResponseEntity<List<ContactRequest>> getNewContactRequest() {
+		List<ContactRequest> contactRequestOpen = adminService.getNewContactRequest();
 		return new ResponseEntity<List<ContactRequest>>(contactRequestOpen, HttpStatus.OK);
 	}
 	
@@ -43,7 +42,6 @@ public class AdminController {
 		return new ResponseEntity<Integer>(approvedContactRequest, HttpStatus.OK);
 	}
 	
-
 	@GetMapping("/newPotogrpahers")
 	public ResponseEntity<List<Photographers>> getNewPhotogrpahers() {
 		List<Photographers> photographers = adminService.getNewPhotogrpahers();

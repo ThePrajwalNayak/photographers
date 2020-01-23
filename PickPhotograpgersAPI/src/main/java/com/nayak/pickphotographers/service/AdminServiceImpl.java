@@ -57,8 +57,8 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public List<ContactRequest> getAllContactRequestBYStatus(Character status) {
-		return contactRequestRepository.findByIsRead(status);
+	public List<ContactRequest> getNewContactRequest() {
+		return contactRequestRepository.findByIsRead(PhotographersConstant.Y);
 	}
 
 	@Override

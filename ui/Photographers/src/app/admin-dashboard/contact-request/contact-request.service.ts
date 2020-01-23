@@ -13,11 +13,7 @@ export class ContactRequestService {
     constructor(private http: HttpClient) { }
 
     getUnreadContactRequest() {
-        return this.http.get(this.BASE_URL + "/admin/contactRequestByStatus", {
-            params: {
-                status: 'N'
-            }
-        });
+        return this.http.get(this.BASE_URL + "/admin/newContactRequest");
     }
 
     approveContactRequest(contactRequestArray){

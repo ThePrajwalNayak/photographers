@@ -20,7 +20,7 @@ public interface AdminService {
 
 	List<ContactRequest> getAllContactRequest();
 
-	List<ContactRequest> getAllContactRequestBYStatus(Character status);
+	List<ContactRequest> getNewContactRequest();
 
 	Integer approveContactRequest(List<ContactRequest> contactRequests);
 
