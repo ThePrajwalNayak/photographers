@@ -29,11 +29,6 @@ public class AdminController {
 	@Autowired
 	AdminService adminService;
 	
-	@GetMapping("/contactRequest")
-	public ResponseEntity<List<ContactRequest>> getAllContactRequest() {
-		List<ContactRequest> contactRequest = adminService.getAllContactRequest();
-		return new ResponseEntity<List<ContactRequest>>(contactRequest, HttpStatus.OK);
-	}
 
 	//http://localhost:8080/contactRequestByStatus?status=N
 	@GetMapping("/contactRequestByStatus")
@@ -55,10 +50,16 @@ public class AdminController {
 		return new ResponseEntity<List<Photographers>>(photographers, HttpStatus.OK);
 	}
 	
-	@PutMapping("/approveNewPhotographers")
+	@PutMapping("/approvePhotographersRequest")
 	public ResponseEntity<Photographers> approveNewPhotographers(@Valid @RequestBody Photographers photographers){
 		Photographers updatedPhotographers = adminService.approveNewPhotographers(photographers);
 		return new ResponseEntity<Photographers>(updatedPhotographers, HttpStatus.OK);
+	}
+	
+	@GetMapping("/contactRequest")
+	public ResponseEntity<List<ContactRequest>> getAllContactRequest() {
+		List<ContactRequest> contactRequest = adminService.getAllContactRequest();
+		return new ResponseEntity<List<ContactRequest>>(contactRequest, HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/photographers")

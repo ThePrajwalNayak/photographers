@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 
 import { environment } from '../../../environments/environment';
-import { ContactRequestService } from './contact-request-service';
+import { ContactRequestService } from './contact-request.service';
 
 @Component({
   selector: 'app-contact-request',
