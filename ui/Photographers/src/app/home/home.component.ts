@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.initVideoCard();
     this.initImageCard();
-    this.initPhotographers();
+    // this.initPhotographers();
   }
 
   initVideoCard() {

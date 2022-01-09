@@ -1,5 +1,9 @@
 <div id="photographers" class="app-conatiner">
-    <div class="row">
+    <div>
+        <h3>Sorry, this page is down for scheduled maintenance right now !!!</h3>
+        <h6>Please tour Honeymoon Photography, Images, Explore tabs :) </h6>
+    </div>
+    <div *ngIf="false" class="row">
         <div class="col-md-3 card-left">
             <div class="photographers-card clearfix padding-one pointer" [ngClass]="{'selected-photographer' : photographer.photographersId == selectedPhotographer.photographersId}"
                 (click)="setPhotographer(photographer)" *ngFor="let photographer of photographers">

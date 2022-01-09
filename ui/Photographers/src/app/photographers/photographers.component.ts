@@ -16,8 +16,8 @@ export class PhotographersComponent implements OnInit {
   private spinnerService: Ng4LoadingSpinnerService) { }
 
   ngOnInit() {
-    this.spinnerService.show();
-    this.loadAllPhotographers();
+    // this.spinnerService.show();
+    // this.loadAllPhotographers();
   }
 
   loadAllPhotographers() {
